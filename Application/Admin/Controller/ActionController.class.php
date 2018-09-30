@@ -1,8 +1,7 @@
 <?php
 namespace Admin\Controller;
-use Think\Controller;
-class ActionController extends PublicController
-{
+
+class ActionController extends PublicController {
     public function index()
     {
 		$Action = M('action_log');

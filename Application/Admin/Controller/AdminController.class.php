@@ -1,8 +1,6 @@
 <?php
 namespace Admin\Controller;
-use Think\Controller;
-class AdminController extends PublicController
-{
+class AdminController extends PublicController {
     public function index()
     {
 		$Admin = M('admin');
