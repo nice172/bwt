@@ -1,0 +1,37 @@
+<?php $sel = 1; ?>
+<include file="Public/commoner"/>
+<block name="body">
+	<ol class="breadcrumb">
+		<li><a href="{:U('Index/summarize')}">首页</a></li>
+		<li><a href="{:U('Product/index')}">产品管理</a></li>
+		<li>产品详情</li>
+	</ol>
+	<div class="content">
+		<div class="Config_nav">
+			<ul>
+				<li><a href="{:U('Product/index')}">产品管理</a></li>
+				<li><a href="{:U('Product/add')}">添加产品</a></li>
+				<li><a href="{:U('Prodata/add',array('articleid'=>$articleid))}">添加详情</a></li>
+			</ul>
+		</div>
+		<form action="{:U('Prodata/insert')}" method="post"  id="form" enctype="multipart/form-data" >
+			<input type="hidden" name="articleid" value="{$articleid}" />
+			<div class="SiteContent">
+				<ul>
+					<li class="Name">标题</li>
+					<li class="input"><input class="common-text input-text" name="commenttitle" size="40" datatype="*1-100" value=""  type="text"></li>
+				</ul>
+				<ul>
+					<li class="Name">评论内容</li>
+					<li class="input"><script type="text/plain" id="editor" style="width: 100%;height: 350px;"></script></li>
+				</ul>
+				<div class="cl" style="height: 10px;"></div>
+				<div class="btn">
+					<input class="btn btn-primary btn6 mr10" value="提交" style="margin-right: 10px;" type="submit"><input class="btn btn6" onClick="history.go(-1)" value="返回" type="button">
+				</div>
+			</div>
+		</form>
+		<include file="Public:copyright"/>
+	</div>
+</black>
+<include file="Public/editorjs"/>

@@ -1,0 +1,50 @@
+<nav class="nav">
+    <div class="navbg">
+        <div class="logo"><a href="__ROOT__/"><img src="{:getWebSetting('site_logo')}" alt="{:getWebSetting('companyname')}" /></a></div>
+        <div class="describe">
+            <h2>CCTV品牌影响力推荐企业</h2>
+            <h2>正气浩然 ● 事业如虹</h2>
+        </div>
+        <ul class="column">
+            <foreach name="cateone" item="vo" key="k">
+                <li <if condition="($k+1) eq $sel"> class="active"</if>>
+                    <if condition="substr($vo['url'],0,7) eq 'http://' or substr($vo['url'],0,8) eq 'https://'">
+                        <a href="{$vo.url}">{$vo.catname}</a>
+                    <else />
+                        <a href="{:U($vo['url'])}">{$vo.catname}</a>
+                    </if>
+                    <i></i>
+                    <if condition = "countnum($vo['catid']) != 0">
+                        <div class="column_SL" <if condition="$vo['catid'] eq 3">style="left: -45px;"</if>>
+                            <div class="column_SL_line"></div>
+                            <ul class="column_SL_list clearfix" <if condition="$vo['catid'] eq 3">style="width: 135px;"</if>>
+                                <?php $catid = $vo['catid']; ?>
+								<category item="vs" limit="5" pid="$catid" order="sort desc,catid asc">
+                                    <if condition = "$vo.catid eq $vs['pid']">
+                                        <if condition="substr($vs['url'],0,7) eq 'http://' or substr($vs['url'],0,8) eq 'https://'">
+                                             <li><a href="{$vs.url}">{$vs.catname}</a></li>
+                                        <elseif condition="$vs['url'] eq ''" />
+                                            <li><a href="{:U($vo['url'],array('catid'=>$vs['catid']))}">{$vs.catname}</a></li>
+                                        <elseif condition="$vs['url'] neq '' and (substr($vs['url'],0,7) neq 'http://' or substr($vs['url'],0,8) neq 'https://')" />
+                                            <li><a href="{:U($vs['url'],array('catid'=>$vs['catid']))}">{$vs.catname}</a></li>
+                                        </if>
+                                    </if>
+                                </category>
+                            </ul>
+                        </div>
+                    </if>
+                </li>
+            </foreach>
+            <li <if condition="$sel eq 6"> class="active"</if>>
+                <a href="{:U('Fume/index')}">油烟专题</a>
+                <i></i>
+            </li>
+            <li <if condition="$sel eq 7"> class="active"</if>>
+            	<a href="{:U('Vocs/index')}">VOCs专题</a>
+                <i></i>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+

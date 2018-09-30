@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <include file="default:public:header" />
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/Css/main.css"/>
+    </head>
+    <body>
+    	<!--Header Start-->
+    	<include file="default:public:top" />
+        <!--Header end-->
+        <!--Inside Banner Start-->
+        <div class="banner" style="background-image: url({:get_catname(5,'thumb')})">
+        	<div class="warp1300 fs36">{:get_catname(5,'catname')}</div>
+        	<div class="tr">
+            	<div class="warp1300 fs14">{:catpos(5,get_catname(5,'url'))}{:get_catname($cate['catid'],'catname')}</div>
+            </div>
+        </div>
+        <!--Inside Banner end-->
+        <!--Inside Content Start-->
+        <div class="warp1300 m40">
+            <div class="Left box_siz fl">                
+                <div class="top_show">
+                    <h3>{$cate.title}</h3>
+                    <div class="Data">
+                        <span>阅读量：{$cate.views}</span><span class="Time">{$cate.inputtime|date="Y-m-d",###}</span>
+                    </div>
+                </div>
+                <div class="Content">
+                    {$cate.content}
+                </div>
+                <div class="Flip box_siz">
+                	<a href="{$previous_page[url]}" class="fl">上一篇</a><a href="javascript:history.go(-1)" class="return">返回</a><a href="{$next_page[url]}" class="fr">下一篇</a>
+                </div>
+            </div>
+            <div class="Right fr">
+                <div class="New_tit"><span>最新新闻</span></div>
+                <ul class="New_news">
+                    <arclist item="vs" limit="6" catid="5" order="sort desc,id desc" key="k">
+                        <li><a href="{:U('News/show',array('id'=>$vs['id']))}" title="{$vs.title}">{$vs.title}</a></li>
+                    </arclist>
+                </ul>
+                <div class="cl"></div>
+                <ul class="Sort_li">
+                	<category item="vo" pid="4" key="k" order="sort desc,catid asc">
+                        <if condition="substr($vo['url'],0,7) eq 'http://' or substr($vo['url'],0,8) eq 'https://'">
+                            <li><a href="{$vo.url}" class="box_siz">{$vo.catname}</a></li>
+                        <elseif condition="$vo['url'] eq ''" />
+                            <li><a href="{:U(get_catname(4,'url'),array('catid'=>$vo['catid']))}" class="box_siz">{$vo.catname}</a></li>
+                        <elseif condition="$vo['url'] neq '' and (substr($vo['url'],0,7) neq 'http://' or substr($vo['url'],0,8) neq 'https://')" />
+                            <li><a href="{:U($vo['url'],array('catid'=>$vo['catid']))}" class="box_siz">{$vo.catname}</a></li>
+                        </if>
+                    </category>
+                </ul>
+            </div>
+            <div class="cl"></div>
+        </div>
+        <!--Inside Content end-->
+        <!--Footer Start-->
+    	<include file="default:public:foot" />
+        <!--Footer end-->
+    </body>
+</html>

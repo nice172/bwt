@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <include file="default:public:header" />
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/wap/css/main.css"/>
+    </head>
+    <body>
+    	<!--Header Start-->
+    	<include file="default:public:top" />
+        <!--Header end-->
+        <!--Inside Banner Start-->
+        <div class="warp banner">
+        	<img src="__PUBLIC__/wap/img/job_bg.jpg" class="ylw-img" />
+        	<div class="fs26">{:get_catname(6,'catname')}</div>
+            <div class="fs12">{:catpos(6,get_catname(6,'url'))}{$cate.catname}</div>
+        </div>
+        <!--Inside Banner end-->
+        <!--Inside Content Start-->
+        <div class="warp pt20">
+        	<div class="Tar pb_20">
+            	<h2>{$cate.catname}</h2>
+            </div>
+            <div class="Jobs_Con">
+                {$cate.content}
+            </div>
+            <div class="recruit_main" id="recruit_main_list">
+                <ul class="recruit_list_top clearfix">
+                    <li class="recruit_name">职位名称</li>
+                    <li class="recruit_num">招聘人数</li>
+                    <li class="recruit_com">学历要求</li>
+                    <li class="recruit_date">更新时间</li>
+                </ul>
+                <foreach name="lists" item="vo">
+                    <div class="recruit_list">
+                        <ul class="clearfix">
+                            <li class="recruit_name">{$vo.title}</li>
+                            <li class="recruit_num">{$vo.rens}</li>
+                            <li class="recruit_com">
+                                <if condition="$vo['qualifi'] eq 0">不限
+                                <elseif condition="$vo['qualifi'] eq 1" />小学
+                                <elseif condition="$vo['qualifi'] eq 2" />初中
+                                <elseif condition="$vo['qualifi'] eq 3" />高中
+                                <elseif condition="$vo['qualifi'] eq 4" />大专
+                                <elseif condition="$vo['qualifi'] eq 5" />本科
+                                <elseif condition="$vo['qualifi'] eq 6" />研究生
+                                <elseif condition="$vo['qualifi'] eq 7" />硕士
+                                </if>
+                            </li>
+                            <li class="recruit_date">{$vo.inputtime|date="Y-m-d",###}</li>
+                        </ul>
+                        <div class="recruit_det" style="display: none;">
+                            <if condition="$vo['content'] neq ''">
+                                <p>
+                                    <strong>工作职责：</strong>
+                                    {$vo.content}
+                                </p>
+                            </if>
+                            <if condition="$vo['profe'] neq ''">
+                                <p>
+                                    <strong>任职资格：</strong>
+                                    {$vo.profe}
+                                </p>
+                            </if>
+                            <if condition="$vo['info'] neq ''">
+                                <p>
+                                    <strong>薪酬福利：</strong>
+                                    {$vo.info}
+                                </p>
+                            </if>	
+                        </div>
+                    </div>
+                </foreach>
+        	</div>
+            <div class="page">
+                <div class="pages">{$pages}</div>
+            </div>
+            <div class="cl"></div>
+        </div>
+        <script>
+        	$('.recruit_list ul').click(function(){
+				$(this).toggleClass('on').parent().siblings().find('ul').removeClass('on');
+				$(this).siblings('.recruit_det').slideToggle().parent().siblings().find('.recruit_det').slideUp();
+			});
+        </script>
+        <!--Inside Content end-->
+        <!--Footer Start-->
+		<include file="default:public:foot" />
+        <!--Footer end-->
+    </body>
+</html>

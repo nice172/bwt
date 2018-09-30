@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <include file="default:public:header" />
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/wap/css/main.css"/>
+    </head>
+    <body>
+    	<!--Header Start-->
+    	<include file="default:public:top" />
+        <!--Header end-->
+        <!--Inside Banner Start-->
+        <div class="warp banner">
+        	<img src="__PUBLIC__/wap/img/pro_bg.jpg" class="ylw-img" />
+        	<div class="fs26">{:get_catname(3,'catname')}</div>
+            <div class="fs12">{:catpos(3,get_catname(3,'url'))}{$cate.catname}</div>
+        </div>
+        <!--Inside Banner end-->
+        <!--Inside Content Start-->
+        <div class="warp pt20">
+            <div class="Tar pb_20"><h2>{$cate.catname}</h2></div>
+            <h3 class="root">通过搜索查找正虹产品</h3>
+			<div class="search">
+                <form action="{:U('Product/lists')}" method="get" id="myform">
+                    <input type="text" name="q" placeholder="搜索关键词" autocomplete="off" class="search-box flex-1" />
+                    <a href="javascript:;" class="submit-btn fr tc" onclick="submitForm()"></a>
+                </form>
+            </div>
+            <ul class="pro_ul"> 
+                <foreach name="lists" item="vo" key="k">
+                    <li>
+                        <a href="{:U('Product/show',array('id'=>$vo['id']))}">
+                            <i><img src="{$vo.thumb}" alt="{$vo.title}" class="absolute" /></i>
+                            <h5>{$vo.title}</h5>
+                        </a>
+                    </li>
+                </foreach>
+            </ul>
+            <div class="page">
+                <div class="pages">{$pages}</div>
+            </div>
+            <div class="cl"></div>
+        </div>
+        <!--Inside Content end-->
+        <!--Footer Start-->
+		<include file="default:public:foot" />
+        <!--Footer end-->
+        <script type="text/javascript">
+			function submitForm(){
+				$("#myform").submit();
+			}
+		</script>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!--联系我们-->
+<section class="warp index_contact">
+    <div class="links">
+        <div class="title">友情链接</div>
+        <div class="footer_link">
+            <p>正虹环境</p>
+            <ul>
+                <flink item="vo" cid="0" key="k" order="sort desc,linkid asc">
+                    <li><a href="{$vo.url}" title="{$vo.name}" target="_blank">{$vo.name}</a></li>
+                </flink>
+            </ul>
+        </div>
+    </div>
+    <div class="record_other">
+        <ul>
+        	<li><img src="__PUBLIC__/wap/img/ico1.png" class="ylw-img" /></li>
+            <li><img src="__PUBLIC__/wap/img/ico2.png" class="ylw-img" /></li>
+            <li><img src="__PUBLIC__/wap/img/ico3.png" class="ylw-img" /></li>
+            <li><img src="__PUBLIC__/wap/img/ico4.png" class="ylw-img" /></li>
+        </ul>
+    </div>
+	<div class="Copyright">Copyright &copy; 12014 正虹科技<a href="http://www.miitbeian.gov.cn/">{:getWebSetting('site_filing')}</a></div>
+</section>
+<script>
+	$('.footer_link').click(function(){
+		$('ul',this).slideToggle()
+	});
+	$('.footer_link').mouseleave(function(){
+		$('ul',this).slideUp();
+	});
+</script>

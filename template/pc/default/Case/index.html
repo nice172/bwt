@@ -1,0 +1,64 @@
+<?php $sel = 4; ?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <include file="default:public:header" />
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/Css/main.css"/>
+    </head>
+    <body>
+    	<!--Header Start-->
+    	<include file="default:public:top" />
+        <!--Header end-->
+        <div class="banner" style="background-image: url({:get_catname(4,'thumb')})">
+        	<div class="warp1300 fs36">{:get_catname(4,'catname')}</div>
+        	<div class="tr">
+            	<div class="warp1300 fs14">{:catpos(4,get_catname(4,'url'))}{$cate.catname}</div>
+            </div>
+        </div>
+        <div class="warp1300 m40">
+        	<foreach name="catelist" item="vo" key="k">
+                <div class="Case_Sort">
+                    <div class="Tar">
+                        <h2>{$vo.catname}</h2>
+                    </div>
+                    <p>{$vo.info}</p>
+                    <?php $catid = $vo['catid']; ?>
+                    <ul>
+                    	<category item="vs" pid="$catid" key="k" order="sort desc,catid asc">
+                            <li class="box_siz">
+								<if condition="$vo['url'] neq ''">
+                                    <if condition="substr($vs['url'],0,7) eq 'http://' or substr($vs['url'],0,8) eq 'https://'">
+                                         <a href="{$vs.url}">
+                                            <i><img src="{$vs.thumb}" alt="{$vs.catname}" /></i>
+                                            <h4>{$vs.catname}</h4>
+                                         </a>
+                                    <elseif condition="$vs['url'] eq ''" />
+                                        <a href="{:U($vo['url'],array('catid'=>$vs['catid']))}">
+                                            <i><img src="{$vs.thumb}" alt="{$vs.catname}" /></i>
+                                            <h4>{$vs.catname}</h4>
+                                        </a>
+                                    <elseif condition="$vs['url'] neq '' and (substr($vs['url'],0,7) neq 'http://' or substr($vs['url'],0,8) neq 'https://')" />
+                                        <a href="{:U($vs['url'],array('catid'=>$vs['catid']))}">
+                                            <i><img src="{$vs.thumb}" alt="{$vs.catname}" /></i>
+                                            <h4>{$vs.catname}</h4>
+                                        </a>
+                                    </if>
+								<else/>
+                                	<a href="{:U('Case/lists',array('catid'=>$vs['catid']))}">
+                                        <i><img src="{$vs.thumb}" alt="{$vs.catname}" /></i>
+                                        <h4>{$vs.catname}</h4>
+                                     </a>
+								</if>
+                            </li>
+                        </category>
+                    </ul>
+                    <div class="cl"></div>
+                </div>
+            </foreach>
+        	<div class="cl"></div>
+        </div>
+        <!--Footer Start-->
+    	<include file="default:public:foot" />
+        <!--Footer Start-->
+    </body>
+</html>

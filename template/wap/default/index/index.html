@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <include file="default:public:header" />
+		<link rel="stylesheet" href="__PUBLIC__/Wap/Css/index.css" />
+        <script type="text/javascript" src="__PUBLIC__/Wap/js/owl.carousel.min.js"></script>
+    </head>
+    <body>
+    	<include file="default:public:top" />
+		<div class="warp banner">
+            <div class="slider">
+                <ul class="slides">
+                    <li class="slide">
+                        <div class="box" style="background-image: url(__PUBLIC__/Wap/img/banner1.jpg)"><img src="__PUBLIC__/Wap/img/Banner.png" class="ylw-img" /></div>
+                    </li>
+                    <li class="slide">
+                        <div class="box" style="background-image: url(__PUBLIC__/Wap/img/banner1.jpg)"><img src="__PUBLIC__/Wap/img/Banner.png" class="ylw-img" /></div>
+                    </li>
+                    <li class="slide">
+                        <div class="box" style="background-image: url(__PUBLIC__/Wap/img/banner1.jpg)"><img src="__PUBLIC__/Wap/img/Banner.png" class="ylw-img" /></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+		<script src="__PUBLIC__/Wap/js/jquery.glide.min.js"></script>
+        <script src="__PUBLIC__/Wap/js/jquery.glide.admin.js"></script>
+        <div class="warp">
+        	<div class="Tar p20"><h2>关于正虹</h2></div>
+            <ul class="i_about">
+                <category item="vo" pid="2" key="k" limit="4" order="sort desc,catid asc">
+                    <if condition="substr($vo['url'],0,7) eq 'http://' or substr($vo['url'],0,8) eq 'https://'">
+                        <li><a href="{$vo.url}"><i><img src="__PUBLIC__/Wap/img/ico_{$k+1}.png" class="absolute max-img" /></i>{$vo.catname}</a></li>
+                    <elseif condition="$vo['url'] eq ''" />
+                        <li><a href="{:U(get_catname(2,'url'),array('catid'=>$vo['catid']))}"><i><img src="__PUBLIC__/Wap/img/ico_{$k+1}.png" class="absolute max-img" /></i>{$vo.catname}</a></li>
+                    <elseif condition="$vo['url'] neq '' and (substr($vo['url'],0,7) neq 'http://' or substr($vo['url'],0,8) neq 'https://')" />
+                        <li><a href="{:U($vo['url'],array('catid'=>$vo['catid']))}"><i><img src="__PUBLIC__/Wap/img/ico_{$k+1}.png" class="absolute max-img" /></i>{$vo.catname}</a></li>
+                    </if>
+                </category>
+            </ul>
+        </div>
+        <div class="warp">
+        	<div class="Tar p20"><h2>产品展示</h2></div>
+            <div class="viws">
+                <div id="i_pro" class="owlCarousel">
+                    <category item="vo" pid="3" key="k" order="sort desc,catid asc">
+                        <if condition="substr($vo['url'],0,7) eq 'http://' or substr($vo['url'],0,8) eq 'https://'">
+                             <a href="{$vo.url}">
+                                <i><img src="__PUBLIC__/Home/img/{$k+1}.png" class="absolute max-img" /></i>
+                                <h3>{$vo.catname}</h3>
+                            </a>
+                        <elseif condition="$vo['url'] eq ''" />
+                            <a href="{:U(get_catname(3,'url'),array('catid'=>$vo['catid']))}">
+                                <i><img src="__PUBLIC__/Home/img/{$k+1}.png" class="absolute max-img" /></i>
+                                <h3>{$vo.catname}</h3>
+                            </a>
+                        <elseif condition="$vo['url'] neq '' and (substr($vo['url'],0,7) neq 'http://' or substr($vo['url'],0,8) neq 'https://')" />
+                            <a href="{:U($vo['url'],array('catid'=>$vo['catid']))}">
+                                <i><img src="__PUBLIC__/Home/img/{$k+1}.png" class="absolute max-img" /></i>
+                                <h3>{$vo.catname}</h3>
+                            </a>
+                        </if>
+                    </category>
+                </div>
+                <div id="pres" class="pre btn"></div>
+                <div id="nexts" class="next btn"></div>
+            </div>
+        </div>
+        <div class="warp">
+        	<div class="Tar p20"><h2>重点工程</h2></div>
+            <div class="picMarquee-left">
+                <div class="more">
+                    <a class="next tc"><img src="__PUBLIC__/Wap/img/right.png" /></a>
+                    <a class="prev tc"><img src="__PUBLIC__/Wap/img/left.png" /></a>
+                </div>
+                <div class="bd"> 
+                    <ul class="picList">
+                    	<arclist item="vs" limit="5" catid="21" order="sort desc,id desc" key="k">
+                            <li>
+                                <a href="{:U('Case/show',array('id'=>$vs['id']))}">
+                                    <div><img src="{$vs.thumb}" alt="{$vs.title}" title="{$vs.title}"/></div>
+                                    <p>{$vs.title|str_cut=34}</p>
+                                </a>
+                            </li>
+                        </arclist>
+                    </ul>
+                </div>
+            </div>
+		</div>
+		<script type="text/javascript" src="__PUBLIC__/Wap/js/jquery.SuperSlide.2.1.1.js"></script>
+        <script type="text/javascript">
+        	jQuery(".picMarquee-left").slide({mainCell:".bd ul",autoPlay:true,effect:"leftMarquee",vis: 5,interTime:50,trigger:"click"});
+        </script>
+        <div class="warp">
+        	<div class="Tar p20"><h2>公司新闻</h2></div>
+            <div class="i_zxme">
+                <div class="i_zxmelc1">
+                	<category item="vo" pid="5" key="k" order="sort desc,catid asc">
+                        <span id="two{$k+1}" onmouseover="setContentTab('two',{$k+1},{:countnum($vo['pid'])})" <if condition="($k+1) eq 1">class="hover"</if>>{$vo.catname}</span>
+                    </category>
+                </div>
+                <div class="i_zxmelc3">
+                    <category item="vo" key="k" pid="5" order="sort desc,catid asc">
+                        <div id="con_two_{$k+1}" <if condition="($k+1) eq 1">style="display: block;"<else />style="display: none;"</if>>
+                            <ul>
+                            	<?php $catid = $vo['catid']; ?>
+                                <arclist item="vs" limit="5" catid="$catid" order="sort desc,id desc" key="k">
+                                    <li>	
+                                        <a href="{:U('News/show',array('id'=>$vs['id']))}" title="{$vs.title}">
+                                            <h3>{$vs.title}</h3>
+                                            <p>{$vs.info|str_cut=180}</p>
+                                            <span>{$vs.inputtime|date="Y-m-d",###}</span>
+                                        </a>
+                                    </li>
+                                </arclist>
+                            </ul>
+                            <a href="{:U('News/index',array('catid'=>$vo['catid']))}" class="more">了解更多</a>
+                        </div>
+                    </category>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+			function setContentTab(name, curr, n) {
+				for (i = 1; i <= n; i++) {
+					var menu = document.getElementById(name + i);
+					var cont = document.getElementById("con_" + name + "_" + i);
+					menu.className = i == curr ? "hover" : "";
+					if (i == curr) {
+						cont.style.display = "block";
+					} else {
+						cont.style.display = "none";
+					}
+				}
+			}
+		</script>
+        <div class="warp">
+        	<div class="Tar p20"><h2>项目工程</h2></div>
+            <div class="project">
+                <arclist item="vs" limit="2" catid="20" order="sort desc,id desc" key="k">
+                    <a href="{:U('Case/show',array('id'=>$vs['id']))}">
+                        <i><img src="{$vs.thumb}" alt="{$vs.title}" class="y-img" title="{$vs.title}" /></i>
+                        <h4>{$vs.title}</h4>
+                        <p>{$vs.info}</p>
+                        <label>{$vs.views}</label>
+                    </a>
+                </arclist> 
+            </div>
+        </div>
+        <div class="cl" style="height: 20px;"></div>
+        <include file="default:public:foot" />
+    </body>
+</html>

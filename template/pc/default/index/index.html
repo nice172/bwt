@@ -1,0 +1,383 @@
+<?php $sel = 1; ?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <include file="default:public:header" />
+    </head>
+    <body>
+    	<include file="default:public:top" />
+        <link rel="stylesheet" href="__PUBLIC__/Home/Css/index.css" />
+		<script type="text/javascript" src="__PUBLIC__/Home/js/jquery.easing.1.3.js"></script>
+        <script>
+            $('body,html').css('overflow', 'hidden');
+        </script>
+		<section class="index_banner clearfix">
+        <!--banner图片-->
+            <ul class="banner_ul">
+                <li style="display: block;">
+                    <img src="__PUBLIC__/Home/img/banner3.jpg" class="bg" />
+                    <img src="__PUBLIC__/Home/img/banner3_txt.png" class="banner_1 banner_other" />
+                    <a class="more" href="">了解更多</a>
+                </li>
+                <li style="display: none;">
+                    <img src="__PUBLIC__/Home/img/banner1.jpg" class="bg" />
+                    <img src="__PUBLIC__/Home/img/banner1_txt.png" class="banner_1 banner_other" />
+                    <img src="__PUBLIC__/Home/img/banner1_equipment.png" class="banner_2 banner_other" />
+                    <img src="__PUBLIC__/Home/img/banner1_other.png" class="banner_3 banner_other" />
+                    <a class="more" href="">了解更多</a>
+                </li>
+                <li style="display: none;">
+                    <img src="__PUBLIC__/Home/img/banner2.jpg" class="bg" />
+                    <img src="__PUBLIC__/Home/img/banner2_txt.png" class="banner_1 banner_other" />
+                    <img src="__PUBLIC__/Home/img/banner2_equipment.png" class="banner_2 banner_other" />
+                    <a class="more" href="">了解更多</a>
+                </li>
+            </ul>
+            <div class="btn absolute clearfix">
+                <div class="pre"></div>
+                <div class="next"></div>
+            </div>
+        </section>
+<!--关于正虹-->
+<section class="index_about">
+    <img class="bg" src="__PUBLIC__/Home/img/about.jpg" />
+    <img class="logo ico" src="__PUBLIC__/Home/img/about_bg1.png" />
+    <img class="logo" src="__PUBLIC__/Home/img/about_bg2.png" />
+    <div>
+    	<category item="vo" pid="2" key="k" limit="4" order="sort desc,catid asc">
+            <if condition="substr($vo['url'],0,7) eq 'http://' or substr($vo['url'],0,8) eq 'https://'">
+                 <a href="{$vo.url}" class="ico{$k+1}"><p>{$vo.catname}</p></a>
+            <elseif condition="$vo['url'] eq ''" />
+                <a href="{:U(get_catname(2,'url'),array('catid'=>$vo['catid']))}" class="ico{$k+1}"><p>{$vo.catname}</p></a>
+            <elseif condition="$vo['url'] neq '' and (substr($vo['url'],0,7) neq 'http://' or substr($vo['url'],0,8) neq 'https://')" />
+                <a href="{:U($vo['url'],array('catid'=>$vo['catid']))}" class="ico{$k+1}"><p>{$vo.catname}</p></a>
+            </if>
+        </category>
+    </div>
+	<a class="more" href="{:U(get_catname(2,'url'))}">深入了解</a>
+</section>
+<!--产品中心-->
+<section class="index_product" id="product">
+	<img class="bg" src="__PUBLIC__/Home/img/product.jpg" />
+    <div class="product_content">
+        <div class="product_list">
+            <category item="vo" pid="3" key="k" order="sort desc,catid asc">
+                <if condition="substr($vo['url'],0,7) eq 'http://' or substr($vo['url'],0,8) eq 'https://'">
+                     <a href="{$vo.url}">
+                        <div class="ico"><img src="__PUBLIC__/Home/img/{$k+1}.png" class="absolute" /></div>
+                        <h3>{$vo.catname}</h3>
+                        <img src="{$vo.thumb}" class="img">
+                    </a>
+                <elseif condition="$vo['url'] eq ''" />
+                    <a href="{:U(get_catname(3,'url'),array('catid'=>$vo['catid']))}">
+                        <div class="ico"><img src="__PUBLIC__/Home/img/{$k+1}.png" class="absolute" /></div>
+                        <h3>{$vo.catname}</h3>
+                        <img src="{$vo.thumb}" class="img">
+                    </a>
+                <elseif condition="$vo['url'] neq '' and (substr($vo['url'],0,7) neq 'http://' or substr($vo['url'],0,8) neq 'https://')" />
+                    <a href="{:U($vo['url'],array('catid'=>$vo['catid']))}">
+                        <div class="ico"><img src="__PUBLIC__/Home/img/{$k+1}.png" class="absolute" /></div>
+                        <h3>{$vo.catname}</h3>
+                        <img src="{$vo.thumb}" class="img">
+                    </a>
+                </if>
+            </category>
+        </div>
+        <div class="product_btn absolute">
+            <div class="pre" style="display: none;"></div>
+            <div class="next"></div>
+        </div>
+    </div>
+	<a class="more" href="{:U('Product/index')}">深入了解</a>
+</section>
+<!--重点工程-->
+<section class="index_stress" id="stress">
+	<img class="bg" src="__PUBLIC__/Home/img/stress__bg.jpg" />
+    <div class="stress_content">
+        <div class="stress_btn absolute">
+            <div class="pre"></div>
+            <div class="next"></div>
+        </div>
+        <div class="stress_a">
+        	<arclist item="vs" limit="5" catid="21" order="sort desc,id desc" key="k">
+                <a href="{:U('Case/show',array('id'=>$vs['id']))}">
+                    <div><img src="{$vs.thumb}" alt="{$vs.title}" title="{$vs.title}"/></div>
+                    <p>{$vs.title}</p>
+                </a>
+            </arclist>
+        </div>
+    </div>
+	<a class="more" href="{:U('Case/lists','catid=21')}">更多工程</a>
+</section>
+<!--资讯中心-->
+<section class="index_info" id="app">
+    <div class="info_class">
+        <category item="vo" pid="5" key="k" order="sort desc,catid asc">
+        	<div <if condition="($k+1) eq 1"> class="cur"</if>>{$vo.catname}</div>
+        </category>
+    </div>
+    <category item="vo" pid="5" key="k" order="sort desc,catid asc">
+        <article class="info_content clearfix cla{$k+1}" <if condition="($k+1) eq 1"> style="display: block;"<else/>style="display: none;"</if>>
+            <div class="left">
+                <div class="img"></div>
+                <div class="txt">
+                    <h3></h3>
+                    <p></p>
+                    <a class="more_btn">阅读详情<i></i></a>
+                </div>
+            </div>
+            <div class="right">
+                <?php $catid = $vo['catid']; ?>
+                <arclist item="vs" limit="6" catid="$catid" order="sort desc,id desc" key="k">
+                <a href="{:U('News/show',array('id'=>$vs['id']))}" title="{$vs.title}" hrefid="{$vs.id}" firstimg="<img src='{$vs.thumb}' />" brief="{:unsafe_replace($vs['info'])}">
+                    <div class="date">{$vs.inputtime|date="Y-m-d",###}</div>
+                    <p class="txt">{$vs.title}</p>
+                </a>
+               </arclist>
+            </div>
+            <ul class="info_list_dot"></ul>
+        </article>
+    </category>
+	<a class="info_more" href="{:U('News/index','catid=22')}">更多新闻</a>
+	<a class="info_more" href="{:U('News/index','catid=23')}">更多动态</a>
+	<a class="info_more" href="{:U('News/index','catid=24')}">更多法规</a>
+	<a class="info_more" href="{:U('News/index','catid=25')}">更多百科</a>
+</section>
+<!--项目案例-->
+<section class="index_project" id="APP">
+    <img class="bg" src="__PUBLIC__/Home/img/project_bg.jpg" />
+    <div class="project_content clearfix">
+        <arclist item="vs" limit="4" catid="20" order="sort desc,id desc" key="k">
+            <a href="{:U('Case/show',array('id'=>$vs['id']))}">
+                <i><img src="{$vs.thumb}" alt="{$vs.title}" title="{$vs.title}" /></i>
+                <h4>{$vs.title}</h4>
+                <p>{$vs.info}</p>
+                <label>{$vs.views}</label>
+            </a>
+        </arclist> 
+    </div>
+    <a class="more" href="{:U('Case/lists','catid=20')}">更多案例</a>
+    <div class="mask_bg"></div>
+</section>
+<!--二维码-->
+<!--
+	<div class="code-top">
+		<div class="code">
+			<i class="btn"></i>
+			<i class="code_bg"></i>
+		</div>
+		<div class="top">
+			<span class="top_btn">TOP</span>
+			<span class="top_bg">返回顶部</span>
+		</div>
+	</div>
+-->
+	<!--视频-->
+    <!--
+	<div class="video">
+		<img src="__PUBLIC__/Home/img/video.jpg" />
+		<div class="btn"></div>
+	</div>
+    -->
+	<!--遮罩层-->
+    <!--
+	<div class="mask">
+		<div class="mask_close" title="关闭当前弹出窗口">×</div>
+		<div class="video_open" id="VideoList">
+			<h3 class="title"></h3>
+			<div class="play">
+				<div id="video" style="width: 600px; height: 400px;"></div>
+				<p class="key_word"><span>关键词：</span></p>
+				<p class="video_visit">访问量：</p>
+			</div>
+			<ul class="list">
+
+				<video item="vs" limit="10" order="sort desc,id desc" key="k">
+                    <li url="{$vs.videourl}">
+                        <div><img src="{$vs.thumb}" /></div>
+                        <p class="title">{$vs.title}</p>
+                        <p class="key_word"><span>关键词：</span>{$vs.info}</p>
+                        <p class="video_visit">访问量：{$vs.views}</p>
+                    </li>
+				</video>
+			</ul>
+		</div>
+	</div>
+    -->
+	<ul class="page_show">
+		<li class="dot"></li>
+		<li class="cur show"><span>首 页 </span></li>
+		<li class="show"><span>关于正虹 </span></li>
+		<li class="show"><span>产品中心 </span></li>
+		<li class="show"><span>重点工程 </span></li>
+		<li class="show"><span>资讯中心 </span></li>
+		<li class="show"><span>项目案例 </span></li>
+		<li class="show"><span>联系我们 </span></li>
+	</ul>
+	<script type="text/javascript" src="__PUBLIC__/Home/js/index.js"></script>
+	<script src="__PUBLIC__/Home/js/index_move.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		$(function () {
+			$(' .nav .column  .index').addClass('cur');
+			if ($('.index_product .product_content .product_list a').length <= 5) {
+				$('.index_product .product_content .product_btn').hide();
+			};
+			$('.index_product .product_content .product_list a').each(function (i, ele) {
+				$(ele).css('left', i * $(ele).width());
+			});
+			$('.index_info .info_class div').each(function (index, elemet) {
+				$(elemet).attr({ 'index': index + 1 });
+			});
+			var info_num = 0, InfoImgMove = '', InfoImgNum = 0, info_cla = 1;
+			info(info_cla);
+			function info(cla) {
+				$('.index_info .info_more').hide().eq(cla - 1).show();
+				clearInterval(InfoImgMove);
+				InfoImgNum = 0;
+				var info_right_a = $('.index_info .info_content.cla' + cla + ' .right a').eq(info_num);
+				var infoleftimglist = info_right_a.attr('firstimg').toString().split('#').join("");
+				$('.index_info .info_content.cla' + cla + ' .left div.img').html(infoleftimglist);
+				$('.index_info .info_content.cla' + cla + ' .left .txt h3').text(info_right_a.find('.txt').text());
+				$('.index_info .info_content.cla' + cla + ' .left .txt p').text(info_right_a.attr('brief').replace('"', "%26quot%3B"));
+				$('.index_info .info_content.cla' + cla + ' .left .txt .more_btn').attr('href', "/News/show/id/" + info_right_a.attr('hrefid'));
+				$('.index_info .info_content.cla' + cla + ' .left .img img').each(function (i, ele) {
+					$(ele).css({ 'left': (i - InfoImgNum) * 370 });
+				});
+				for (var i = 0; i < info_right_a.attr('firstimg').split('#').length; i++) {
+					if (i == 0) {
+						$('.index_info .info_content .info_list_dot').html('');
+						$('.index_info .info_content .info_list_dot').html('<li class="cur"></li>');
+					}
+					else {
+						$('.index_info .info_content .info_list_dot').append('<li></li>');
+					}
+				}
+				InfoImgMove = setInterval(function () {
+					$('.index_info .info_content.cla' + cla + ' .left .img img').each(function (i, ele) {
+						$(ele).css({ 'left': (i - InfoImgNum) * 370 });
+					});
+					InfoImgNum++;
+					if (InfoImgNum >= $('.index_info .info_content.cla' + cla + ' .left .img img').length) {
+						InfoImgNum = 0;
+					}
+					$('.index_info .info_content.cla' + cla + ' .left .img img').each(function (i, ele) {
+						$(ele).animate({ 'left': [(i - InfoImgNum) * 370, 'easeOutCubic'] }, 400);
+					});
+					$('.index_info .info_content.cla' + cla + ' .info_list_dot li').removeClass('cur').eq(InfoImgNum).addClass('cur');
+				}, 4000);
+			};
+			$('.index_info .info_content .right a').mouseenter(function () {
+				if (info_num != $(this).index()) {
+					info_num = $(this).index();
+					$('.index_info .info_content .left>div').removeClass('fadeInRight').css('animation-duration', '0.5s').addClass('fadeOutLeft');
+					setTimeout(function () {
+						info(info_cla);
+						$('.index_info .info_content .left>div').removeClass('fadeOutLeft').css('animation-duration', '0.5s').addClass('fadeInRight');
+					}, 500);
+				}
+			});
+			$('body').on('mouseenter', '.index_info .info_content .left .img img', function () {
+				clearInterval(InfoImgMove);
+			});
+			$('body').on('mouseleave', '.index_info .info_content .left .img img', function () {
+				InfoImgMove = setInterval(function () {
+					$('.index_info .info_content.cla' + info_cla + ' .left .img img').each(function (i, ele) {
+						$(ele).css({ 'left': (i - InfoImgNum) * 370 });
+					});
+					InfoImgNum++;
+					if (InfoImgNum >= $('.index_info .info_content.cla' + info_cla + ' .left .img img').length) {
+						InfoImgNum = 0;
+					}
+					$('.index_info .info_content.cla' + info_cla + ' .left .img img').each(function (i, ele) {
+						$(ele).animate({ 'left': [(i - InfoImgNum) * 370, 'easeOutCubic'] }, 400);
+					});
+					$('.index_info .info_content.cla' + info_cla + ' .info_list_dot li').removeClass('cur').eq(InfoImgNum).addClass('cur');
+				}, 4000);
+			});
+			$('body').on('click', '.index_info .info_content .info_list_dot li', function () {
+				info_list_dot_li_click(info_cla, $(this).index());
+			});
+			function info_list_dot_li_click(cla, num) {
+				clearInterval(InfoImgMove);
+				InfoImgNum = num;
+				$('.index_info .info_content.cla' + cla + ' .left .img img').each(function (i, ele) {
+					$(ele).animate({ 'left': [(i - InfoImgNum) * 370, 'easeOutCubic'] }, 400);
+				});
+				$('.index_info .info_content.cla' + cla + ' .info_list_dot li').removeClass('cur').eq(InfoImgNum).addClass('cur');
+
+				InfoImgMove = setInterval(function () {
+					InfoImgNum++;
+					if (InfoImgNum >= $('.index_info .info_content.cla' + cla + ' .left .img img').length) {
+						InfoImgNum = 0;
+					}
+					$('.index_info .info_content.cla' + cla + ' .left .img img').each(function (i, ele) {
+						$(ele).animate({ 'left': [(i - InfoImgNum) * 370, 'easeOutCubic'] }, 400);
+					});
+					$('.index_info .info_content.cla' + cla + ' .info_list_dot li').removeClass('cur').eq(InfoImgNum).addClass('cur');
+				}, 4000);
+			}
+			$('.index_info .info_class div').click(function () {
+				$('.index_info .info_class div').removeClass('cur');
+				$('.index_info .info_class div').eq($(this).attr('index') - 1).addClass('cur');
+				$('.index_info .info_content').stop(true, true);
+				var _this = this;
+				var index = $(_this).attr('index');
+				if ($('.index_info .info_content.cla' + index + '').is(':hidden')) {
+					clearInterval(InfoImgMove);
+					info_num = 0; InfoImgNum = 0;
+					$('.index_info article.info_content').fadeOut(400)
+					setTimeout(function () {
+						info_cla = index;
+						info(info_cla);
+						$('.index_info .info_content').eq(info_cla - 1).fadeIn(400);
+					}, 400);
+				}
+			});
+			/*
+			video(0);
+			function video(value) {
+				$('.mask .video_open h3.title').text($('.mask .video_open ul.list li').eq(value).find('p.title').text());
+				$('.mask .video_open .play  p.key_word').html($('.mask .video_open ul.list li').eq(value).find('p.key_word').html());
+				$('.mask .video_open .play  p.video_visit').html($('.mask .video_open ul.list li').eq(value).find('p.video_visit').html());
+				var Url = $('.mask .video_open ul.list li').eq(value).attr('Url');
+				//if (Url.search(".mp4") != -1) {
+					//$('.play #video').html('');
+				//}
+				//else {
+					$('.play #video').html('');
+					var a = '<embed ref="play_embed" src="' + Url + '" type="application/x-shockwave-flash" class="video_play" pluginspage="http://www.macromedia.com/go/getflashplayer" width="480" height="380" wmode="transparent" play="true" loop="false" menu="false" allowscriptaccess="never" allowfullscreen="true"></embed>';
+					$('.play #video').html(a);
+				//}
+			}
+			$('.mask .video_open ul.list li').click(function () {
+				$(this).parents().find('li').removeClass('cur');
+				$(this).addClass('cur');
+				$(this).parents('#VideoList').find('.play').css({ 'opacity': 0 });
+				video($(this).index());
+				$(this).parents('#VideoList').find('.play').animate({ 'opacity': 1 });
+			});
+			*/
+			$('body').on('mouseenter', '.index_product .product_content .product_list a', function () {
+				$(this).find('.ico').attr('src', $(this).attr('ico2'));
+			});
+			$('body').on('mouseleave', '.index_product .product_content .product_list a', function () {
+				$(this).find('.ico').attr('src', $(this).attr('ico1'));
+			});
+		});
+	</script>
+    <!--
+    <div class="code-top">
+		<div class="code">
+			<i class="btn"></i>
+			<i class="code_bg"></i>
+		</div>
+		<div class="top" style="display: none;">
+			<span class="top_btn">TOP</span>
+			<span class="top_bg">返回顶部</span>
+		</div>
+	</div>
+    -->
+    <include file="default:public:foot" />
+	<script src="__PUBLIC__/Home/js/SL.js" type="text/javascript" charset="utf-8"></script> 
+    </body>
+</html>

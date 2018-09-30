@@ -1,0 +1,44 @@
+<include file="Public/commoner"/>
+<block name="body">
+    <ol class="breadcrumb">
+        <li><a href="{:U('Index/summarize')}">首页</a></li>
+        <li><a href="{:U('Social/index')}">招聘属性</a></li>
+        <li>属性编辑</li>
+    </ol>
+    <div class="content">
+        <div class="Config_nav">
+            <ul>
+                <li><a class="on" href="{:U('Social/index')}">招聘属性</a></li>
+                <li><a href="{:U('Social/add')}">属性添加</a></li>
+            </ul>
+        </div>
+        <form action="{:U('Social/update')}" method="post" id="form"  enctype="multipart/form-data">
+        	<input type="hidden" name="id" value="{$detail.id}" />  
+            <div class="SiteContent">
+                <ul>
+                    <li class="Name">名称</li>
+                    <li class="input"><input type="text" name="title" class="common-text input-text" size="30" value="{$detail.title}" /></li>
+                </ul>
+                <ul>
+                    <li class="Name">属性</li>
+                    <li class="input">
+                        <div class="radio"><span><input type="radio" name="types" value="1" <if condition="$detail['types'] eq 1">checked="checked"</if>></span><label for="types1">工作地点</label></div>
+                        <div class="radio"><span><input type="radio" name="types" value="2" <if condition="$detail['types'] eq 2">checked="checked"</if>></span><label for="types2">职业类型</label></div>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="Name">状态</li>
+                    <li class="input">
+                        <div class="radio"><span><input type="radio" name="status" value="1" <if condition="$detail['status'] eq 1">checked="checked"</if>></span><label for="status1">启用</label></div>
+                        <div class="radio"><span><input type="radio" name="status" value="0" <if condition="$detail['status'] eq 0">checked="checked"</if>></span><label for="status2">禁用</label></div>
+                    </li>
+                </ul>
+                <div class="cl" style="height: 10px;"></div>
+                <div class="btn">
+                    <input class="btn btn-primary btn6 mr10" name="submit" value="保存" style="margin-right: 10px;" type="submit"><input class="btn btn6" onClick="history.go(-1)" value="返回" type="button">
+                </div>
+            </div>
+        </form>           
+        <include file="Public:copyright"/>
+    </div>
+</block>

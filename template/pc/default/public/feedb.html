@@ -1,0 +1,64 @@
+<div class="fdback_bg">
+    <div class="warp1300 fd">
+        <h5>选择正虹，和我们一起治理环境</h5>
+        <p>我们视口碑为生命，视服务为根本</p>
+        <div class="cl"></div>
+        <div class="fl fdback">
+            <h6>留言让专业顾问联系您</h6>
+            <form method="post" name="myform" id="myform" action="{:U('Contact/feedb')}">
+                <div class="row">
+                    <div class="fl Input"><input name="name" class="iInput border" placeholder="姓名 *" id="name" type="text" /></div>
+                    <div class="fr Input"><input name="telephone"  class="iInput border" placeholder="手机 *" type="text" id="telephone" /></div>
+                </div>
+                <div class="row">
+                    <div class="fl Input"><input name="qq" class="iInput border" placeholder="微信 *" type="text"  id="qq" /></div>
+                    <div class="fr Input"><input name="title" class="iInput border" placeholder="标题 *" id="title" type="text" /></div>
+                </div>
+                <div class="row">
+                    <textarea name="content" id="content" rows="4" placeholder="留言内容 *" class="iInput text border"></textarea>
+                </div>
+                <div class="cl" style="height: 20px;"></div>
+                <div>
+                    <button name="submit" class="submit border" type="submit">提 交</button>
+                </div>
+            </form>
+        </div>
+        <div class="fr ly">
+            <h6>留言让专业顾问联系您</h6>
+            <div id="demo">
+                <div id="indemo">
+                    <div id="demo1">
+                        <ul>
+                        	<feedback item="vo" order="id desc" key="k">
+                                <li>
+                                    <div class="ip">(来自{$vo.city}的用户){$vo.name}</div>
+                                    <div class="fd_con">{$vo.content}</div>
+                                </li>
+                            </feedback>
+                        </ul>
+                    </div>
+                    <div id="demo2"></div>
+                </div>
+            </div>
+        </div>
+        <div class="cl"></div>
+    </div>
+</div>
+<script>
+    var speed=100;
+    var tab=document.getElementById("demo");
+    var tab1=document.getElementById("demo1");
+    var tab2=document.getElementById("demo2");
+    
+    tab2.innerHTML=tab1.innerHTML;
+    function Marquee(){
+        if(tab2.offsetHeight-tab.scrollTop<=0)
+            tab.scrollTop-=tab1.offsetWidth
+        else{
+            tab.scrollTop++;
+        }
+    }
+    var MyMar=setInterval(Marquee,speed);
+    tab.onmouseover=function() {clearInterval(MyMar)};
+    tab.onmouseout=function() {MyMar=setInterval(Marquee,speed)};
+</script>

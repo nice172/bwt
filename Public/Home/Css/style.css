@@ -1,0 +1,59 @@
+/* CSS Document */
+a:link, a:visited{color: #333;text-decoration:none;}
+a:hover{text-decoration: none;}
+.banner{width: 100%;height: 350px;background-repeat: no-repeat;background-position: center top;background-size: cover;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;margin: 90px auto 0px;position: relative;}
+.cl{clear:both; height:0px; overflow:hidden;}
+.fl{float: left;}
+.fr{float: right;}
+.box_siz{-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;-o-box-sizing: border-box;-ms-box-sizing: border-box;}
+img{border: none;vertical-align: middle;}
+
+.warp1300{width: 1300px;margin: 0px auto;position: relative;}
+.tr{border-top: 1px solid rgba(237,237,237,0.2);}
+.fs36{ height: 300px; font-size: 36px; line-height: 300px;color: #fff;}
+.fs14{height: 49px; font-size: 14px; line-height: 49px;color: #fff;}
+.fs14 a{float: left;color: #fff;}
+.fs14 span{padding: 0px 10px;float: left;}
+
+.m40{ margin: 40px auto;}
+.Content{overflow: hidden;line-height: 2em;color: #555;font-size: 13px;padding: 15px 0px;word-wrap:break-word;}
+.Content img{max-width: 100%;}
+.Content table{width: 100%;background: #d9d9d9; max-width: 100%;}
+.Content table td{background: #fff;padding: 5px 10px;color: #333;text-align: left;}
+
+
+.fdback_bg{background: url(../img/feedback.jpg) center top no-repeat;height: 620px;}
+.fd{padding: 50px 0px 30px;}
+.fd h5{color: #fff; font-size: 36px;line-height: 50px;text-align: center; margin-bottom: 5px;}
+.fd p{font-size: 20px;color: #fff;text-align: center;height: 31px;line-height: 31px;margin-bottom: 60px;}
+.fd p::before,
+.fd p::after{content: ''; margin: 15px 0px; height: 1px;width: 475px; background-color: rgba(210,210,210,.3);}
+.fd p::before{ float: left;}
+.fd p::after{ float: right;}
+.fd h6{color: #fff; font-size: 18px;line-height: 24px;text-align: left;font-weight: normal;}
+
+.fdback{width: 630px;}
+.fdback form{margin-top: 30px;}
+.row{margin-bottom: 15px;overflow: hidden;}
+.row .Input{width: 300px;height: 40px;}
+.row .iInput{background: #fff;border: none;height: 40px;width: 270px;line-height: 40px;font-size: 14px;padding: 0px 15px;}
+.row .text{line-height: 30px;padding: 10px 15px;height: 120px;resize: none; width: 600px;display: block;}
+
+.submit {
+    border: none;
+    height: 35px;
+    background: #CD181D;
+    color: #fff;
+    width: 100px;
+    cursor: pointer;
+}
+
+.ly{width: 600px;}
+#demo{overflow:hidden;height: 252px;margin-top: 30px;}
+#indemo {height: 800%;}
+#demo1 li,
+#demo2 li{font-size: 12px;margin-bottom: 18px;}
+#demo1 li .ip,
+#demo2 li .ip{height: 36px; line-height: 36px; background: #f6f6f6; color: #919191; padding: 0px 20px;}
+#demo1 li .fd_con,
+#demo2 li .fd_con{ border: 1px solid #e5e5e5; background: #fff; height: 34px; line-height: 34px;color: #333;padding: 0px 20px;}

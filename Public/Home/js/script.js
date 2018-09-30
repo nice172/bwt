@@ -1,0 +1,9 @@
+$(".a").on("click",function(){
+	//$(this).find("i").toggleClass("icon-caidan").toggleClass("icon-guanbi")
+	 $(".fade").show();//.slideToggle(100);
+	 $("body").addClass("modal_open");
+})
+$(".close").on("click",function(){
+	$(".fade").hide();
+	 $("body").removeClass("modal_open");
+});

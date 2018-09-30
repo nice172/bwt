@@ -1,0 +1,88 @@
+<include file="Public/commoner"/>
+<block name="body">
+	<ol class="breadcrumb">
+		<li><a href="{:U('Index/summarize')}">首页</a></li>
+		<li><a href="{:U('Jobs/index')}">招聘管理</a></li>
+		<li>应聘简历</li>
+	</ol>
+	<div class="content">
+		<div class="Config_nav">
+			<ul>
+				<li><a href="{:U('Jobs/index')}">招聘管理</a></li>
+				<li><a href="{:U('Jobs/add')}">添加招聘</a></li>
+				<li><a class="on" href="{:U('Jobs/jobjoin_index')}">应聘简历</a></li>
+                <li><a href="{:U('Jobs/recycle')}">回收站</a></li>
+			</ul>
+		</div>
+        <div class="Search">
+            <form action="" method="get">
+                <div class="JianSuo">
+                    <select name="status">
+                        <option>选择栏目</option>
+                        <option value="0" >未查看</option>
+                        <option value="1" >待定</option>
+                        <option value="2" >已面试</option>
+                        <option value="3" >已淘汰</option>
+                    </select>
+                </div>
+                <div class="btn1"><input class="btn btn-primary btn6 mr10" value="查询" type="submit" /></div>
+            </form>
+        </div>
+			<div class="List">
+				<div class="job-list">
+					<ul>
+						<li class="ID">ID</li>
+						<li class="Title">应聘职位</li>
+						<li class="Name">姓名</li>
+                        <li class="Sex">性别</li>
+                        <li class="Age">年龄</li>
+                        <li class="Educa">学历</li>
+                        <li class="Profes">专业</li>
+						<li class="Time">毕业学校</li>
+						<li class="Status">状态</li>
+						<li class="Oper">管理操作</li>
+					</ul>
+				</div>
+				<foreach name="jobs_list" item="vo" key="k" >
+					<div class="jobList">
+						<ul>
+							<li class="ID">{$vo.id}</li>
+							<li class="Title">{$vo.title|str_cut=40}</li>
+							<li class="Name">{$vo.name}</li>
+                            <li class="Sex">{$vo[sex] == 1?'男':'女'}</li>
+                            <li class="Age">{:datediffage($vo[born],$Think.NOW_TIME)}</li>
+                            <li class="Educa">
+                                <if condition="$vo['qualifi'] eq 1">小学
+                                <elseif condition="$vo['qualifi'] eq 2" />初中
+                                <elseif condition="$vo['qualifi'] eq 3" />高中
+                                <elseif condition="$vo['qualifi'] eq 4" />大专
+                                <elseif condition="$vo['qualifi'] eq 5" />本科
+                                <elseif condition="$vo['qualifi'] eq 6" />研究生
+                                <elseif condition="$vo['qualifi'] eq 7" />硕士
+                                </if>
+                            </li>
+                            <li class="Profes">{$vo.profe}</li>
+							<li class="Time">{$vo.school}</li>
+							<li class="Status"><if condition="$vo['status'] eq 0"><font color=red>未查看</font>
+                                <elseif condition="$vo['status'] eq 1" />待定
+                                <elseif condition="$vo['status'] eq 2" />已面试
+                                <elseif condition="$vo['status'] eq 3" />已淘汰
+                                </if></li>
+							<li class="Oper">
+                                <div>
+                                    <a href="{:U('Jobs/Comment',array('id'=>$vo['id']))}">查看</a>
+                                    <span>|</span>
+                                    <a href="{:U('Jobs/jobjoin_delete',array('id'=>$vo['id']))}" onclick="return confirm('确认是否删除?')">删除</a>
+                                </div>
+							</li>
+						</ul>
+					</div>
+				</foreach>
+				<div class="cl" style="margin-top: 15px;"></div>
+				<div class="Order_submit">
+					<div class="tp_pages">{$page}</div>
+				</div>
+			</div>
+		<include file="Public:copyright"/>
+	</div>
+</black>

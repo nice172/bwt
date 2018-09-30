@@ -1,0 +1,56 @@
+<!--联系我们-->
+<section class="index_contact">
+    <div class="contact_content clearfix">
+        <foreach name="cateth" item="vo" key="k">
+            <if condition="($k+1) neq 1">
+                <div>
+                    <h3>{$vo.catname}</h3>
+                    <?php $catid = $vo['catid']; ?>
+					<category item="vs" limit="4" pid="$catid"  order="sort desc,catid asc">
+                        <if condition = "$vo.catid eq $vs['pid']">          
+                            <if condition="substr($vs['url'],0,7) eq 'http://' or substr($vs['url'],0,8) eq 'https://'">
+                                <a href="{$vs.url}">{$vs.catname}</a>
+                            <elseif condition="$vs['url'] eq ''" />
+                                <a href="{:U($vo['url'],array('catid'=>$vs['catid']))}">{$vs.catname}</a>
+                            <elseif condition="$vs['url'] neq '' and (substr($vs['url'],0,7) neq 'http://' or substr($vs['url'],0,8) neq 'https://')" />
+                                <a href="{:U($vs['url'],array('catid'=>$vs['catid']))}">{$vs.catname}</a>
+                            </if>
+                        </if>
+					</category>
+                </div>
+            </if>
+        </foreach>
+        <div class="contact_code">
+            <img src="__PUBLIC__/Home/img/code.png" />
+            <p>关注正虹环境</p>
+        </div>
+        <div class="contact_phone">
+            <a class="on_line" href="http://p.qiao.baidu.com/cps/chat?siteId=11788570&userId=6675475" target="_blank"><i></i><span>在线咨询</span></a>
+            <p class="time">周一至日&nbsp;8:30-18:00</p>
+            <p class="phone">{:getWebSetting('site_phone')}</p>
+        </div>
+        <div class="record_other clearfix">
+            <img class="other clearfix" src="__PUBLIC__/Home/img/other.jpg" />
+        </div>
+        <div class="links">
+            <span>友情链接</span>
+            <flink item="vo" cid="0" key="k" order="sort desc,linkid asc">
+            	<a href="{$vo.url}" target="_blank">{$vo.name}</a>
+			</flink>
+        </div>
+        <div class="record_number">COPYRIGHT&copy;12014&nbsp;正虹科技,ALL&nbsp;RIGHTS&nbsp;RESERVED&nbsp;<a href="http://www.miitbeian.gov.cn/">{:getWebSetting('site_filing')}</a></div>
+    </div>
+</section>
+<script src="__PUBLIC__/Home/js/nav-footer.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+	$('.nav .column > li').hover(function () {
+			$(this).find('.column_SL').stop(true, true).slideDown(400);
+		}, function () {
+			$(this).find('.column_SL').stop(true, true).slideUp(400);
+		});
+		$('.nav .column > li > .column_SL > .column_SL_list > li').hover(function () {
+			$(this).parents(".column_SL").find(".column_SL_line").css('top', $(this).index() * 30 + 20);
+		}, function () {
+	});
+</script>

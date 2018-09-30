@@ -1,0 +1,130 @@
+		<!--banner-->
+        <section class="banner">
+            <banner item="vo" cid="0" order="sort desc,id desc">
+                <div><a href="{$vo.url}"><img src="{$vo.thumb}" alt="{$vo.name}" /></a></div>
+            </banner>
+        </section>       
+		<!--pro-->
+        <div class="home_pro">
+            <div class="pro_nei">
+                <div class="top_all">
+                    <h3>{:get_catname(46,'catname')}</h3>
+                    <span>{:get_catname(46,'ecatname')}</span>
+                </div>
+                <div class="pro_com clearfix">
+                    <Product item="vo" limit="5" catid="46" order="sort desc,id desc" key="k">
+                        <if condition="($k+1)==1">
+                            <div class="p_left wow bounceInLeft">
+                                <img src="{$vo.thumb}" alt="{$vo.title}" class="vcenter" />
+                                <i></i>
+                                <a href="{:U('Product/show',array('id'=>$vo['id']))}" class="zhe_a slideExpandUp">
+                                    <img src="__PUBLIC__/Home/Images/lian.png" />
+                                    <span class="zw">{$vo.title}</span>
+                                    <span class="yw">VIEW</span>
+                                </a>
+                            </div>
+                        </if>
+                        <if condition="($k+1) eq 1">
+                            <div class="p_right wow bounceInRight">
+                                <ul class="clearfix">
+                        </if>
+                        <if condition="($k+1) != 1">
+                            <li>
+                                <div class="pic">
+                                    <img src="{$vo.thumb}" alt="{$vo.title}" class="vcenter" />
+                                    <i></i>
+                                </div>
+                                <a href="{:U('Product/show',array('id'=>$vo['id']))}" class="zhe_a slideExpandUp">
+                                    <img src="__PUBLIC__/Home/Images/lian.png" />
+                                    <span class="zw">{$vo.title}</span>
+                                    <span class="yw">VIEW</span>
+                                </a>
+                            </li>
+                        </if>
+                        <if condition="($k+1) gt 4">
+                                </ul>
+                            </div>
+                        </if>
+                    </Product>
+                </div>
+            </div>
+        </div>
+        <div class="home_about">
+            <div class="about_com clearfix">
+                <div class="a_left wow bounceInLeft">
+                    <div class="ab_bg">
+                        <i></i>
+                    </div>
+                    <div class="pic">
+                        <img src="{:get_catname(67,'thumb')}" alt="" class="vcenter" />
+                        <i></i>
+                    </div>
+                </div>
+                <div class="a_right wow bounceInRight">
+                    <div class="span_y">
+                        {:get_catname(67,'ecatname')}
+                    </div>
+                    <div class="span_z">
+                        {:get_catname(67,'catname')}
+                    </div>
+                    <p>
+                        {:get_catname(67,'info')}
+                    </p>
+                <a href="{:U('About/index')}" class="more">查看更多 →</a>
+                </div>
+            </div>
+        </div>
+        <div class="home_news">
+            <div class="news_com">
+                <div class="top_all">
+                    <h3>{:get_catname(47,'catname')}</h3>
+                    <span>{:get_catname(47,'ecatname')}</span> 
+                </div>
+                <div class="news_nei clearfix">
+                <arclist item="vo" limit="4" catid="47" order="sort desc,id desc" key="k">
+                    <if condition="($k+1)==1">
+                        <div class="n_left  wow bounceInLeft">
+                            <div class="imgd">
+                                <a href="{:U('News/show',array('id'=>$vo['id']))}"><img src="{$vo.thumb}" alt="" class="vcenter" /></a>
+                                <i></i>
+                                <span class="ri">
+                                    <i>{$vo.inputtime|date="d",###}</i>
+                                    <time>{$vo.inputtime|date="Y.m",###}</time>
+                                </span>
+                            </div>
+                            <h4><a href="{:U('News/show',array('id'=>$vo['id']))}">{$vo.title|str_cut=80}</a></h4>
+                            <p>
+                               {$vo.info|str_cut=150}
+                            </p>
+                            <a href="{:U('News/show',array('id'=>$vo['id']))}" class="more">查看更多>></a>
+                        </div>
+                    </if>
+                    <if condition="($k+1) eq 1">
+                    <div class="n_right">
+                        <ul>
+                    </if>
+                    <if condition="($k+1) != 1">
+                        <li class="clearfix wow bounceInRight"  data-wow-delay="{$k}s">
+                            <a href="{:U('News/show',array('id'=>$vo['id']))}">
+                                <span class="ri">
+                                    <i>{$vo.inputtime|date="d",###}</i>
+                                    <time>{$vo.inputtime|date="Y.m",###}</time>
+                                </span>
+                                <div class="wen_nei">
+                                    <h4>{$vo.title|str_cut=80}</h4>
+                                    <p>{$vo.info|str_cut=150}</p>
+                                </div>
+                            </a>
+                        </li>
+                    </if>
+                    <if condition="($k+1) gt 3">
+                        </ul>
+                    </div>
+                    </if>
+                    </arclist>
+                </div>
+            </div>
+        </div>
+        <!--Footer Start-->
+    	<include file="default:public:foot" />
+        <!--Footer end-->

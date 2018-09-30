@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <include file="default:public:header" />
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/wap/css/main.css"/>
+    </head>
+    <body>
+    	<!--Header Start-->
+    	<include file="default:public:top" />
+        <!--Header end-->
+        <!--Inside Banner Start-->
+        <div class="warp banner">
+        	<img src="__PUBLIC__/wap/img/news_bg.jpg" class="ylw-img" />
+        	<div class="fs26">{:get_catname(5,'catname')}</div>
+            <div class="fs12">{:catpos(5,get_catname(5,'url'))}{:get_catname($cate['catid'],'catname')}</div>
+        </div>
+        <!--Inside Banner end-->
+        <!--Inside Content Start-->
+       <div class="warp pt20">
+            <div class="Tar pb_20"><h2>{:get_catname($cate['catid'],'catname')}</h2></div>               
+            <div class="top_show">
+                <h3>{$cate.title}</h3>
+                <div class="Data">
+                    <span>阅读量：{$cate.views}</span><span class="Time">{$cate.inputtime|date="Y-m-d",###}</span>
+                </div>
+            </div>
+            <div class="con">
+                {$cate.content}
+            </div>
+            <div class="Flip box_siz">
+                <a href="{$previous_page[url]}" class="fl">上一篇</a><a href="javascript:history.go(-1)" class="return">返回</a><a href="{$next_page[url]}" class="fr">下一篇</a>
+            </div>
+            <div class="cl"></div>
+        </div>
+        <!--Inside Content end-->
+        <!--Footer Start-->
+		<include file="default:public:foot" />
+        <!--Footer end-->
+    </body>
+</html>

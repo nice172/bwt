@@ -1,0 +1,996 @@
+[ 2018-09-30T11:36:44+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000792s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000806s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000896s ]
+SQL: SHOW COLUMNS FROM `xg_category` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid = 0 and ishidden = 0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid = 0 and ishidden = 0 ) ORDER BY sort desc,catid asc LIMIT 7   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `xg_site` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `xg_site` WHERE `siteid` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xg_article` [ RunTime:0.0007s ]
+SQL: SELECT `gallery` FROM `xg_article` WHERE ( status = 1 )  [ RunTime:0.0008s ]
+NOTIC: [8] Undefined variable: lists E:\job\bwt\Application\Home\Controller\IndexController.class.php 第 55 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+SQL: SHOW COLUMNS FROM `xg_category` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `xg_category` WHERE `ismodel` = 1 AND `ishidden` = 0  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `xg_category` WHERE `ismodel` = 1 AND `ishidden` = 0  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `xg_category` WHERE `ismodel` = 1 AND `ishidden` = 0  [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000495s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000557s ]
+SQL: SELECT `companyname` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `site_logo` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `companyname` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=2 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0006s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 3 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=3 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0007s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 4 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=4 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0005s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 5 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=5 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=2 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0005s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=3 and ishidden=0 ) ORDER BY sort desc,catid asc  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (21,35,36,37,38,39) and status=1 ) ORDER BY sort desc,id desc LIMIT 5   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=5 and ishidden=0 ) ORDER BY sort desc,catid asc  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=5 and ishidden=0 ) ORDER BY sort desc,catid asc  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (22) and status=1 ) ORDER BY sort desc,id desc LIMIT 6   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (23) and status=1 ) ORDER BY sort desc,id desc LIMIT 6   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (24) and status=1 ) ORDER BY sort desc,id desc LIMIT 6   [ RunTime:0.0015s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (25) and status=1 ) ORDER BY sort desc,id desc LIMIT 6   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (20,31,32,34,54) and status=1 ) ORDER BY sort desc,id desc LIMIT 4   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `xg_video` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `xg_video` WHERE ( status=1 ) ORDER BY sort desc,id desc LIMIT 10   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=2 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=3 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=4 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=5 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=6 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=7 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT `site_phone` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xg_flink` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_flink` WHERE ( cid=0 and ishidden=0 ) ORDER BY sort desc,linkid asc  [ RunTime:0.0003s ]
+SQL: SELECT `site_filing` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.151609s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.151656s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000555s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000714s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000964s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001049s ]
+
+[ 2018-09-30T11:36:45+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000587s ]
+
+[ 2018-09-30T11:36:45+08:00 ] 127.0.0.1 /About/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000550s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000839s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000907s ]
+NOTIC: [2048] Declaration of Home\Controller\AboutController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') E:\job\bwt\Application\Home\Controller\AboutController.class.php 第 9 行.
+SQL: SHOW COLUMNS FROM `xg_category` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid = 0 and ishidden = 0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid = 0 and ishidden = 0 ) ORDER BY sort desc,catid asc LIMIT 7   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `xg_site` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_site` WHERE `siteid` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xg_category` [ RunTime:0.0007s ]
+SQL: SELECT `ismodel` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE `ismodel` = '0' AND `ishidden` = 0  [ RunTime:0.0004s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `catid` FROM `xg_category` WHERE `pid` = 2 AND `ismodel` = 0 AND `ishidden` = 0 ORDER BY catid asc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `ismodel` FROM `xg_category` WHERE `catid` = 8 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( catid = 8 and pid in (2,8,10) and ismodel = 0 and ishidden = 0 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xg_innerlink` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `xg_innerlink` WHERE `status` = 1  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category` WHERE `pid` = 2 AND `ishidden` = 0 ORDER BY sort desc, catid asc  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+SQL: SELECT * FROM `xg_category` WHERE `ismodel` = 1 AND `ishidden` = 0  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_category` WHERE `ismodel` = 1 AND `ishidden` = 0  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_category` WHERE `ismodel` = 1 AND `ishidden` = 0  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000180s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000246s ]
+SQL: SELECT `ptitle` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `companyname` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `pkeywords` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `site_logo` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `companyname` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=2 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0004s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=3 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0006s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=4 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0004s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 5 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=5 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0004s ]
+SQL: SELECT `thumb` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `catname` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_category`  [ RunTime:0.0009s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=2 and ishidden=0 ) ORDER BY sort desc,catid asc  [ RunTime:0.0008s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=2 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=3 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=4 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=5 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=6 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=7 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT `site_phone` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xg_flink` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_flink` WHERE ( cid=0 and ishidden=0 ) ORDER BY sort desc,linkid asc  [ RunTime:0.0004s ]
+SQL: SELECT `site_filing` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.049997s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.050048s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000714s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000845s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001501s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001689s ]
+
+[ 2018-09-30T11:36:46+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000403s ]
+
+[ 2018-09-30T13:57:26+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000450s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001068s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001149s ]
+SQL: SHOW COLUMNS FROM `xg_category` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid = 0 and ishidden = 0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid = 0 and ishidden = 0 ) ORDER BY sort desc,catid asc LIMIT 7   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xg_site` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_site` WHERE `siteid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xg_article` [ RunTime:0.0006s ]
+SQL: SELECT `gallery` FROM `xg_article` WHERE ( status = 1 )  [ RunTime:0.0007s ]
+NOTIC: [8] Undefined variable: lists E:\job\bwt\Application\Home\Controller\IndexController.class.php 第 55 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+SQL: SHOW COLUMNS FROM `xg_category` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_category` WHERE `ismodel` = 1 AND `ishidden` = 0  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_category` WHERE `ismodel` = 1 AND `ishidden` = 0  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_category` WHERE `ismodel` = 1 AND `ishidden` = 0  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000315s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000366s ]
+SQL: SELECT `companyname` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `site_logo` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `companyname` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=2 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0004s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=3 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0005s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=4 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0004s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 5 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=5 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=2 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0005s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=3 and ishidden=0 ) ORDER BY sort desc,catid asc  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (21,35,36,37,38,39) and status=1 ) ORDER BY sort desc,id desc LIMIT 5   [ RunTime:0.0012s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=5 and ishidden=0 ) ORDER BY sort desc,catid asc  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=5 and ishidden=0 ) ORDER BY sort desc,catid asc  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (22) and status=1 ) ORDER BY sort desc,id desc LIMIT 6   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (23) and status=1 ) ORDER BY sort desc,id desc LIMIT 6   [ RunTime:0.0012s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (24) and status=1 ) ORDER BY sort desc,id desc LIMIT 6   [ RunTime:0.0027s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (25) and status=1 ) ORDER BY sort desc,id desc LIMIT 6   [ RunTime:0.0015s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (20,31,32,34,54) and status=1 ) ORDER BY sort desc,id desc LIMIT 4   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `xg_video` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_video` WHERE ( status=1 ) ORDER BY sort desc,id desc LIMIT 10   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=2 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=3 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=4 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=5 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=6 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=7 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT `site_phone` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xg_flink` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_flink` WHERE ( cid=0 and ishidden=0 ) ORDER BY sort desc,linkid asc  [ RunTime:0.0004s ]
+SQL: SELECT `site_filing` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.064032s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.064087s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000577s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000614s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001207s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001309s ]
+
+[ 2018-09-30T13:57:27+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000767s ]
+
+[ 2018-09-30T13:57:34+08:00 ] 127.0.0.1 /Fume/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000419s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001174s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001292s ]
+SQL: SHOW COLUMNS FROM `xg_category` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid = 0 and ishidden = 0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid = 0 and ishidden = 0 ) ORDER BY sort desc,catid asc LIMIT 7   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `xg_site` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_site` WHERE `siteid` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xg_category` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_category` WHERE `catid` = 40 AND `ishidden` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE `pid` = 40 AND `ishidden` = 0 ORDER BY sort desc, catid asc  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+SQL: SELECT * FROM `xg_category` WHERE `ismodel` = 1 AND `ishidden` = 0  [ RunTime:0.0007s ]
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000248s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000285s ]
+SQL: SELECT `ptitle` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `companyname` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `pkeywords` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `pdescription` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `site_logo` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `companyname` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=2 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0005s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=3 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0005s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=4 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0004s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 5 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=5 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0004s ]
+SQL: SELECT `thumb` FROM `xg_category` WHERE `catid` = 40 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `catname` FROM `xg_category` WHERE `catid` = 40 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 40 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category`  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `xg_article` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (5,22,23,24,25) and status=1 ) ORDER BY sort desc,id desc LIMIT 3   [ RunTime:0.0016s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=2 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=3 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=4 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=5 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=6 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=7 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0006s ]
+SQL: SELECT `site_phone` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xg_flink` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_flink` WHERE ( cid=0 and ishidden=0 ) ORDER BY sort desc,linkid asc  [ RunTime:0.0003s ]
+SQL: SELECT `site_filing` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.051265s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.051327s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000541s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000587s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000822s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000889s ]
+
+[ 2018-09-30T13:57:35+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000431s ]
+
+[ 2018-09-30T13:57:47+08:00 ] 127.0.0.1 /Vocs/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000502s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000818s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000871s ]
+SQL: SHOW COLUMNS FROM `xg_category` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid = 0 and ishidden = 0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0011s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid = 0 and ishidden = 0 ) ORDER BY sort desc,catid asc LIMIT 7   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `xg_site` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `xg_site` WHERE `siteid` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `xg_category` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_category` WHERE `catid` = 41 AND `ishidden` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xg_category` WHERE `pid` = 41 AND `ishidden` = 0 ORDER BY sort desc, catid asc  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000361s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000428s ]
+SQL: SELECT `ptitle` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `companyname` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `pkeywords` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `pdescription` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `site_logo` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `companyname` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=2 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0004s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=3 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0005s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=4 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0003s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=5 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0003s ]
+SQL: SELECT `thumb` FROM `xg_category` WHERE `catid` = 41 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `catname` FROM `xg_category` WHERE `catid` = 41 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 41 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category`  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `xg_guestbook` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `xg_guestbook` WHERE ( status = 1 ) ORDER BY id desc  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=2 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=3 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=4 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=5 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=6 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=7 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0005s ]
+SQL: SELECT `site_phone` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xg_flink` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_flink` WHERE ( cid=0 and ishidden=0 ) ORDER BY sort desc,linkid asc  [ RunTime:0.0003s ]
+SQL: SELECT `site_filing` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.051173s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.051218s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000512s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000551s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001008s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001076s ]
+
+[ 2018-09-30T13:57:48+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000450s ]
+
+[ 2018-09-30T13:58:23+08:00 ] 127.0.0.1 /About/index/catid/11.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000482s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000933s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000999s ]
+NOTIC: [2048] Declaration of Home\Controller\AboutController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') E:\job\bwt\Application\Home\Controller\AboutController.class.php 第 9 行.
+SQL: SHOW COLUMNS FROM `xg_category` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid = 0 and ishidden = 0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid = 0 and ishidden = 0 ) ORDER BY sort desc,catid asc LIMIT 7   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xg_site` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_site` WHERE `siteid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xg_category` [ RunTime:0.0005s ]
+SQL: SELECT `ismodel` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category` WHERE `ismodel` = '0' AND `ishidden` = 0  [ RunTime:0.0003s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `ismodel` FROM `xg_category` WHERE `catid` = 11 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 2 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_category` WHERE ( catid = 11 and pid in (2,8,10) and ismodel = 1 and ishidden = 0 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xg_innerlink` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_innerlink` WHERE `status` = 1  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category` WHERE `pid` = 2 AND `ishidden` = 0 ORDER BY sort desc, catid asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xg_article` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_category` WHERE `ismodel` = '1' AND `ishidden` = 0  [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xg_article` WHERE ( catid in (11,52,43,44,45,46,47,48,49,50,51,53)  and status = 1 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (11,52,43,44,45,46,47,48,49,50,51,53)  and status = 1 ) ORDER BY sort desc,id desc LIMIT 0,12   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+SQL: SELECT * FROM `xg_category` WHERE `ismodel` = 1 AND `ishidden` = 0  [ RunTime:0.0009s ]
+SQL: SELECT * FROM `xg_category` WHERE `ismodel` = 1 AND `ishidden` = 0  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_category` WHERE `ismodel` = 1 AND `ishidden` = 0  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000161s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000198s ]
+SQL: SELECT `ptitle` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `companyname` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `pkeywords` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `pdescription` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `site_logo` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `companyname` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=2 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0004s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=3 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0005s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 4 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=4 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0005s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 5 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=5 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0004s ]
+SQL: SELECT `thumb` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `catname` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category`  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=2 and ishidden=0 ) ORDER BY sort desc,catid asc  [ RunTime:0.0004s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=11 and ishidden=0 ) ORDER BY sort desc,catid desc  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (53) and status=1 ) ORDER BY sort desc,id desc  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (52) and status=1 ) ORDER BY sort desc,id desc  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (51) and status=1 ) ORDER BY sort desc,id desc  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (50) and status=1 ) ORDER BY sort desc,id desc  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (49) and status=1 ) ORDER BY sort desc,id desc  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (48) and status=1 ) ORDER BY sort desc,id desc  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (47) and status=1 ) ORDER BY sort desc,id desc  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (46) and status=1 ) ORDER BY sort desc,id desc  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (45) and status=1 ) ORDER BY sort desc,id desc  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (44) and status=1 ) ORDER BY sort desc,id desc  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (43) and status=1 ) ORDER BY sort desc,id desc  [ RunTime:0.0013s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=2 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=3 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=4 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=5 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=6 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=7 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT `site_phone` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xg_flink` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_flink` WHERE ( cid=0 and ishidden=0 ) ORDER BY sort desc,linkid asc  [ RunTime:0.0003s ]
+SQL: SELECT `site_filing` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.056082s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.056126s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000569s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000606s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000838s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000901s ]
+
+[ 2018-09-30T13:58:24+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000390s ]
+
+[ 2018-09-30T13:58:29+08:00 ] 127.0.0.1 /Product/lists/catid/14.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000436s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001107s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001185s ]
+NOTIC: [2048] Declaration of Home\Controller\ProductController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') E:\job\bwt\Application\Home\Controller\ProductController.class.php 第 9 行.
+SQL: SHOW COLUMNS FROM `xg_category` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid = 0 and ishidden = 0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid = 0 and ishidden = 0 ) ORDER BY sort desc,catid asc LIMIT 7   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xg_site` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_site` WHERE `siteid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xg_category` [ RunTime:0.0009s ]
+SQL: SELECT `ismodel` FROM `xg_category` WHERE `catid` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE `ismodel` = '2' AND `ishidden` = 0  [ RunTime:0.0004s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `ismodel` FROM `xg_category` WHERE `catid` = 14 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 3 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xg_category` WHERE ( catid = 14 and pid in (3,12,13,14,15,16,17,18,19) and ismodel = 2 and ishidden = 0 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xg_innerlink` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_innerlink` WHERE `status` = 1  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category` WHERE `pid` = 3 AND `ishidden` = 0 ORDER BY sort desc, catid asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xg_product` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_category` WHERE `ismodel` = '2' AND `ishidden` = 0  [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xg_product` WHERE ( catid in (14)  and status = 1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_product` WHERE ( catid in (14)  and status = 1 ) ORDER BY sort desc,id desc LIMIT 0,12   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000114s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000165s ]
+SQL: SELECT `ptitle` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `companyname` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `pkeywords` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `pdescription` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `site_logo` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `companyname` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Home\163d431a3cc2aa44fbd7dddced40d1ce.php 第 51 行.
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Home\163d431a3cc2aa44fbd7dddced40d1ce.php 第 51 行.
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=2 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Home\163d431a3cc2aa44fbd7dddced40d1ce.php 第 51 行.
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=3 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Home\163d431a3cc2aa44fbd7dddced40d1ce.php 第 51 行.
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=4 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Home\163d431a3cc2aa44fbd7dddced40d1ce.php 第 51 行.
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 5 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=5 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0007s ]
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Home\163d431a3cc2aa44fbd7dddced40d1ce.php 第 85 行.
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Home\163d431a3cc2aa44fbd7dddced40d1ce.php 第 93 行.
+SQL: SELECT `thumb` FROM `xg_category` WHERE `catid` = 3 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `catname` FROM `xg_category` WHERE `catid` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category`  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=2 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=3 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=4 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=5 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=6 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=7 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT `site_phone` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xg_flink` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_flink` WHERE ( cid=0 and ishidden=0 ) ORDER BY sort desc,linkid asc  [ RunTime:0.0003s ]
+SQL: SELECT `site_filing` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033248s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033291s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000546s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000584s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000710s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000760s ]
+
+[ 2018-09-30T13:58:29+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000640s ]
+
+[ 2018-09-30T13:58:36+08:00 ] 127.0.0.1 /admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000516s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000914s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001021s ]
+ERR: 无法加载控制器:Admin
+
+[ 2018-09-30T13:58:36+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000558s ]
+
+[ 2018-09-30T13:58:44+08:00 ] 127.0.0.1 /skin-config.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000419s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000827s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000899s ]
+ERR: 无法加载控制器:Skin-config
+
+[ 2018-09-30T13:58:44+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000409s ]
+
+[ 2018-09-30T14:06:58+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000477s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000756s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000817s ]
+SQL: SHOW COLUMNS FROM `xg_category` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid = 0 and ishidden = 0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid = 0 and ishidden = 0 ) ORDER BY sort desc,catid asc LIMIT 7   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xg_site` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_site` WHERE `siteid` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xg_article` [ RunTime:0.0007s ]
+SQL: SELECT `gallery` FROM `xg_article` WHERE ( status = 1 )  [ RunTime:0.0008s ]
+NOTIC: [8] Undefined variable: lists E:\job\bwt\Application\Home\Controller\IndexController.class.php 第 55 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+SQL: SHOW COLUMNS FROM `xg_category` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `xg_category` WHERE `ismodel` = 1 AND `ishidden` = 0  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_category` WHERE `ismodel` = 1 AND `ishidden` = 0  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_category` WHERE `ismodel` = 1 AND `ishidden` = 0  [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000390s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000482s ]
+SQL: SELECT `companyname` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `site_logo` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `companyname` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=2 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0004s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=3 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0005s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=4 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0003s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=5 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=2 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=3 and ishidden=0 ) ORDER BY sort desc,catid asc  [ RunTime:0.0011s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (21,35,36,37,38,39) and status=1 ) ORDER BY sort desc,id desc LIMIT 5   [ RunTime:0.0014s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=5 and ishidden=0 ) ORDER BY sort desc,catid asc  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=5 and ishidden=0 ) ORDER BY sort desc,catid asc  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (22) and status=1 ) ORDER BY sort desc,id desc LIMIT 6   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (23) and status=1 ) ORDER BY sort desc,id desc LIMIT 6   [ RunTime:0.0013s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (24) and status=1 ) ORDER BY sort desc,id desc LIMIT 6   [ RunTime:0.0017s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (25) and status=1 ) ORDER BY sort desc,id desc LIMIT 6   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (20,31,32,34,54) and status=1 ) ORDER BY sort desc,id desc LIMIT 4   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `xg_video` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_video` WHERE ( status=1 ) ORDER BY sort desc,id desc LIMIT 10   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=2 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=3 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0011s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=4 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=5 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=6 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=7 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT `site_phone` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xg_flink` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_flink` WHERE ( cid=0 and ishidden=0 ) ORDER BY sort desc,linkid asc  [ RunTime:0.0004s ]
+SQL: SELECT `site_filing` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.068765s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.068815s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000584s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000622s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001005s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001084s ]
+
+[ 2018-09-30T14:06:59+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000389s ]
+
+[ 2018-09-30T14:07:09+08:00 ] 127.0.0.1 /About/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000507s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000705s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000756s ]
+NOTIC: [2048] Declaration of Home\Controller\AboutController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') E:\job\bwt\Application\Home\Controller\AboutController.class.php 第 9 行.
+SQL: SHOW COLUMNS FROM `xg_category` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid = 0 and ishidden = 0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid = 0 and ishidden = 0 ) ORDER BY sort desc,catid asc LIMIT 7   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `xg_site` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_site` WHERE `siteid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xg_category` [ RunTime:0.0005s ]
+SQL: SELECT `ismodel` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category` WHERE `ismodel` = '0' AND `ishidden` = 0  [ RunTime:0.0004s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `catid` FROM `xg_category` WHERE `pid` = 2 AND `ismodel` = 0 AND `ishidden` = 0 ORDER BY catid asc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `ismodel` FROM `xg_category` WHERE `catid` = 8 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category` WHERE ( catid = 8 and pid in (2,8,10) and ismodel = 0 and ishidden = 0 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xg_innerlink` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_innerlink` WHERE `status` = 1  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category` WHERE `pid` = 2 AND `ishidden` = 0 ORDER BY sort desc, catid asc  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+SQL: SELECT * FROM `xg_category` WHERE `ismodel` = 1 AND `ishidden` = 0  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_category` WHERE `ismodel` = 1 AND `ishidden` = 0  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xg_category` WHERE `ismodel` = 1 AND `ishidden` = 0  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000148s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000185s ]
+SQL: SELECT `ptitle` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `companyname` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `pkeywords` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `site_logo` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `companyname` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=2 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0006s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=3 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0004s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=4 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0003s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=5 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0003s ]
+SQL: SELECT `thumb` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `catname` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category`  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=2 and ishidden=0 ) ORDER BY sort desc,catid asc  [ RunTime:0.0004s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=2 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=3 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=4 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=5 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=6 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=7 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0011s ]
+SQL: SELECT `site_phone` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `xg_flink` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `xg_flink` WHERE ( cid=0 and ishidden=0 ) ORDER BY sort desc,linkid asc  [ RunTime:0.0005s ]
+SQL: SELECT `site_filing` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.044568s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.044610s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000601s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000658s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000775s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000826s ]
+
+[ 2018-09-30T14:07:09+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000395s ]
+
+[ 2018-09-30T14:07:10+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000685s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000729s ]
+SQL: SHOW COLUMNS FROM `xg_category` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid = 0 and ishidden = 0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid = 0 and ishidden = 0 ) ORDER BY sort desc,catid asc LIMIT 7   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xg_site` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_site` WHERE `siteid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xg_article` [ RunTime:0.0006s ]
+SQL: SELECT `gallery` FROM `xg_article` WHERE ( status = 1 )  [ RunTime:0.0007s ]
+NOTIC: [8] Undefined variable: lists E:\job\bwt\Application\Home\Controller\IndexController.class.php 第 55 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+SQL: SHOW COLUMNS FROM `xg_category` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_category` WHERE `ismodel` = 1 AND `ishidden` = 0  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_category` WHERE `ismodel` = 1 AND `ishidden` = 0  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xg_category` WHERE `ismodel` = 1 AND `ishidden` = 0  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000296s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000345s ]
+SQL: SELECT `companyname` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `site_logo` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `companyname` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=2 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0004s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=3 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0004s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=4 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0004s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 5 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=5 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=2 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=3 and ishidden=0 ) ORDER BY sort desc,catid asc  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (21,35,36,37,38,39) and status=1 ) ORDER BY sort desc,id desc LIMIT 5   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=5 and ishidden=0 ) ORDER BY sort desc,catid asc  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=5 and ishidden=0 ) ORDER BY sort desc,catid asc  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (22) and status=1 ) ORDER BY sort desc,id desc LIMIT 6   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (23) and status=1 ) ORDER BY sort desc,id desc LIMIT 6   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (24) and status=1 ) ORDER BY sort desc,id desc LIMIT 6   [ RunTime:0.0021s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (25) and status=1 ) ORDER BY sort desc,id desc LIMIT 6   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (20,31,32,34,54) and status=1 ) ORDER BY sort desc,id desc LIMIT 4   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `xg_video` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_video` WHERE ( status=1 ) ORDER BY sort desc,id desc LIMIT 10   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=2 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=3 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=4 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=5 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=6 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=7 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT `site_phone` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xg_flink` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_flink` WHERE ( cid=0 and ishidden=0 ) ORDER BY sort desc,linkid asc  [ RunTime:0.0003s ]
+SQL: SELECT `site_filing` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.052182s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.052226s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000766s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000838s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001088s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001195s ]
+
+[ 2018-09-30T14:07:10+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000637s ]
+
+[ 2018-09-30T14:07:12+08:00 ] 127.0.0.1 /About/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000669s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001183s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001272s ]
+NOTIC: [2048] Declaration of Home\Controller\AboutController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') E:\job\bwt\Application\Home\Controller\AboutController.class.php 第 9 行.
+SQL: SHOW COLUMNS FROM `xg_category` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid = 0 and ishidden = 0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid = 0 and ishidden = 0 ) ORDER BY sort desc,catid asc LIMIT 7   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `xg_site` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `xg_site` WHERE `siteid` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xg_category` [ RunTime:0.0006s ]
+SQL: SELECT `ismodel` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE `ismodel` = '0' AND `ishidden` = 0  [ RunTime:0.0004s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `catid` FROM `xg_category` WHERE `pid` = 2 AND `ismodel` = 0 AND `ishidden` = 0 ORDER BY catid asc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `ismodel` FROM `xg_category` WHERE `catid` = 8 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category` WHERE ( catid = 8 and pid in (2,8,10) and ismodel = 0 and ishidden = 0 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xg_innerlink` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_innerlink` WHERE `status` = 1  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE `pid` = 2 AND `ishidden` = 0 ORDER BY sort desc, catid asc  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+SQL: SELECT * FROM `xg_category` WHERE `ismodel` = 1 AND `ishidden` = 0  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_category` WHERE `ismodel` = 1 AND `ishidden` = 0  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xg_category` WHERE `ismodel` = 1 AND `ishidden` = 0  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000162s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000202s ]
+SQL: SELECT `ptitle` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `companyname` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `pkeywords` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `site_logo` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `companyname` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=2 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0004s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=3 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0005s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=4 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0004s ]
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=5 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0003s ]
+SQL: SELECT `thumb` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `catname` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category`  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=2 and ishidden=0 ) ORDER BY sort desc,catid asc  [ RunTime:0.0005s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=2 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=3 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=4 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=5 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=6 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=7 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT `site_phone` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xg_flink` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_flink` WHERE ( cid=0 and ishidden=0 ) ORDER BY sort desc,linkid asc  [ RunTime:0.0003s ]
+SQL: SELECT `site_filing` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.045733s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045774s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000507s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000544s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000675s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000734s ]
+
+[ 2018-09-30T14:07:12+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000610s ]
+
+[ 2018-09-30T14:07:15+08:00 ] 127.0.0.1 /Product/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000570s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000802s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000861s ]
+NOTIC: [2048] Declaration of Home\Controller\ProductController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') E:\job\bwt\Application\Home\Controller\ProductController.class.php 第 9 行.
+SQL: SHOW COLUMNS FROM `xg_category` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid = 0 and ishidden = 0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid = 0 and ishidden = 0 ) ORDER BY sort desc,catid asc LIMIT 7   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `xg_site` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_site` WHERE `siteid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xg_category` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_category` WHERE `catid` = 3 AND `ishidden` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE `pid` = 3 AND `ishidden` = 0 ORDER BY sort desc, catid asc  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+NOTIC: [8] Undefined index: catid E:\job\bwt\Application\Common\Tag\My.class.php 第 189 行.
+SQL: SELECT * FROM `xg_category` WHERE `ismodel` = 1 AND `ishidden` = 0  [ RunTime:0.0006s ]
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000180s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000294s ]
+SQL: SELECT `ptitle` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `companyname` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `pkeywords` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `pdescription` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `site_logo` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `companyname` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Home\d6428a214d46f060d69091ec200af878.php 第 51 行.
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Home\d6428a214d46f060d69091ec200af878.php 第 51 行.
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=2 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Home\d6428a214d46f060d69091ec200af878.php 第 51 行.
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=3 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Home\d6428a214d46f060d69091ec200af878.php 第 51 行.
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=4 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Home\d6428a214d46f060d69091ec200af878.php 第 51 行.
+SQL: SELECT count(*) as c_num FROM `xg_category` WHERE `pid` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=5 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 5   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Home\d6428a214d46f060d69091ec200af878.php 第 85 行.
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Home\d6428a214d46f060d69091ec200af878.php 第 93 行.
+SQL: SELECT `thumb` FROM `xg_category` WHERE `catid` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `catname` FROM `xg_category` WHERE `catid` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `url` FROM `xg_category` WHERE `catid` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_category`  [ RunTime:0.0006s ]
+SQL: SELECT `catname` FROM `xg_category` WHERE `catid` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xg_article` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_article` WHERE ( catid in (20,31,32,34,54) and status=1 ) ORDER BY sort desc,id desc LIMIT 4   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=2 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=3 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=4 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=5 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=6 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xg_category` WHERE ( pid=7 and ishidden=0 ) ORDER BY sort desc,catid asc LIMIT 4   [ RunTime:0.0003s ]
+SQL: SELECT `site_phone` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xg_flink` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xg_flink` WHERE ( cid=0 and ishidden=0 ) ORDER BY sort desc,linkid asc  [ RunTime:0.0003s ]
+SQL: SELECT `site_filing` FROM `xg_site` WHERE ( siteid = 1 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.057124s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.057169s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000534s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000576s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000649s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000696s ]
+
+[ 2018-09-30T14:07:15+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000648s ]
+

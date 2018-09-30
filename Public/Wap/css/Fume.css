@@ -1,0 +1,68 @@
+/* CSS Document */
+.m20{ margin: 20px auto 0px;}
+h1{font-size: 18px;color: #333;text-align: center;line-height: 28px;margin-bottom: 5px;padding: 0px 10px;}
+h1 span{font-weight: normal;color: #db0812;}
+.fume p.info{text-align: center;font-size: 12px;color: #666;height: 20px;line-height: 20px;padding: 0px 10px;margin-bottom: 15px;}
+
+.video{overflow: hidden;}
+.video li{width: 100%;height: auto;text-align: center;}
+.video li i{display: block;width: 100%;height: auto;position: relative;overflow: hidden;}
+.video li i img{width: 100%;height: 100%;}
+.video li i a::after{content: '';width: 50px;height: 50px;background: rgba(0,0,0,.7) url(../img/video_img.png) center no-repeat;display: block;}
+.video li i a::after{border-radius: 100%;-o-border-radius: 100%;-ms-border-radius: 100%;-zom-border-radius: 100%;-webkit-border-radius: 100%;}
+.video li p{height: 40px;line-height: 40px;padding: 0px 10px;text-align: center;font-size: 12px;}
+.video li p a{color: #666;}
+
+.hzdw{overflow: hidden;background: #dbf2ff;padding: 20px 10px;}
+.hzdw a{height: 40px;background: #cd161c;float: left; width: 49%;border-radius: 5px;-o-border-radius: 5px;-ms-border-radius: 5px;-zom-border-radius: 5px;-webkit-border-radius: 5px; line-height: 40px;color: #fff; font-size: 12px; margin-top: 15px;text-align: center;}
+.hzdw a:nth-child(2n+2){float: right;}
+.hzdw a:nth-child(1),
+.hzdw a:nth-child(2){margin-top: 0px;}
+
+.sdlyBox{height: auto;width: 100%; padding:0px 20px;}
+.sdly{width: 100%;height: auto;background: #f7f7f7;margin-top: 23px;padding: 0px 10px 7px;}
+.sdly b{height: 87px;float: left;width: 66px;background: url(../img/sdlysz.png) left top no-repeat;margin: -8px 13px 0px 0px;padding-right: 13px;text-align: center; line-height: 87px;font-size: 60px;color: #fff;font-family:Arial, Helvetica, sans-serif;}
+.sdly p{font-size: 12px;line-height: 20px;color: #919191; overflow: hidden;}
+.sdly p span{display: block;font-size: 14px;font-weight: bold;color: #333;line-height: 22px; padding: 5px 0px 3px;}
+
+.zfzc_img{background: #f4f4f4;text-align: center; width: 100%;padding: 15px; height: auto;}
+.zfzc{width: 100%;height: auto;padding: 0px 10px;}
+.zfzc li{height: auto;border-bottom: 1px dashed #cbcbcb; padding: 15px 0px 12px;}
+.zfzc li h2{ font-size: 15px;line-height: 24px; margin-bottom: 5px;}
+.zfzc li p{font-size: 12px;line-height: 22px;color: #666;}
+
+.Brands{padding: 10px; overflow: hidden}
+.Brands .ppys_img{width: 32%;}
+.Brands .ppys_info{width: 65%;}
+.Brands b{ font-size: 20px;color: #cd181c;line-height: 26px; margin-bottom: 3px;}
+.Brands h2{font-size: 14px;line-height: 22px;margin-bottom: 3px;}
+.Brands p{font-size: 12px;line-height: 20px;color: #919191;}
+.ysbg{background: #f7f7f7;}
+
+.spbox{width: 100%; padding: 0px 10px;overflow: hidden;}
+.spbox h3{height: 40px;line-height: 40px;background: #cd181c;text-align: center;font-size: 14px;font-weight: normal;color: #fff;margin-bottom: 15px;}
+.spbox div{width: 100%;}
+.spbox div i,
+.spbox div a{display: block;color: #919191;}
+.spbox div i,
+.spbox div i img{width: 100%;}
+.spbox div p{height: 40px;line-height: 40px;background: #fff;font-size: 12px; text-align: center;}
+
+
+.ljjm_bg{ background: #cd181c;text-align: center; padding: 16px 10px 20px;}
+.ljjm_bg h2{color: #fff;font-size: 16px; line-height: 28px;}
+.ljjm_bg h2 span{font-weight: normal; display: block;}
+.ljjm_bg a{width: 100px;height: 30px;line-height: 30px;background: #fff; text-align: center; color: #666;font-size: 14px;display: inline-block; margin-top: 10px;}
+
+.N_news h2{font-size: 24px;font-weight: normal;color: #333;line-height: 32px;text-align: center;}
+
+.news_ul{margin-top: 20px;}
+.news_ul li{border: 1px solid #eee;width: 100%;overflow: hidden;margin-top: 20px;}
+.news_ul li:nth-child(1){margin-top: 0px;}
+.news_ul li i{width: 100%;display: block;height: auto;border-bottom: 1px solid #eee;position: relative;text-align: center;}
+.N_Info{padding: 9px 12px;}
+.N_Info h5{display: block;line-height: 24px;margin-bottom: 5px;font-weight: normal;font-size: 16px;color: #333;overflow: hidden;}
+.N_Info p{font-size: 12px;line-height: 20px;overflow: hidden;margin-bottom: 5px;color: #666;}
+.N_Info label {height: 18px;color: #919191;font-size: 12px;line-height: 18px;display: block; background: url(../img/Time.png) left center no-repeat; padding-left: 24px}
+.N_Info span{height: 18px;color: #919191;font-size: 12px;line-height: 18px;display: block;margin-bottom: 5px;}
+.N_Info p.info{margin-bottom: 0px;}

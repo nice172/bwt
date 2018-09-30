@@ -1,0 +1,131 @@
+<include file="Public/commoner"/>
+<script language="javascript">
+function preview(oper) {
+	if (oper < 10){
+		bdhtml=window.document.body.innerHTML;
+		sprnstr="<!--startprint"+oper+"-->";
+		eprnstr="<!--endprint"+oper+"-->";
+		prnhtml=bdhtml.substring(bdhtml.indexOf(sprnstr)+18); 
+		prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr));
+		window.document.body.innerHTML=prnhtml;
+		window.print();
+		window.document.body.innerHTML=bdhtml;
+	} else {
+		window.print();
+	}
+}
+</script>
+<block name="body">
+	<ol class="breadcrumb">
+		<li><a href="{:U('Index/summarize')}">首页</a></li>
+		<li><a href="{:U('Jobs/index')}">招聘管理</a></li>
+		<li>应聘简历</li>
+	</ol>
+	<div class="content">
+		<div class="Config_nav">
+			<ul>
+				<li><a href="{:U('Jobs/index')}">招聘管理</a></li>
+				<li><a href="{:U('Jobs/add')}">添加招聘</a></li>
+				<li><a class="on" href="{:U('Jobs/jobjoin_index')}">应聘简历</a></li>
+                <li><a href="{:U('Jobs/recycle')}">回收站</a></li>
+			</ul>
+		</div>
+        <div class="jobbox">
+            <!--startprint1-->
+                <div class="job">
+                	<div class="jb">
+                    	<div class="name"><b>{$detail.name}</b><div class="zl"><if condition="$detail['years'] eq 1">一年
+                                            <elseif condition="$detail['years'] eq 2" />两年
+                                            <elseif condition="$detail['years'] eq 3" />三年
+                                            <elseif condition="$detail['years'] eq 4" />四年
+                                            <elseif condition="$detail['years'] eq 5" />五年
+                                            <elseif condition="$detail['years'] eq 6" />五年以上
+                                            </if>工作经验<span>|</span>{$detail[sex] == 1?'男':'女'}<span>|</span>{:datediffage($detail[born],$Think.NOW_TIME)}（{$detail.born|date="Y-m-d",###}）</div></div>
+                        <div class="cl"></div>
+                        <div class="xx">
+                        	<div class="jbxx">
+                            	<div class="listjb">
+                                	<div class="tt"><b>学历：</b><if condition="$detail['qualifi'] eq 1">小学
+                                            <elseif condition="$detail['qualifi'] eq 2" />初中
+                                            <elseif condition="$detail['qualifi'] eq 3" />高中
+                                            <elseif condition="$detail['qualifi'] eq 4" />大专
+                                            <elseif condition="$detail['qualifi'] eq 5" />本科
+                                            <elseif condition="$detail['qualifi'] eq 6" />研究生
+                                            <elseif condition="$detail['qualifi'] eq 7" />硕士
+                                            </if>
+                                    </div>
+                                    <div class="tt"><b>专业：</b>{$detail.profe}</div>
+                                </div>
+                                <div class="listjb">
+                                	<div class="tt"><b>学校：</b>{$detail.school}</div>
+                                    <div class="tt"><b>手机：</b>{$detail.telphone}</div>
+                                </div>
+                                <script type="text/javascript" src="__JS__/City2.js"></script>
+                                <div class="listjb">
+                                	<b>现居地：</b>
+									<script>getProvinceName({$detail.province});</script>
+									<script>getCityName({$detail.city});</script>
+									<script>getAreaName({$detail.area});</script>
+                                    {$detail.current}
+                                </div>
+                                <div class="listjb">
+                                	<div class="tt"><b>邮箱：</b>{$detail.email}</div>
+                                    <div class="tt"><b>期望薪资：</b>{$detail.wage}</div>
+                                </div>
+                            </div>
+                        	<div class="pic"><img src="{:get_user_avatar($detail['userid'])}" /></div>
+                        </div>
+                    </div>
+                    <div class="job_nn">
+                    	<div class="job_text"><b>工作经验</b></div>
+                        <div class="jobcontent">{$detail.empiric}</div>
+                    </div>
+                    <div class="job_nn">
+                    	<div class="job_text"><b>教育经历</b></div>
+                        <div class="jobcontent">{$detail.educate}</div>
+                    </div>
+                    <div class="job_nn">
+                    	<div class="job_text"><b>技能特长</b></div>
+                        <div class="jobcontent">{$detail.fortes}</div>
+                    </div>
+                    <div class="job_nn">
+                    	<div class="job_text"><b>在校情况</b></div>
+                        <div class="jobcontent">{$detail.prac}</div>
+                    </div>
+                    <div class="job_nn">
+                    	<div class="job_text"><b>自我评价</b></div>
+                        <div class="jobcontent">{$detail.other}</div>
+                    </div>
+                </div>
+            <!--endprint1-->
+        </div>
+        <div style="text-align: center; overflow: hidden;">
+            <div style="display:inline-block; vertical-align:middle;">
+                <if condition="$detail['file'] neq ''">
+                    <span style="float: left;">
+                        <form action="{:U('Jobs/down')}" method="post" id="form"  enctype="multipart/form-data">
+                            <input type="hidden" name="id" value="{$detail.id}" />
+                            <input type="submit" name="submit" class="btn btn-primary btn6 mr10" style="margin: 0px 5px;" value="下载" />
+                        </form>
+                    </span>
+                </if>
+                <span style="float: left;">
+                	<A class="btn btn-primary btn6 mr10" style="color: #fff;font-size: 12px;margin: 0px 5px;" href="{:U('Jobs/jobjoin_status',array('id' => $detail['id'], 'status' => 0))}">未查看</A>
+                </span>
+                <span style="float: left;">
+                	<A class="btn btn-primary btn6 mr10" style="color: #fff;font-size: 12px;margin: 0px 5px;" href="{:U('Jobs/jobjoin_status',array('id' => $detail['id'], 'status' => 1))}">待定</A>
+                </span>
+                <span style="float: left;">
+                	<A class="btn btn-primary btn6 mr10" style="color: #fff;font-size: 12px;margin: 0px 5px;" href="{:U('Jobs/jobjoin_status',array('id' => $detail['id'], 'status' => 2))}">已面试</A>
+                </span>
+                <span style="float: left;">
+                	<A class="btn btn-primary btn6 mr10" style="color: #fff;font-size: 12px;margin: 0px 5px;" href="{:U('Jobs/jobjoin_status',array('id' => $detail['id'], 'status' => 3))}">已淘汰</A>
+                </span>
+                <span style="float: left;">
+				<input type="button" name="btn" class="btn btn-primary btn6 mr10" style="margin: 0px 5px;" onclick="preview(1)" value="打印" />
+                </span>
+            </div>
+        </div>
+		<include file="Public:copyright"/>
+	</div>
+</black>

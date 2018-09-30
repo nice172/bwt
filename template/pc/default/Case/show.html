@@ -1,0 +1,69 @@
+<?php $sel = 4; ?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <include file="default:public:header" />
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/Css/main.css"/>
+    </head>
+    <body>
+    	<!--Header Start-->
+    	<include file="default:public:top" />
+        <!--Header end-->
+        <div class="banner" style="background-image: url({:get_catname(4,'thumb')})">
+        	<div class="warp1300 fs36">{:get_catname(4,'catname')}</div>
+        	<div class="tr">
+            	<div class="warp1300 fs14">{:catpos(4,get_catname(4,'url'))}{:get_catname($cate['catid'],'catname')}</div>
+            </div>
+        </div>
+        <div class="warp1300 m40">        	
+            <h3 class="root">{$cate.title}</h3>
+            <div id="preview">
+                <div class="jqzoom box_siz" id="spec-n1"><img src="{$cate.thumb}" class="absolute" /></div>
+                <div id="spec-list">
+                    <ul class=list-h>
+                        <li id="two0" onmouseover="setContentTab('two',0,2)" class="sel"><img src="{$cate.thumb}"></li>
+                        <foreach name="gallery" key="k" item="vo">
+                            <li id="two{$k+1}" onmouseover="setContentTab('two',{$k+1},2)"><img src="{$vo}" /></li>
+                        </foreach>
+                    </ul>
+                </div>
+            </div>
+            <script type="text/javascript">
+                jQuery("#preview").slide({mainCell:"ul.list-h",autoPage:true,effect:"leftLoop",autoPlay:false,vis: 3,trigger:"click"});
+            </script>
+            <SCRIPT type=text/javascript>
+                $(function(){
+                    $("#spec-list img").bind("mouseover",function(){
+                        var src=$(this).attr("src");
+                        $("#spec-n1 img").eq(0).attr({
+                            src:src.replace("\/n5\/","\/n1\/"),
+                            jqimg:src.replace("\/n5\/","\/n0\/")
+                        });
+
+                    });				
+                });
+                function setContentTab(name, curr, n) {
+                    for (i = 0; i <= n; i++) {
+                        var menu = document.getElementById(name + i);
+                        var cont = document.getElementById("con_" + name + "_" + i);
+                        menu.className = i == curr ? "sel" : "";
+                    }
+                }
+            </SCRIPT>
+        	<div class="cl"></div>
+        </div>
+        <div class="crumbs">
+        	<div class="warp1300">
+            	<span></span>
+                <a class="sel">项目概况</a>
+            </div>
+        </div>
+        <div class="warp1300 m40">        	
+			<div class="Content">{$cate.content}</div>
+        	<div class="cl"></div>
+        </div>
+        <!--Footer Start-->
+    	<include file="default:public:foot" />
+        <!--Footer Start-->
+    </body>
+</html>

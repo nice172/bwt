@@ -1,0 +1,45 @@
+<include file="Public/commoner"/>
+<block name="body">
+    <ol class="breadcrumb">
+        <li><a href="{:U('Index/summarize')}">首页</a></li>
+        <li><a href="{:U('Exc/index')}">内链管理</a></li>
+        <li>添加内链</li>
+    </ol>
+    <div class="content">
+        <div class="Config_nav">
+            <ul>
+                <li><a href="{:U('Exc/index')}">内链管理</a></li>
+                <li><a class="on" href="{:U('Exc/add')}">添加内链</a></li>
+            </ul>
+        </div>
+        <form action="{:U('Exc/insert')}" method="post"  id="form" enctype="multipart/form-data" >
+            <div class="SiteContent">
+                <ul>
+                    <li class="Name">关键字标题</li>
+                    <li class="input"><input class="common-text input-text" name="title" size="40" type="text"></li>
+                </ul>
+                <ul>
+                    <li class="Name">网址</li>
+                    <li class="input"><input class="common-text input-text" name="url" size="40" type="text"></li>
+                </ul>
+                <ul>
+                    <li class="Name">关键字提示</li>
+                    <li class="input"><textarea name="hint" class="common-textarea textarea" cols="30" style="width: 40%;" rows="5"></textarea></li>
+                </ul>
+                <ul>
+                    <li class="Name">状态</li>
+                    <li class="input">
+                        <div class="radio"><span><input type="radio" name="status" value="0" ></span><label for="status1">禁用</label></div>
+                        <div class="radio"><span><input type="radio" name="status" value="1" checked="checked"></span><label for="status2">正常</label></div>
+                    </li>
+                </ul>
+                <div class="cl" style="height: 10px;"></div>
+                <div class="btn">
+                    <input class="btn btn-primary btn6 mr10" value="提交" style="margin-right: 10px;" type="submit">
+                    <input class="btn btn6" onClick="history.go(-1)" value="返回" type="button">
+                </div>
+            </div>
+        </form>           
+        <include file="Public:copyright"/>
+    </div>
+</black>

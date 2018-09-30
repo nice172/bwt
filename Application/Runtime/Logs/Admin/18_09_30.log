@@ -1,0 +1,203 @@
+[ 2018-09-30T11:36:40+08:00 ] 127.0.0.1 /admin.php/Public/cache.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000408s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000566s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000610s ]
+SQL: SHOW COLUMNS FROM `xg_site` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_site` WHERE `siteid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xg_admin` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `xg_auth` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xg_menu` [ RunTime:0.0004s ]
+SQL: SELECT `authority` FROM `xg_admin` WHERE `adminid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_auth` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `menu_id` FROM `xg_auth` WHERE `id` IN ('1')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_menu` WHERE `id` IN ('1','8','9','10','11','12','2','13','14','3','15','16','17','4','18','19','5','20','21','22','23','6','24','25','26','28','31','32','7','29','30','33','27') AND `status` = 1 ORDER BY sort desc,id asc  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000252s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000327s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010048s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010112s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000545s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000581s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000719s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000778s ]
+
+[ 2018-09-30T11:36:44+08:00 ] 127.0.0.1 /admin.php/index/summarize.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000754s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000935s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001020s ]
+SQL: SHOW COLUMNS FROM `xg_site` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_site` WHERE `siteid` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xg_admin` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `xg_auth` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `xg_menu` [ RunTime:0.0006s ]
+SQL: SELECT `authority` FROM `xg_admin` WHERE `adminid` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xg_auth` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `menu_id` FROM `xg_auth` WHERE `id` IN ('1')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_menu` WHERE `id` IN ('1','8','9','10','11','12','2','13','14','3','15','16','17','4','18','19','5','20','21','22','23','6','24','25','26','28','31','32','7','29','30','33','27') AND `status` = 1 ORDER BY sort desc,id asc  [ RunTime:0.0004s ]
+SQL: select version() as ver [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000264s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000431s ]
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Admin\a91718f612b01347f17fdaf34b340690.php 第 30 行.
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Admin\a91718f612b01347f17fdaf34b340690.php 第 30 行.
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Admin\a91718f612b01347f17fdaf34b340690.php 第 30 行.
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Admin\a91718f612b01347f17fdaf34b340690.php 第 40 行.
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Admin\a91718f612b01347f17fdaf34b340690.php 第 40 行.
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Admin\a91718f612b01347f17fdaf34b340690.php 第 40 行.
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Admin\a91718f612b01347f17fdaf34b340690.php 第 60 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.082599s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.082733s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001301s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001429s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001438s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001541s ]
+
+[ 2018-09-30T13:58:41+08:00 ] 127.0.0.1 /admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000497s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000861s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000955s ]
+SQL: SHOW COLUMNS FROM `xg_site` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `xg_site` WHERE `siteid` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xg_admin` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `xg_auth` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `xg_menu` [ RunTime:0.0005s ]
+SQL: SELECT `authority` FROM `xg_admin` WHERE `adminid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_auth` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `menu_id` FROM `xg_auth` WHERE `id` IN ('1')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_menu` WHERE `id` IN ('1','8','9','10','11','12','2','13','14','3','15','16','17','4','18','19','5','20','21','22','23','6','24','25','26','28','31','32','7','29','30','33','27') AND `status` = 1 ORDER BY sort desc,id asc  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000225s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000272s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.104853s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.104907s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000464s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000502s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000638s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000674s ]
+
+[ 2018-09-30T13:58:44+08:00 ] 127.0.0.1 /admin.php/index/summarize.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000379s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000667s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000711s ]
+SQL: SHOW COLUMNS FROM `xg_site` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_site` WHERE `siteid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xg_admin` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `xg_auth` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xg_menu` [ RunTime:0.0004s ]
+SQL: SELECT `authority` FROM `xg_admin` WHERE `adminid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_auth` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `menu_id` FROM `xg_auth` WHERE `id` IN ('1')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_menu` WHERE `id` IN ('1','8','9','10','11','12','2','13','14','3','15','16','17','4','18','19','5','20','21','22','23','6','24','25','26','28','31','32','7','29','30','33','27') AND `status` = 1 ORDER BY sort desc,id asc  [ RunTime:0.0003s ]
+SQL: select version() as ver [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000292s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000444s ]
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Admin\a91718f612b01347f17fdaf34b340690.php 第 30 行.
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Admin\a91718f612b01347f17fdaf34b340690.php 第 30 行.
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Admin\a91718f612b01347f17fdaf34b340690.php 第 30 行.
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Admin\a91718f612b01347f17fdaf34b340690.php 第 40 行.
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Admin\a91718f612b01347f17fdaf34b340690.php 第 40 行.
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Admin\a91718f612b01347f17fdaf34b340690.php 第 40 行.
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Admin\a91718f612b01347f17fdaf34b340690.php 第 60 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032475s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032696s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001453s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001626s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002301s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002461s ]
+
+[ 2018-09-30T13:58:47+08:00 ] 127.0.0.1 /admin.php/Category/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000493s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000828s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000884s ]
+SQL: SHOW COLUMNS FROM `xg_site` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `xg_site` WHERE `siteid` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xg_admin` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `xg_auth` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `xg_menu` [ RunTime:0.0005s ]
+SQL: SELECT `authority` FROM `xg_admin` WHERE `adminid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_auth` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `menu_id` FROM `xg_auth` WHERE `id` IN ('1')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_menu` WHERE `id` IN ('1','8','9','10','11','12','2','13','14','3','15','16','17','4','18','19','5','20','21','22','23','6','24','25','26','28','31','32','7','29','30','33','27') AND `status` = 1 ORDER BY sort desc,id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xg_category` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_category` ORDER BY sort desc,catid asc  [ RunTime:0.0014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000110s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000166s ]
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Admin\9bfef0f9f473c596f668b6c9a32bfd5c.php 第 30 行.
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Admin\9bfef0f9f473c596f668b6c9a32bfd5c.php 第 30 行.
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Admin\9bfef0f9f473c596f668b6c9a32bfd5c.php 第 30 行.
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Admin\9bfef0f9f473c596f668b6c9a32bfd5c.php 第 40 行.
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Admin\9bfef0f9f473c596f668b6c9a32bfd5c.php 第 40 行.
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Admin\9bfef0f9f473c596f668b6c9a32bfd5c.php 第 40 行.
+NOTIC: [8] Undefined variable: sel E:\job\bwt\Application\Runtime\Cache\Admin\9bfef0f9f473c596f668b6c9a32bfd5c.php 第 60 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018505s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018571s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000617s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000674s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001021s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001111s ]
+
+[ 2018-09-30T13:58:52+08:00 ] 127.0.0.1 /admin.php/Category/edit/catid/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000479s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000785s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000840s ]
+SQL: SHOW COLUMNS FROM `xg_site` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `xg_site` WHERE `siteid` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xg_admin` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `xg_auth` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `xg_menu` [ RunTime:0.0005s ]
+SQL: SELECT `authority` FROM `xg_admin` WHERE `adminid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xg_auth` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `menu_id` FROM `xg_auth` WHERE `id` IN ('1')  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xg_menu` WHERE `id` IN ('1','8','9','10','11','12','2','13','14','3','15','16','17','4','18','19','5','20','21','22','23','6','24','25','26','28','31','32','7','29','30','33','27') AND `status` = 1 ORDER BY sort desc,id asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xg_category` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_category` ORDER BY sort desc,catid asc  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `xg_category` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xg_category` WHERE `catid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000224s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000270s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016089s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016156s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000455s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000492s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000738s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000801s ]
+

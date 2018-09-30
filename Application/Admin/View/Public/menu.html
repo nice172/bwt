@@ -1,0 +1,77 @@
+<if condition="$config['pattern'] eq 1">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="nav-close"><i class="fa fa-times-circle"></i>
+        </div>
+        <div class="sidebar-collapse">
+            <ul class="nav" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                        <span><img alt="image" class="img-circle" src="__IMG__/profile_small.jpg" /></span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear">
+                                <span class="block m-t-xs"><strong class="font-bold">{$_SESSION.admin_auth.username}</strong></span>
+                                <span class="text-muted text-xs block">{$adminauth.title}<b class="caret"></b></span>
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a class="J_menuItem" href="{:U('Index/updPwd')}">{:L('icon-key')}</a></li>
+                            <!--<li><a class="J_menuItem" href="{:U('User/updateNickname')}">个人资料</a></li>-->
+                            <li class="divider"></li>
+                            <li><a href="{:U('Public/logout')}">{:L('Logout')}</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">M+</div>
+                </li>
+                <li>
+                    <a class="J_menuItem" href="{:U('Index/summarize')}"><i class="fa fa-home"></i> <span class="nav-label">主页</span></a>
+                </li>
+                <foreach name="menuList" item="val">
+                    <li>
+                        <a href="#">
+                            <i class="fa {$val.icon}"></i>
+                            <span class="nav-label">{$val.name}</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level collapse">
+                            <foreach name="val['child']" item="va">
+                                <li><a href="{:U($va['url'])}" class="J_menuItem">{$va.name}</a></li>
+                            </foreach>
+                        </ul>
+                    </li>
+                </foreach>
+            </ul>
+        </div>
+    </nav>
+<else/>
+    <div class="left side-menu">
+        <div class="sidebar-inner slimscrollleft">
+            <div id="sidebar-menu">
+                <ul>
+                    <li class=''>
+                        <a href="{:U('Index/summarize')}"><i class='icon-home-3'></i><span>主页</span></a>
+                    </li>
+                    <foreach name="menuList" item="val">
+                        <li class='has_sub'>
+                            <a href='javascript:void(0);'><i class='fa {$val.icon}'></i><span>{$val.name}</span><span class="pull-right"><i class="fa fa-angle-down"></i></span></a>
+                            <ul>
+                                <foreach name="val['child']" item="va">
+                                    <li><a href="{:U($va['url'])}"><span>{$va.name}</span></a></li>
+                                </foreach>
+                            </ul>
+                        </li>
+                    </foreach>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="left-footer">
+            <div class="progress progress-xs">
+                <div class="progress-bar bg-green-1" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                    <span class="progress-precentage">80%</span>
+                </div>
+                <a data-toggle="tooltip" title="See task progress" class="btn btn-default" data-modal="task-progress"><i class="fa fa-inbox"></i></a>
+            </div>
+        </div>
+    </div>
+</if>

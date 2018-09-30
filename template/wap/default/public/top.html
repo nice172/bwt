@@ -1,0 +1,44 @@
+<header class="f-cb warp">
+    <a href="__ROOT__/" class="logo fl"><img src="{:getWebSetting('site_logo')}" alt="{:getWebSetting('companyname')}" class="absolute max-img" /></a>
+    <a href="javascript:;" class="mobile-nav">
+        <div>
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+        </div>
+    </a>
+    <nav class="mobile-nav-box">
+        <ul>
+            <foreach name="cateone" item="vo" key="k">
+                <li>
+                	<if condition = "countnum($vo['catid']) != 0">
+                        <h2><a href="javascript:;" class="title">{$vo.catname}</a></h2>
+                    <else />
+                        <if condition="substr($vo['url'],0,7) eq 'http://' or substr($vo['url'],0,8) eq 'https://'">
+                            <a href="{$vo.url}" class="tit">{$vo.catname}</a>
+                        <else />
+                            <a href="{:U($vo['url'])}" class="tit">{$vo.catname}</a>
+                        </if>
+                    </if>
+                    <if condition = "countnum($vo['catid']) != 0">
+                        <div class="con">
+                            <?php $catid = $vo['catid']; ?>
+                            <category item="vs" pid="$catid" order="sort desc,catid asc">
+                                <if condition = "$vo.catid eq $vs['pid']">
+                                    <if condition="substr($vs['url'],0,7) eq 'http://' or substr($vs['url'],0,8) eq 'https://'">
+										<p><a href="{$vs.url}" class="link-tit">{$vs.catname}</a></p>
+                                    <elseif condition="$vs['url'] eq ''" />
+										<p><a href="{:U($vo['url'],array('catid'=>$vs['catid']))}" class="link-tit">{$vs.catname}</a></p>
+                                    <elseif condition="$vs['url'] neq '' and (substr($vs['url'],0,7) neq 'http://' or substr($vs['url'],0,8) neq 'https://')" />
+										<p><a href="{:U($vs['url'],array('catid'=>$vs['catid']))}" class="link-tit">{$vs.catname}</a></p>
+                                    </if>
+                                </if>
+                            </category>
+                        </div>
+                    </if>
+                </li>
+            </foreach>
+        </ul>
+    </nav>
+</header>
+<script type="text/javascript" src="__PUBLIC__/Wap/js/main.js"></script>

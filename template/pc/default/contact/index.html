@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <include file="default:public:header" />
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/Css/main.css"/>
+    </head>
+    <body>
+    	<!--Header Start-->
+    	<include file="default:public:top" />
+        <!--Header end-->
+        <!--Inside Banner Start-->
+        <div class="banner" style="background-image: url({:get_catname(7,'thumb')})">
+        	<div class="warp1300 fs36">{:get_catname(7,'catname')}</div>
+        	<div class="tr">
+            	<div class="warp1300 fs14">{:catpos(7,get_catname(7,'url'))}{$cate.catname}</div>
+            </div>
+        </div>
+        <!--Inside Banner end-->
+        <!--Inside Content Start-->
+        <div class="warp1300" style="margin: 40px auto 30px;">
+            <div class="Tar"><h2>{:get_catname(7,'catname')}</h2></div>
+            <h4 class="Tit">欢迎您浏览正虹官网，如果您遇到的问题，请在下方寻找对应的联系方式</h4>
+			<ul class="Contact">
+            	<li>
+                	<i></i>
+                	<h5>地址</h5>
+                    <p>广州高新技术开发区科学城科学大道182号创新大厦C1座7楼701</p>
+                </li>
+                <li>
+                	<i></i>
+                	<h5>电话</h5>
+                    <p>400-060-2822/ 020-89232836</p>
+                </li>
+                <li>
+                	<i></i>
+                	<h5>邮箱</h5>
+                    <p>zhkj@zhenghongkeji.com</p>
+                </li>
+                <li>
+                	<i></i>
+                	<h5>公众号</h5>
+                    <p>微信搜索“正虹环境”关注</p>
+                </li>
+            </ul>
+			<div class="cl"></div>
+        </div>
+        <h3 class="root">地址地图</h3>
+        <div class="a button-row"></div>
+        <div class="modal fade">
+			<div  id="container"></div>
+			<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=4d57777becc438ccd14e00f013243166"></script>
+            <script type="text/javascript">
+                var map = new AMap.Map('container',{
+                    zoom: 16,
+                    center: [113.456502,23.167185]//new AMap.LngLat(116.39,39.9)
+                });
+                marker = new AMap.Marker({
+                    position: [113.456502,23.167185],  //标记的地图坐标 
+                    map: map
+                });
+                var marker = new AMap.Marker({
+                        icon : 'http://vdata.amap.com/icons/b18/1/2.png',//24px*24px      //自定义图标
+                        position : provinces[i].center.split(','),
+                        offset : new AMap.Pixel(-12,-12),
+                        map : mapObj
+                });
+            </script>
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">关闭</span></button>
+        </div>
+        <div class="warp1300" style="margin: 30px auto 40px;">
+            <h3 class="root">在线留言</h3>
+            <div class="Feedback">
+                <form action="{:U('Contact/insert')}" method="post">
+                    <div class="row">
+                        <div class="fl Input wow bounceInLeft"><input name="name" class="iInput box_siz border" placeholder="姓名 *" id="name" type="text" /></div>
+                        <div class="fr Input wow bounceInRight"><input name="qq" class="iInput box_siz border" placeholder="微信 *" type="text"  id="qq" /></div>
+                    </div>
+                    <div class="row">
+                        <div class="fl Input wow bounceInLeft"><input name="telephone"  class="iInput box_siz border" placeholder="手机 *" type="text" id="telephone" /></div>
+                        <div class="fr Input wow bounceInRight"><input name="email" class="iInput box_siz border" placeholder="邮箱" type="text" id="email" /></div>
+                    </div>
+                    <div class="wow bounceInUp">
+                        <div class="row cl6"><input name="title" class="iInput box_siz border" placeholder="标题 *" id="title" type="text" /></div>
+                        <div class="row cl6"><textarea name="content" id="content" rows="4" placeholder="留言内容 *" class="iInput box_siz text border"></textarea></div>
+                        <div class="row cl6">
+                            <div class="fl fiel"><input  name="code" class="iInput box_siz border" placeholder="验证码" type="text" ></div>
+                            <div class="fl code_img"><img src="{:U('Public/verify')}" title="看不清？点击刷新" style="display:inline;" onclick="this.src=this.src+'?'" /></div>
+                        </div>
+                        <div class="simple_name">
+                            <button name="submit" class="submit border" type="submit">提 交</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+			<div class="cl"></div>
+        </div>
+        <!--Inside Content end-->
+        <!--Footer Start-->
+    	<include file="default:public:foot" />
+        <!--Footer end-->
+		<script type="text/javascript" src="__PUBLIC__/Home/js/script.js"></script>
+    </body>
+</html>
+
+
+
+
+

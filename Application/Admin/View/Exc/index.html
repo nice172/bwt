@@ -1,0 +1,52 @@
+<include file="Public/commoner"/>
+<block name="body">
+    <ol class="breadcrumb">
+        <li><a href="{:U('Index/summarize')}">首页</a></li>
+        <li>内链管理</li>
+    </ol>
+    <div class="content">
+        <div class="Config_nav">
+            <ul>
+                <li><a class="on" href="{:U('Exc/index')}">内链管理</a></li>
+                <li><a href="{:U('Exc/add')}">添加内链</a></li>
+            </ul>
+        </div>
+        <div class="List">
+            <div class="table-list">
+                <ul>
+                    <li class="ID">ID</li>
+                    <li class="Name">关键字标题</li>
+                    <li class="Property">关键字提示</li>
+                    <li class="S_Order">关键字链接</li>
+                    <li class="Status">状态</li>
+                    <li class="Oper">管理操作</li>
+                </ul>
+            </div>
+            <foreach name="list" item="vo" key="k" >
+                <div class="ProList">
+                    <ul>
+                        <li class="ID">{$vo.id}</li>
+                        <li class="Name"><a href="{:U('Exc/edit',array('id'=>$vo['id']))}">{$vo.title|str_cut=80}</a></li>
+                        <li class="Property">
+                            {$vo.hint}
+                        </li>
+                        <li class="S_Order">{$vo.url}</li>
+                        <li class="Status"><a href="{:U('Exc/status',array('id'=>$vo['id'],'status'=>$vo['status']))}">{$vo['status']==1?'正常':'<font color="red">禁用</font>'}</a></li>
+                        <li class="Oper">
+                            <div>
+                                <a href="{:U('Exc/edit',array('id'=>$vo['id']))}">编辑</a>
+                                <span>|</span>
+                                <a href="{:U('Exc/delete',array('id'=>$vo['id']))}"  onclick="return confirm('确认是否删除?')">删除</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </foreach>
+            <div class="cl" style="margin-top: 15px;"></div>
+            <div class="Order_submit">
+                <div class="tp_pages">{$page}</div>
+            </div>
+        </div>     
+        <include file="Public:copyright"/>
+    </div>
+</black>

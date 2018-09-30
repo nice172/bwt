@@ -1,0 +1,142 @@
+<?php $sel = 2; ?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <include file="default:public:header" />
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/Css/main.css"/>
+		<script type="text/javascript"> 
+			$(function(){
+				systole();
+			});
+			function systole(){
+				if(!$(".history").length){
+					return;
+				}
+				var $warpEle = $(".history-date"),
+				$targetA = $warpEle.find("h2 a"),
+				parentH,
+				eleTop = [];
+				parentH = $warpEle.parent().height();
+				$warpEle.parent().css({"height": 69});
+				setTimeout(function(){
+					$warpEle.find("ul").children(":not('h2:first')").each(function(idx){
+						eleTop.push($(this).position().top);
+						$(this).css({"margin-top":-eleTop[idx]}).children().hide();
+					}).animate({"margin-top":0}, 1000).children().fadeIn();
+					$warpEle.parent().animate({"height": parentH+69+74}, 3000);
+					$warpEle.find("ul").children(":not('h2:first')").addClass("bounceInDown").css({"-webkit-animation-duration":"2s","-webkit-animation-delay":"0","-webkit-animation-timing-function":"ease","-webkit-animation-fill-mode":"both"}).end().children("h2").css({"position":"relative"});
+					
+				}, 600);
+				$targetA.click(function(){
+					$(this).parent().css({"position":"relative"});
+					$(this).parent().siblings().slideToggle();
+					$warpEle.parent().removeAttr("style");
+					return false;
+				});
+			};
+        </script>
+    </head>
+    <body>
+    	<!--Header Start-->
+    	<include file="default:public:top" />
+        <!--Header end-->
+        <!--Inside Banner Start-->
+        <div class="banner" style="background-image: url({:get_catname(2,'thumb')})">
+        	<div class="warp1300 fs36">{:get_catname(2,'catname')}</div>
+        	<div class="tr">
+            	<div class="warp1300 fs14">{:catpos(2,get_catname(2,'url'))}{$cate.catname}</div>
+            </div>
+        </div>
+        <!--Inside Banner end-->
+        <!--Inside Content Start-->
+        <div class="warp1300 m40">
+        	<div class="Tar">
+            	<h2>{$cate.catname}</h2>
+            </div>
+            <if condition="$cate.ismodel eq 0">
+                <div class="Content">
+                    {$cate.content}
+                </div>
+            <elseif condition="$cate.ismodel eq 1"/>
+            	<if condition="$cate.catid eq 9">
+                    <div class="about2">
+                        <ul>
+                            <arclist item="vo" catid="9" order="sort desc,id desc" key="k">
+                                <li><div class="rongyu-img"><img src="{$vo.thumb}" class="absolute" alt="{$vo.title}"></div></li>
+                            </arclist>
+                        </ul>
+                        <button class="ban_l_btn"></button>
+                        <button class="ban_r_btn"></button>
+                    </div>
+                     <script src="__PUBLIC__/Home/js/roundabout.min.js" type="text/javascript" charset="utf-8"></script>
+                    <script type="text/javascript" src="__PUBLIC__/Home/js/jquery.easing.1.3.js" ></script>
+                    <script type="text/javascript">
+                    $(document).ready(function(){
+                        /*调用*/
+                        $('.about2 ul').roundabout({
+                           startingChild:0,
+                            autoplay:false,
+                            autoplayDuration:4000,
+                            btnPrev: ".ban_r_btn", // 右按钮
+                            btnNext: ".ban_l_btn", // 左按钮
+                            easing: 'easeOutInCirc',
+                            autoplayInitialDelay:0,
+                            duration: 600 //切换一张所花费的时间，而不是 每隔多少秒切换一张
+                        });
+                    
+                    });
+                    </script>
+                <elseif condition="$cate.catid eq 11"/>
+                <div class="history">
+                <?php $catid = $cate['catid']; ?>
+                <category item="vo" pid="$catid" key="k" order="sort desc,catid desc">
+                    <div class="history-date">
+                        <ul>
+                            <h2>
+                                <a href="#nogo">{$vo.catname}</a>
+                                <if condition="($k+1) eq 1">
+                                    <div class="company">
+                                        <span>2000年-{$Think.now|date='Y',time(###)}年</span>
+                                        <p>正虹环境</p>
+                                    </div>
+                                </if>
+                            </h2>
+                            <?php $cateid = $vo['catid']; ?>
+                            <arclist item="vs" catid="$cateid" order="sort desc,id desc" key="k">
+                                <li>
+                                    <h3>{$vs.inputtime|date="m.d",###}<span>{$vs.inputtime|date="Y",###}</span></h3>
+                                    <div class="Root fl">
+                                        <i><img src="{$vs.thumb}" /></i>
+                                        <div class="Text">
+                                            <h4>{$vs.title}</h4>
+                                            <p>{$vs.info}</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </arclist>
+                        </ul>
+                    </div>
+                </category>
+                </div>
+                <elseif condition="$cate.catid eq 42"/>
+                	<div class="cl" style="height: 15px;"></div>
+                	<div class="Bus_img">{$cate.content}</div>
+                    <ul class="Range">
+                    	<?php $catid = $cate['catid']; ?>
+                    	<arclist item="vo" catid="$catid" order="sort desc,id desc" key="k">
+                            <li>
+                                <label>{$vo.title}</label>
+                                <p>{$vo.info}</p>
+                            </li>
+                        </arclist>
+                    </ul>
+                </if>
+            </if>
+            
+            <div class="cl"></div>
+        </div>
+        <!--Inside Content end-->
+        <!--Footer Start-->
+    	<include file="default:public:foot" />
+    </body>
+</html>
