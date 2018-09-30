@@ -20,7 +20,7 @@ $(window).resize(function () {
 
 function windowsize() {
     if (height < 750 && bool) {
-        alert('请全屏浏览网站或更换分辨率！');
+        //alert('请全屏浏览网站或更换分辨率！');
         bool = !bool;
     }
     if (width >= 1300) {

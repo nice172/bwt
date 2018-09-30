@@ -50,7 +50,7 @@
 		<div class="menus">
             <div class="menuk">
                 <ul class="servmen">
-                <category item="vs" pid="2" key="k" order="sort desc,catid asc">
+                <category item="vs" pid="2" key="k" order="sort asc">
                     <if condition="substr($vs['url'],0,7) eq 'http://' or substr($vs['url'],0,8) eq 'https://'">
                         <li><a href="{$vs.url}" <if condition="$vs['catid'] eq $cate['catid']">class="xm"</if>>{$vs.catname}</a></li>
                     <elseif condition="$vs['url'] eq ''" />

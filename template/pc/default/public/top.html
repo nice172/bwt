@@ -14,7 +14,7 @@
                         <a href="{:U($vo['url'])}">{$vo.catname}</a>
                     </if>
                     <i></i>
-                    <if condition = "countnum($vo['catid']) != 0">
+                    <if condition="IS_SHOW && countnum($vo['catid']) != 0">
                         <div class="column_SL" <if condition="$vo['catid'] eq 3">style="left: -45px;"</if>>
                             <div class="column_SL_line"></div>
                             <ul class="column_SL_list clearfix" <if condition="$vo['catid'] eq 3">style="width: 135px;"</if>>

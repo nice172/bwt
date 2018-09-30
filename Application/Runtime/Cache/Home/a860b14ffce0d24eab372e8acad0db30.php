@@ -60,7 +60,7 @@
                     <?php else: ?>
                         <a href="<?php echo U($vo['url']);?>"><?php echo ($vo["catname"]); ?></a><?php endif; ?>
                     <i></i>
-                    <?php if(countnum($vo['catid']) != 0): ?><div class="column_SL" <?php if($vo['catid'] == 3): ?>style="left: -45px;"<?php endif; ?>>
+                    <?php if(IS_SHOW && countnum($vo['catid']) != 0): ?><div class="column_SL" <?php if($vo['catid'] == 3): ?>style="left: -45px;"<?php endif; ?>>
                             <div class="column_SL_line"></div>
                             <ul class="column_SL_list clearfix" <?php if($vo['catid'] == 3): ?>style="width: 135px;"<?php endif; ?>>
                                 <?php $catid = $vo['catid']; ?>
@@ -97,7 +97,7 @@
 		<div class="menus">
             <div class="menuk">
                 <ul class="servmen">
-                <?php $list=M("Category")->where("pid=2 and ishidden=0")->limit(0)->order("sort desc,catid asc")->select();foreach ($list as $k=>$vs): if(substr($vs['url'],0,7) == 'http://' or substr($vs['url'],0,8) == 'https://'): ?><li><a href="<?php echo ($vs["url"]); ?>" <?php if($vs['catid'] == $cate['catid']): ?>class="xm"<?php endif; ?>><?php echo ($vs["catname"]); ?></a></li>
+                <?php $list=M("Category")->where("pid=2 and ishidden=0")->limit(0)->order("sort asc")->select();foreach ($list as $k=>$vs): if(substr($vs['url'],0,7) == 'http://' or substr($vs['url'],0,8) == 'https://'): ?><li><a href="<?php echo ($vs["url"]); ?>" <?php if($vs['catid'] == $cate['catid']): ?>class="xm"<?php endif; ?>><?php echo ($vs["catname"]); ?></a></li>
                     <?php elseif($vs['url'] == ''): ?>
                         <li><a href="<?php echo U(get_catname(2,'url'),array('catid'=>$vs['catid']));?>" <?php if($vs['catid'] == $cate['catid']): ?>class="xm"<?php endif; ?>><?php echo ($vs["catname"]); ?></a></li>
                     <?php elseif($vs['url'] != '' and (substr($vs['url'],0,7) != 'http://' or substr($vs['url'],0,8) != 'https://')): ?>

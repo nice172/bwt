@@ -89,7 +89,7 @@ class PublicController extends Controller
     protected function listCate($pid = 0)
     {
         $cate = M('category');
-        $list = $cate->order('sort desc,catid asc')->select();
+        //$list = $cate->order('sort desc,catid asc')->select();        $list = $cate->order('catid asc')->select();
         return $this->_tree($list, $pid);
     }
 	

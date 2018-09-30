@@ -14,7 +14,7 @@ class PublicController extends Controller
 		
 		$config=M('Site')->where(array('siteid' => 1))->find();
 		$this->assign('config', $config);
-		$this->template = $config['template_pc'] . '/';
+		$this->template = $config['template_pc'] . '/';		define('IS_SHOW', false);
     }
 	public function verify()
     {

@@ -68,7 +68,7 @@ function counum_article($sql,$catid){
 
 //查询栏目下子栏目的第一条的Id
 function get_minid($catid,$ismodel = 0){
-	$info = M('Category')->where(array('pid'=>$catid, 'ismodel' =>  $ismodel, 'ishidden' => array('eq', 0)))->order('catid asc')->limit(1)->getField('catid');
+	$info = M('Category')->where(array('pid'=>$catid, 'ismodel' =>  $ismodel, 'ishidden' => array('eq', 0)))->order('sort asc')->limit(1)->getField('catid');
 	return $info;
 }
 

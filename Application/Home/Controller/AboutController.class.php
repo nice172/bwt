@@ -10,18 +10,18 @@ class AboutController extends PublicController
 		$sortid_all = catid_str($sortid,$model);
 		$catid = I('get.catid', 0, 'intval');
         if (!$catid && countnum($sortid) != 0) {
-            $catid = get_minid($sortid,$model);
+            $catid = get_minid($sortid,$model);
         } elseif (countnum($sortid) == 0) {
 			$catid = $sortid;
 		}
 		$model = get_catname($catid,'ismodel');
         $cate_db = M('Category');
 		/*栏目详情start*/
-		if (countnum($sortid) != 0) {
+		if (countnum($sortid) != 0) {
 			$r = $cate_db->where('catid = '.$catid.' and pid in ('.$sortid_all.') and ismodel = '.$model.' and ishidden = 0')->find();
 		} elseif (countnum($sortid) == 0) {
 			$r = $cate_db->where('catid = '.$catid.' and ismodel = '.$model.' and ishidden = 0')->find();
-		}
+		}		
         if (!$r) {
             $this->error('参数错误');
         }
