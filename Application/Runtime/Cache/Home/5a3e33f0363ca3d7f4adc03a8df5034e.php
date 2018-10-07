@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="/Public/Home/Css/nav-footer.css" />
 <link rel="stylesheet" href="/Public/Home/Css/share.min.css" />
 <script type="text/javascript" src="/Public/Home/js/jquery-3.0.0.js"></script>
-        <link rel="stylesheet" type="text/css" href="/Public/Home/Css/main.css"/><style>.sort {width:300px;}.sort li {width:100%;}.pro_ul li:nth-child(2n+2){margin-right: 0px;float:right;}</style>
+        <link rel="stylesheet" type="text/css" href="/Public/Home/Css/main.css"/>
     </head>
     <body>
     	<!--Header Start-->
@@ -56,27 +56,39 @@
 
         <!--Header end-->
         <!--Inside Banner Start-->
-        <div class="banner" style="background-image: url(<?php echo get_catname(3,'thumb');?>)">
-        	<div class="warp1300 fs36"><?php echo get_catname(3,'catname');?></div>
-        </div>       	<div class="tr">           	<div class="warp1300 fs14"><?php echo catpos(3,get_catname(3,'url')); echo ($cate["catname"]); ?></div>        </div>
+        <div class="banner" style="background-image: url(<?php echo get_catname(5,'thumb');?>)">
+        	<!--<div class="warp1300 fs36"><?php echo get_catname(5,'catname');?></div>-->        <div class="menus">            <div class="menuk">                <ul class="servmen">                <?php $list=M("Category")->where("pid=5 and ishidden=0")->limit(0)->order("sort desc,catid asc")->select();foreach ($list as $k=>$vs): if(substr($vs['url'],0,7) == 'http://' or substr($vs['url'],0,8) == 'https://'): ?><li><a href="<?php echo ($vs["url"]); ?>" <?php if($vs['catid'] == $cate['catid']): ?>class="xm"<?php endif; ?>><?php echo ($vs["catname"]); ?><br /><?php echo ($vs["ecatname"]); ?></a></li>                    <?php elseif($vs['url'] == ''): ?>                        <li><a href="<?php echo U(get_catname(5,'url'),array('catid'=>$vs['catid']));?>" <?php if($vs['catid'] == $cate['catid']): ?>class="xm"<?php endif; ?>><?php echo ($vs["catname"]); ?><br /><?php echo ($vs["ecatname"]); ?></a></li>                    <?php elseif($vs['url'] != '' and (substr($vs['url'],0,7) != 'http://' or substr($vs['url'],0,8) != 'https://')): ?>                        <li><a href="<?php echo U($vs['url'],array('catid'=>$vs['catid']));?>" <?php if($vs['catid'] == $cate['catid']): ?>class="xm"<?php endif; ?>><?php echo ($vs["catname"]); ?><br /><?php echo ($vs["ecatname"]); ?></a></li><?php endif; endforeach; ?>                             </ul>            </div>        </div>
+        </div>
+        	<div class="tr">            	<div class="warp1300 fs14"><?php echo catpos(5,get_catname(5,'url')); echo ($cate["catname"]); ?></div>            </div>
         <!--Inside Banner end-->
         <!--Inside Content Start-->
         <div class="warp1300 m40">
-            <!-- <div class="Tar"><h2><?php echo get_catname(3,'catname');?></h2></div> -->
-            <div class="cl"></div>
-			<div class="container">			<div style="float:left;width:300px;">			<h3 class="root" style="width:300px;height:70px;line-height:70px;text-align:center;border-top: 1px solid #ececec;border-left: 1px solid #ececec;border-right: 1px solid #ececec;"><?php echo get_catname(3,'catname');?></h3>            <ul class="sort">                <?php if(is_array($catelist)): foreach($catelist as $k=>$vo): if($vo['url'] == ''): ?><li <?php if($vo['catid'] == $catid): ?>class="selected"<?php endif; ?>><a href="<?php echo U('Product/index',array('catid'=>$vo['catid']));?>"><?php echo ($vo["catname"]); ?></a></li>                    <?php else: ?>                        <li <?php if($vo['catid'] == $catid): ?>class="selected"<?php endif; ?>><a href="<?php echo U('Product/index',array('catid'=>$vo['catid']));?>"><?php echo ($vo["catname"]); ?></a></li><?php endif; endforeach; endif; ?>              </ul>			</div>						<div class="goods_list" style="width:900px;background:#fff;float:right;">				<ul class="pro_ul" style="margin-top:0px;">                 <?php if(is_array($lists)): foreach($lists as $k=>$vo): ?><li>                        <a href="<?php echo U('Product/show',array('id'=>$vo['id']));?>">                            <i><img src="<?php echo ($vo["thumb"]); ?>" alt="<?php echo ($vo["title"]); ?>" class="absolute" /></i>                            <div>                                <h5><?php echo ($vo["title"]); ?></h5>                                <p><?php echo ($vo["info"]); ?></p>                                <label>查看详情</label>                            </div>                        </a>                    </li><?php endforeach; endif; ?>            </ul>                        <div class="cl"></div>                        <div class="page">                <div class="pages"><?php echo ($pages); ?></div>            </div>            <div class="cl"></div>            			</div>						</div>
-            <div class="cl" style="height: 40px;"></div>
-            <h3 class="root">相关案例推荐</h3>
-            <div class="cl" style="height: 30px;"></div>
-            <ul class="cate_com">
-                <?php $list=M("Article")->where("catid in (20,31,32,34,54) and status=1")->limit(4)->order("sort desc,id desc")->select();foreach ($list as $k=>$vs):?><li>
-                        <a href="<?php echo U('News/show',array('id'=>$vs['id']));?>">
-                            <i><img src="<?php echo ($vs["thumb"]); ?>" alt="<?php echo ($vs["title"]); ?>" title="<?php echo ($vs["title"]); ?>" /></i>
-                            <h4><?php echo ($vs["title"]); ?></h4>
+            <div class="Tar" style="margin-bottom: 50px;"><h2><?php echo ($cate["catname"]); ?></h2></div>
+            <?php $catid = $cate['catid']; ?>
+            <?php if(is_array($lists)): foreach($lists as $k=>$vo): ?><div class="Top_News" style="border:none;">
+                	<div class="top_img fl"><a href="<?php echo U('News/show',array('id'=>$vo['id']));?>" title="<?php echo ($vo["title"]); ?>"><img  src="<?php echo ($vo["thumb"]); ?>" class="absolute" alt="<?php echo ($vo["title"]); ?>"  /></a></div>
+                    <div class="Top_Info fr" style="margin-top:0px;">
+                        <h5><a href="<?php echo U('News/show',array('id'=>$vo['id']));?>" title="<?php echo ($vo["title"]); ?>" style="display:inline;"><?php echo ($vo["title"]); ?></a><label style="float:right;margin-top:7px;font-weight:normal;"><?php echo (date("Y-m-d",$vo["inputtime"])); ?></label></h5>
+                        <p><?php echo ($vo["info"]); ?></p>
+                        <a href="<?php echo U('News/show',array('id'=>$vo['id']));?>" stitle="<?php echo ($vo["title"]); ?>" class="more">了解更多</a>
+                    </div>
+                </div><?php endforeach; endif; ?>
+            <?php if(isset($news_li)): ?><ul class="news_ul"> 
+                <?php if(is_array($lists)): foreach($lists as $k=>$vo): ?><li class="box_siz">
+                    	<a href="<?php echo U('News/show',array('id'=>$vo['id']));?>" title="<?php echo ($vo["title"]); ?>">
+                            <i><img src="<?php echo ($vo["thumb"]); ?>" class="absolute" alt="<?php echo ($vo["title"]); ?>" /></i>
+                            <div class="N_Info">
+                                <h5><?php echo (str_cut($vo["title"],60)); ?></h5>
+                                <p><?php echo ($vo["info"]); ?></p>
+                                <label><?php echo (date("Y-m-d",$vo["inputtime"])); ?></label>
+                            </div>
                         </a>
-                    </li><?php endforeach; ?>
+                    </li><?php endforeach; endif; ?>				
                 <div class="cl"></div>
-            </ul>
+            </ul><?php endif; ?>
+            <div class="page">
+                <div class="pages"><?php echo ($pages); ?></div>
+            </div>
             <div class="cl"></div>
         </div>
         <!--Inside Content end-->

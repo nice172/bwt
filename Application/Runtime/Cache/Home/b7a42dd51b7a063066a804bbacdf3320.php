@@ -1,4 +1,5 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit(); $sel = 4; ?>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -28,7 +29,7 @@
                     <?php else: ?>
                         <a href="<?php echo U($vo['url']);?>"><?php echo ($vo["catname"]); ?></a><?php endif; ?>
                     <i></i>
-                    <?php if(countnum($vo['catid']) != 0): ?><div class="column_SL" <?php if($vo['catid'] == 3): ?>style="left: -45px;"<?php endif; ?>>
+                    <?php if(IS_SHOW && countnum($vo['catid']) != 0): ?><div class="column_SL" <?php if($vo['catid'] == 3): ?>style="left: -45px;"<?php endif; ?>>
                             <div class="column_SL_line"></div>
                             <ul class="column_SL_list clearfix" <?php if($vo['catid'] == 3): ?>style="width: 135px;"<?php endif; ?>>
                                 <?php $catid = $vo['catid']; ?>
@@ -55,42 +56,37 @@
 
 
         <!--Header end-->
-        <!--Inside Banner Start-->
-        <div class="banner" style="background-image: url(<?php echo get_catname(3,'thumb');?>)">
-        	<div class="warp1300 fs36"><?php echo get_catname(3,'catname');?></div>
+        <div class="banner" style="background-image: url(<?php echo get_catname(4,'thumb');?>)">
+        	<div class="warp1300 fs36"><?php echo get_catname(4,'catname');?></div>
         	<div class="tr">
-            	<div class="warp1300 fs14"><?php echo catpos(3,get_catname(3,'url')); echo ($cate["catname"]); ?></div>
+            	<div class="warp1300 fs14"><?php echo catpos(4,get_catname(4,'url')); echo ($cate["catname"]); ?></div>
             </div>
         </div>
-        <!--Inside Banner end-->
-        <!--Inside Content Start-->
-        <div class="warp1300 m40">
-            <div class="Tar"><h2><?php echo ($cate["catname"]); ?></h2></div>
-            <h3 class="root">通过搜索查找正虹产品</h3>
-			<div class="search">
-                <form action="<?php echo U('Product/lists');?>" method="get" id="myform">
-                    <input type="text" name="q" placeholder="搜索关键词" autocomplete="off" class="search-box fl" />
-                    <a href="javascript:;" class="submit-btn fr tc" onclick="submitForm()"></a>
-                </form>
+        <div class="warp1300 m40">        	
+            <div class="Tar">
+                <h2><?php echo ($cate["catname"]); ?></h2>
             </div>
-            <ul class="pro_ul"> 
-                <?php if(is_array($lists)): foreach($lists as $k=>$vo): ?><li>
-                        <a href="<?php echo U('Product/show',array('id'=>$vo['id']));?>">
-                            <i><img src="<?php echo ($vo["thumb"]); ?>" alt="<?php echo ($vo["title"]); ?>" class="absolute" /></i>
-                            <div>
+            <div class="cl" style="height: 20px;"></div>
+            <ul class="case_ul">
+                <?php if(is_array($lists)): foreach($lists as $k=>$vo): ?><li class="box_siz">
+                        <a href="<?php echo U('Case/show',array('id'=>$vo['id']));?>">
+                            <i><img src="<?php echo ($vo["thumb"]); ?>" alt="<?php echo ($vo["title"]); ?>" /></i>
+                            <div class="info">
                                 <h5><?php echo ($vo["title"]); ?></h5>
                                 <p><?php echo ($vo["info"]); ?></p>
-                                <label>查看详情</label>
+                            </div>
+                            <div class="Time">
+                            	<span><?php echo (date("d",$vo["inputtime"])); ?></span>
+                                <label><?php echo (date("Y-m",$vo["inputtime"])); ?></label>
                             </div>
                         </a>
                     </li><?php endforeach; endif; ?>
             </ul>
             <div class="page">
                 <div class="pages"><?php echo ($pages); ?></div>
-            </div>
-            <div class="cl"></div>
+            </div>    
+        	<div class="cl"></div>
         </div>
-        <!--Inside Content end-->
         <!--Footer Start-->
     	<!--联系我们-->
 <section class="index_contact">
@@ -137,11 +133,6 @@
 	});
 </script>
 
-        <!--Footer end-->
-        <script type="text/javascript">
-			function submitForm(){
-				$("#myform").submit();
-			}
-		</script>
+        <!--Footer Start-->
     </body>
 </html>

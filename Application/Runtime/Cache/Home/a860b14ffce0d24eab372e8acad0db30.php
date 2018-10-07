@@ -88,24 +88,9 @@
 
         <!--Header end-->
         <!--Inside Banner Start-->
-        <div class="banner" style="background-image: url(<?php echo get_catname(2,'thumb');?>)">
-        	<div class="warp1300 fs36"><?php echo get_catname(2,'catname');?></div>
-        	<div class="tr">
-            	<div class="warp1300 fs14"><?php echo catpos(2,get_catname(2,'url')); echo ($cate["catname"]); ?></div>
-            </div>
-        </div>
-		<div class="menus">
-            <div class="menuk">
-                <ul class="servmen">
-                <?php $list=M("Category")->where("pid=2 and ishidden=0")->limit(0)->order("sort asc")->select();foreach ($list as $k=>$vs): if(substr($vs['url'],0,7) == 'http://' or substr($vs['url'],0,8) == 'https://'): ?><li><a href="<?php echo ($vs["url"]); ?>" <?php if($vs['catid'] == $cate['catid']): ?>class="xm"<?php endif; ?>><?php echo ($vs["catname"]); ?></a></li>
-                    <?php elseif($vs['url'] == ''): ?>
-                        <li><a href="<?php echo U(get_catname(2,'url'),array('catid'=>$vs['catid']));?>" <?php if($vs['catid'] == $cate['catid']): ?>class="xm"<?php endif; ?>><?php echo ($vs["catname"]); ?></a></li>
-                    <?php elseif($vs['url'] != '' and (substr($vs['url'],0,7) != 'http://' or substr($vs['url'],0,8) != 'https://')): ?>
-                        <li><a href="<?php echo U($vs['url'],array('catid'=>$vs['catid']));?>" <?php if($vs['catid'] == $cate['catid']): ?>class="xm"<?php endif; ?>><?php echo ($vs["catname"]); ?></a></li><?php endif; endforeach; ?>             
-                </ul>
-            </div>
-        </div>
-        <!--Inside Banner end-->
+        <div class="banner" style="background-image: url(<?php echo get_catname(2,'thumb');?>)">        <!-- <div class="warp1300 fs36" style="background:#333;"><?php echo get_catname(2,'catname');?></div> -->		<div class="menus">            <div class="menuk">                <ul class="servmen">                <?php $list=M("Category")->where("pid=2 and ishidden=0")->limit(0)->order("sort asc")->select();foreach ($list as $k=>$vs): if(substr($vs['url'],0,7) == 'http://' or substr($vs['url'],0,8) == 'https://'): ?><li><a href="<?php echo ($vs["url"]); ?>" <?php if($vs['catid'] == $cate['catid']): ?>class="xm"<?php endif; ?>><?php echo ($vs["catname"]); ?><br /><?php echo ($vs["ecatname"]); ?></a></li>                    <?php elseif($vs['url'] == ''): ?>                        <li><a href="<?php echo U(get_catname(2,'url'),array('catid'=>$vs['catid']));?>" <?php if($vs['catid'] == $cate['catid']): ?>class="xm"<?php endif; ?>><?php echo ($vs["catname"]); ?><br /><?php echo ($vs["ecatname"]); ?></a></li>                    <?php elseif($vs['url'] != '' and (substr($vs['url'],0,7) != 'http://' or substr($vs['url'],0,8) != 'https://')): ?>                        <li><a href="<?php echo U($vs['url'],array('catid'=>$vs['catid']));?>" <?php if($vs['catid'] == $cate['catid']): ?>class="xm"<?php endif; ?>><?php echo ($vs["catname"]); ?><br /><?php echo ($vs["ecatname"]); ?></a></li><?php endif; endforeach; ?>                             </ul>            </div>        </div>        </div>
+
+        <!--Inside Banner end-->       	<div class="tr">           	<div class="warp1300 fs14"><?php echo catpos(2,get_catname(2,'url')); echo ($cate["catname"]); ?></div>        </div>
         <!--Inside Content Start-->
         <div class="warp1300 m40">
         	<div class="Tar">
@@ -115,18 +100,15 @@
                     <?php echo ($cate["content"]); ?>
                 </div>
             <?php elseif($cate["ismodel"] == 1): ?>
-            	<?php if($cate["catid"] == 9): ?><div class="about2">
-                        <ul>
-                            <?php $list=M("Article")->where("catid in (9) and status=1")->limit(0)->order("sort desc,id desc")->select();foreach ($list as $k=>$vo):?><li><div class="rongyu-img"><img src="<?php echo ($vo["thumb"]); ?>" class="absolute" alt="<?php echo ($vo["title"]); ?>"></div></li><?php endforeach; ?>
-                        </ul>
-                        <button class="ban_l_btn"></button>
-                        <button class="ban_r_btn"></button>
+            	<?php if($cate["catid"] == 9): ?><style>				.sub_cate {border-bottom:1px solid #ddd;margin-top:30px;}				.sub_cate ul li{display:inline-block;height:40px;font-size:14px;}				.sub_cate ul li a {display:block;line-height:40px;padding:0 10px;}				.sub_cate ul li a:hover,.sub_cate ul li a.current{background:#CD161C;color:#fff;}				.cate_com li {margin-top:15px;}				.cate_com li i img,.cate_com li i{height:220px;}				</style>				<div class="sub_cate">					<ul>						<?php if(is_array($sub_cate)): foreach($sub_cate as $key=>$v): ?><li><a href="<?php echo U('About/index',['catid' => $catid,'subid' => $v['catid']]);?>" <?php if($v['catid'] == $subid): ?>class="current"<?php endif; ?>><?php echo ($v["catname"]); ?></a></li><?php endforeach; endif; ?>					</ul>				</div>
+                    <div class="">            <ul class="cate_com">                <?php if(is_array($lists)): foreach($lists as $key=>$vs): ?><li>                        <a href="<?php echo ($vs["thumb"]); ?>" target="_blank">                            <i><img src="<?php echo ($vs["thumb"]); ?>" alt="<?php echo ($vs["title"]); ?>" title="<?php echo ($vs["title"]); ?>" /></i>                        </a>                    </li><?php endforeach; endif; ?>                <div class="cl"></div>            </ul>
+                                    <div class="page">                <div class="pages"><?php echo ($pages); ?></div>            </div>            <div class="cl"></div>                        
                     </div>
                      <script src="/Public/Home/js/roundabout.min.js" type="text/javascript" charset="utf-8"></script>
                     <script type="text/javascript" src="/Public/Home/js/jquery.easing.1.3.js" ></script>
                     <script type="text/javascript">
                     $(document).ready(function(){
-                        /*调用*/
+                        /*调用
                         $('.about2 ul').roundabout({
                            startingChild:0,
                             autoplay:false,
@@ -136,7 +118,7 @@
                             easing: 'easeOutInCirc',
                             autoplayInitialDelay:0,
                             duration: 600 //切换一张所花费的时间，而不是 每隔多少秒切换一张
-                        });
+                        });                    	*/
                     
                     });
                     </script>

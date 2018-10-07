@@ -11,22 +11,19 @@
         <!--Inside Banner Start-->
         <div class="banner" style="background-image: url({:get_catname(5,'thumb')})">
         	<div class="warp1300 fs36">{:get_catname(5,'catname')}</div>
-        	<div class="tr">
-            	<div class="warp1300 fs14">{:catpos(5,get_catname(5,'url'))}{:get_catname($cate['catid'],'catname')}</div>
-            </div>
         </div>
-        <!--Inside Banner end-->
+        <!--Inside Banner end-->        	<div class="tr">            	<div class="warp1300 fs14">{:catpos(5,get_catname(5,'url'))}{:get_catname($cate['catid'],'catname')}</div>            </div>
         <!--Inside Content Start-->
         <div class="warp1300 m40">
             <div class="Left box_siz fl">                
-                <div class="top_show">
-                    <h3>{$cate.title}</h3>
-                    <div class="Data">
-                        <span>阅读量：{$cate.views}</span><span class="Time">{$cate.inputtime|date="Y-m-d",###}</span>
-                    </div>
-                </div>
-                <div class="Content">
-                    {$cate.content}
+                <div class="top_show">
+                    <h3>{$cate.title}</h3>
+                    <div class="Data">
+                        <span>阅读量：{$cate.views}</span><span class="Time">{$cate.inputtime|date="Y-m-d",###}</span>						<span><div class="bshare-custom"><a title="分享到QQ空间" class="bshare-qzone"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a>						<a title="分享到人人网" class="bshare-renren"></a>						<a title="分享到腾讯微博" class="bshare-qqmb"></a><a title="分享到网易微博" class="bshare-neteasemb"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a>						<span class="BSHARE_COUNT bshare-share-count">0</span></div>						<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>						<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>						</span>
+                    </div>
+                </div>
+                <div class="Content">
+                    {$cate.content}				<div>  <div class="bshare-custom icon-medium">   <a title="分享到QQ空间" class="bshare-qzone"></a>   <a title="分享到新浪微博" class="bshare-sinaminiblog"></a>   <a title="分享到人人网" class="bshare-renren"></a>   <a title="分享到腾讯微博" class="bshare-qqmb"></a>   <a title="分享到网易微博" class="bshare-neteasemb"></a>   <a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a>   <span class="BSHARE_COUNT bshare-share-count">0</span>  </div>			</div>
                 </div>
                 <div class="Flip box_siz">
                 	<a href="{$previous_page[url]}" class="fl">上一篇</a><a href="javascript:history.go(-1)" class="return">返回</a><a href="{$next_page[url]}" class="fr">下一篇</a>

@@ -2,34 +2,22 @@
 <html>
     <head>
         <include file="default:public:header" />
-        <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/Css/main.css"/>
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/Css/main.css"/><style>.sort {width:300px;}.sort li {width:100%;}.pro_ul li:nth-child(2n+2){margin-right: 0px;float:right;}</style>
     </head>
     <body>
     	<!--Header Start-->
     	<include file="default:public:top" />
         <!--Header end-->
         <!--Inside Banner Start-->
-        <div class="banner" style="background-image: url({:get_catname(3,'thumb')})">
-        	<div class="warp1300 fs36">{:get_catname(3,'catname')}</div>
-        	<div class="tr">
-            	<div class="warp1300 fs14">{:catpos(3,get_catname(3,'url'))}{$cate.catname}</div>
-            </div>
-        </div>
+        <div class="banner" style="background-image: url({:get_catname(3,'thumb')})">
+        	<div class="warp1300 fs36">{:get_catname(3,'catname')}</div>
+        </div>       	<div class="tr">           	<div class="warp1300 fs14">{:catpos(3,get_catname(3,'url'))}{$cate.catname}</div>        </div>
         <!--Inside Banner end-->
         <!--Inside Content Start-->
         <div class="warp1300 m40">
-            <div class="Tar"><h2>{:get_catname(3,'catname')}</h2></div>
-            <h3 class="root">产品类别</h3>
+            <!-- <div class="Tar"><h2>{:get_catname(3,'catname')}</h2></div> -->
             <div class="cl"></div>
-            <ul class="sort">
-                <foreach name="catelist" item="vo" key="k">
-                    <if condition = "$vo['url'] eq ''">
-                        <li><a href="{:U('Product/lists',array('catid'=>$vo['catid']))}">{$vo.catname}</a></li>
-                    <else/>
-                        <li><a href="{:U($vo['url'],array('catid'=>$vo['catid']))}">{$vo.catname}</a></li>
-                    </if>
-                </foreach>  
-            </ul>
+			<div class="container">			<div style="float:left;width:300px;">			<h3 class="root" style="width:300px;height:70px;line-height:70px;text-align:center;border-top: 1px solid #ececec;border-left: 1px solid #ececec;border-right: 1px solid #ececec;">{:get_catname(3,'catname')}</h3>            <ul class="sort">                <foreach name="catelist" item="vo" key="k">                    <if condition = "$vo['url'] eq ''">                        <li <if condition="$vo['catid'] eq $catid">class="selected"</if>><a href="{:U('Product/index',array('catid'=>$vo['catid']))}">{$vo.catname}</a></li>                    <else/>                        <li <if condition="$vo['catid'] eq $catid">class="selected"</if>><a href="{:U('Product/index',array('catid'=>$vo['catid']))}">{$vo.catname}</a></li>                    </if>                </foreach>              </ul>			</div>						<div class="goods_list" style="width:900px;background:#fff;float:right;">				<ul class="pro_ul" style="margin-top:0px;">                 <foreach name="lists" item="vo" key="k">                    <li>                        <a href="{:U('Product/show',array('id'=>$vo['id']))}">                            <i><img src="{$vo.thumb}" alt="{$vo.title}" class="absolute" /></i>                            <div>                                <h5>{$vo.title}</h5>                                <p>{$vo.info}</p>                                <label>查看详情</label>                            </div>                        </a>                    </li>                </foreach>            </ul>                        <div class="cl"></div>                        <div class="page">                <div class="pages">{$pages}</div>            </div>            <div class="cl"></div>            			</div>						</div>
             <div class="cl" style="height: 40px;"></div>
             <h3 class="root">相关案例推荐</h3>
             <div class="cl" style="height: 30px;"></div>

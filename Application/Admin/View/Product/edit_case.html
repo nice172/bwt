@@ -4,89 +4,62 @@
 	<ol class="breadcrumb">
 		<li><a href="{:U('Index/summarize')}">首页</a></li>
 		<li><a href="{:U('Product/index')}">产品管理</a></li>
-		<li>添加产品</li>
+		<li>编辑案例</li>
 	</ol>
 	<div class="content">
 		 <div class="Config_nav">
-			<ul>
-				<li><a href="{:U('Product/index')}">产品管理</a></li>
-				<li><a class="on" href="{:U('Product/add')}">添加产品</a></li>
-				<li><a href="{:U('Productcomment/index')}">产品评论</a></li>
+			<ul>
+				<li><a href="{:U('Product/index')}">产品管理</a></li>				<li><a href="{:U('Product/apply')}">案例管理</a></li>
+				<li><a class="on" href="javascript:;">编辑案例</a></li>
 			</ul>
 		</div>
-		<form action="{:U('Product/insert')}" method="post" id="form"  enctype="multipart/form-data">     
+		<form action="{:U('Product/edit_case')}" method="post" id="form"  enctype="multipart/form-data">     			<input type="hidden" name="id" value="{$detail.id}" />
 			<div class="Save">
 				<div id=cpxqcon>
 					<div id="cpxqcontags">
-						<ul id="cpxqtags">
-							<li class="selectTag"><A onClick="selectTag('cpxqtagContent0',this)" href="javascript:void(0)">常规选项</A></li>							<li><A onClick="selectTag('cpxqtagContent3',this)" href="javascript:void(0)">产品数据</A></li>
+						<ul id="cpxqtags">
+							<li class="selectTag"><A onClick="selectTag('cpxqtagContent0',this)" href="javascript:void(0)">常规选项</A></li>
 							<li><A onClick="selectTag('cpxqtagContent1',this)" href="javascript:void(0)">SEO设置</A></li>
-							<li><A onClick="selectTag('cpxqtagContent2',this)" href="javascript:void(0)">扩展设置</A></li>
 						</ul>
 					</div>
 					<div id="cpxqtagContent"> 
 						<div class="cpxqtagContent selectTag" id=cpxqtagContent0 style="display:block;">
 							<ul>
-								<li class="Name">栏目</li>
+								<li class="Name">所属商品</li>
 								<li class="input">
 									<select name="catid">
-										<option>选择栏目</option>
-										<foreach name="cate_list" item="vo" key="k" >
-											<option value="{$vo.catid}" <if condition="$vo['ispart'] eq 1 or $vo['ismodel'] != 2">disabled="disabled"</if>>{:str_repeat("└─",$vo['level'])}{$vo.catname}</option>
+										<option>选择商品</option>
+										<foreach name="goods_list" item="vo" key="k" >
+											<option value="{$vo.id}" <if condition="$detail['goodsid'] eq $vo['id']">selected="selected"</if>>{$vo.title}</option>
 										</foreach>
 									</select>
 								</li>
 							</ul>
 						
 							<ul>
-								<li class="Name">产品名称</li>
-								<li class="input"><input class="common-text input-text" name="title" size="40" datatype="*1-100" value=""  type="text"></li>
+								<li class="Name">案例名称</li>
+								<li class="input"><input class="common-text input-text" name="title" size="40" datatype="*1-100" value="{$detail.title}"  type="text"></li>
 							</ul>
 							<ul>
 								<li class="Name">缩略图</li>
-								<li class="input"><input id="upload_file" type="file"></li>
+								<li class="input"><input id="upload_file" type="file">								<notempty name="detail.thumb">                                       <div class="cl" style="margin-top: 5px;"></div>                                       <div class="Pic">                                           <span><img src="{$detail.thumb}" /></span>                                           <a href="javascript:void(0)" class="pic_img" onclick="delete_thumb(this);">删除</a>                                       </div>                                 </notempty>								</li>
 							</ul>
 							<ul>
-								<li class="Name">编号</li>
+								<li class="Name">案例简介</li>
 								<li class="input">
-								   <input name="item" class="common-text input-text" value="" type="text">
-								</li>
-							</ul>
-							<ul>
-								<li class="Name">产品简介</li>
-								<li class="input">
-								   <textarea name="info" class="common-textarea textarea" cols="30" style="width: 50%;" rows="5"></textarea>
+								   <textarea name="info" class="common-textarea textarea" cols="30" style="width: 50%;" rows="5">{$detail.info}</textarea>
 								</li>
 							</ul>
 							<ul>
 								<li class="Name">详细内容</li>
-								<li class="input"><script type="text/plain" id="editor" style="width: 100%;height: 350px;"></script></li>
-							</ul>
-							<ul>
-								<li class="Name">原价格</li>
-								<li class="input">
-								   <input name="yprice" class="common-text input-text" value="" size="30" type="text">
-								</li>
-							</ul>
-							<ul>
-								<li class="Name">价格</li>
-								<li class="input">
-								   <input name="price" class="common-text input-text" value="" size="30" type="text">
-								</li>
+								<li class="input"><script type="text/plain" id="editor" style="width: 100%;height: 350px;">{$detail.content}</script></li>
 							</ul>
 							<style>.icheckbox_square-aero {margin: 1.5px 0px;}</style>
 							<ul>
-								<li class="Name">状态</li>
-								<li class="input">
-									<div class="radio"><span><input type="checkbox" name="hotpro" value="1"></span><label for="hotpro1">热门</label></div>
-									<div class="radio"><span><input type="checkbox" name="compro" value="1"></span><label for="compro2">推荐</label></div> 
-								</li>
-							</ul>
-							<ul>
 								<li class="Name">是否发布</li>
 								<li class="input">
-									<div class="radio"><span><input type="radio" name="status" value="1" checked="checked"></span><label for="status1">已发布</label></div>
-									<div class="radio"><span><input type="radio" name="status" value="0"></span><label for="status2">未发布</label></div> 
+									<div class="radio"><span><input type="radio" name="status" value="1" <if condition="$detail['status']">checked="checked"</if>></span><label for="status1">已发布</label></div>
+									<div class="radio"><span><input type="radio" name="status" value="0" <if condition="$detail['status'] eq 0">checked="checked"</if>></span><label for="status2">未发布</label></div> 
 								</li>
 							</ul>
 						</div>
@@ -94,61 +67,17 @@
 						<div class="cpxqtagContent" id=cpxqtagContent1>
                         	<ul>
 								<li class="Name">SEO标题</li>
-								<li class="input"><input class="common-text input-text" name="ptitle" value="" size="50" type="text"></li>
+								<li class="input"><input class="common-text input-text" name="ptitle" value="{$detail.ptitle}" size="50" type="text"></li>
 							</ul>
 							<ul>
 								<li class="Name">SEO关键词</li>
-								<li class="input"><input class="common-text input-text" name="pkeywords" value="" size="50" type="text"></li>
+								<li class="input"><input class="common-text input-text" name="pkeywords" value="{$detail.pkeywords}" size="50" type="text"></li>
 							</ul>
 							<ul>
 								<li class="Name">SEO描述</li>
-								<li class="input"><textarea name="pdescription" class="common-textarea textarea" cols="30" style="width: 50%;" rows="5"></textarea></li>
+								<li class="input"><textarea name="pdescription" class="common-textarea textarea" cols="30" style="width: 50%;" rows="5">{$detail.pdescription}</textarea></li>
 							</ul>
 						</div>
-						<div class="cpxqtagContent" id=cpxqtagContent2>
-							<ul>
-								<li class="Name">组图</li>
-								<li class="input"><input id="upload_gallery" type="file"></li>
-							</ul>
-							<ul>
-								<li class="Name">品牌</li>
-								<li class="input"><input class="common-text input-text" name="brand" value="" size="50" type="text"></li>
-							</ul>
-							<ul>
-								<li class="Name">型号</li>
-								<li class="input"><input class="common-text input-text" name="model" value="" size="50" type="text"></li>
-							</ul>
-							<ul>
-								<li class="Name">质量</li>
-								<li class="input"><input class="common-text input-text" name="quality" value="" size="50" type="text"></li>
-							</ul>
-							<ul>
-								<li class="Name">颜色</li>
-								<li class="input"><input class="common-text input-text" name="color" value="" size="50" type="text"></li>
-							</ul>
-							<ul>
-								<li class="Name">标签</li>
-								<li class="input"><input class="common-text input-text" name="mark" value="" size="50" type="text"></li>
-							</ul>
-							<ul>
-								<li class="Name">库存</li>
-								<li class="input"><input class="common-text input-text" name="stock" value="9999" size="50" type="text"></li>
-							</ul>
-							 <ul>
-								<li class="Name">最小起购</li>
-								<li class="input"><input class="common-text input-text" name="moq" value="0" size="50" type="text"></li>
-							</ul>
-							<ul>
-								<li class="Name">单位</li>
-								<li class="input">
-									<select name="unit">
-										<option value="0">个</option>
-										<option value="1">件</option>
-										<option value="2">批</option>
-									</select>
-								</li>
-							</ul>
-						</div>						<div class="cpxqtagContent" id="cpxqtagContent3">							<ul>								<li class="Name">参数图片</li>								<li class="input"><input id="upload_gallery2" type="file"></li>							</ul>						</div>
 						<div class="cl" style="height: 10px;"></div>
 						<div class="btn">
 							<input class="btn btn-primary btn6 mr10" name="submit" value="保存后关闭" style="margin-right: 10px;" type="submit"><input class="btn btn-primary btn6 mr10" name="submit_continue" style="margin-right: 10px;" value="保存后继续" type="submit"><input class="btn btn6" onClick="history.go(-1)" value="返回" type="button">
@@ -159,7 +88,7 @@
 		</form>           
 		<include file="Public:copyright"/>
 	</div>
-<script type="text/javascript">
+<script type="text/javascript">function delete_thumb(e){	var $this = $(e);	$this.parent('div').remove();	document.getElementById("thumb").value="";}
 $(function(){
 	$('#upload_file').uploadify({
 		'queueSizeLimit'  : 1,

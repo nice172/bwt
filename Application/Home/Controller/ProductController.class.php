@@ -1,10 +1,8 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
-class ProductController extends PublicController
-{
-	public function index()
-    {
+class ProductController extends PublicController {
+	public function index(){
 		$sortid = 3;
         $cate_db = M('Category');
 		/*栏目详情start*/
@@ -16,14 +14,12 @@ class ProductController extends PublicController
 		$this->assign('cate', new_html_entity_decode($r));
 		/*栏目详情end*/
 		$catelist = $cate_db->where(array('pid' => $sortid, 'ishidden' => array('eq', 0)))->order('sort desc, catid asc')->select();
-		$this->assign("catelist",$catelist);
-		
-		$this->display($this->template . 'Product/index');
+		$this->assign("catelist",$catelist);		$this->lists();		
+		$this->display($this->template . 'Product/index');// 		$this->display($this->template . 'Product/lists');
     }
 	
 	
-	public function lists()
-    {
+	public function lists() {
 		$sortid = 3;
 		$model = get_catname($sortid,'ismodel');
 		$sortid_all = catid_str($sortid,$model);
@@ -85,16 +81,12 @@ class ProductController extends PublicController
 				$lists[$k]['title'] = str_replace($q, '<font color=#e28000>' . $q . '</font>', $v['title']);
 			}
 			$this->assign('lists', $lists);
-			$this->assign('pages', $p->show());
+			$this->assign('pages', $p->show());						$this->assign('catid', $catid);
 			/*文章列表end*/
 		}
-		$this->display($this->template . 'Product/lists');
+		//$this->display($this->template . 'Product/lists');
     }
-	
-	
-	
-	public function show()
-    {	
+	public function show(){	
 		$sortid = 3;
 		$model = get_catname($sortid,'ismodel');
 		$sortid_all = catid_str($sortid,$model);	
@@ -112,9 +104,9 @@ class ProductController extends PublicController
 		foreach($innerlink as $link){
              $article_info['content']=str_replace($link['title'],"<a href={$link['url']} title={$link['hint']}>{$link['title']}</a>",$article_info['content']);
 		}
-		$gallery = string2array($article_info['gallery']);
-		$this->assign('gallery', $gallery);
-        $this->assign('cate', new_html_entity_decode($article_info));
+		$gallery = string2array($article_info['gallery']);		$gallery2 = string2array($article_info['gallery2']);
+		$this->assign('gallery', $gallery);		$this->assign('gallery2', $gallery2);
+        $this->assign('cate', new_html_entity_decode($article_info));
         /*文章详情end*/
         /*SEO start*/
         $this->assign('config', $article_info);
@@ -137,13 +129,11 @@ class ProductController extends PublicController
         }
         $this->assign('previous_page', $previous_page);
         /*上一篇end*/
-		
-		$where_xg['id'] = array('lt', $id);
-		$where_xg['catid'] = array('eq', $article_info['catid']);
-        $where_xg['status'] = 1;
-		$lists = $article_db->where($where_xg)->order('id desc')->limit('3')->select();
-		$this->assign('lists', $lists);
-		
+		$where_xg['id'] = array('neq', $id);
+		$where_xg['catid'] = array('eq', $article_info['catid']);
+        $where_xg['status'] = 1;
+		$lists = $article_db->where($where_xg)->order('id desc')->limit('3')->select();
+		$this->assign('lists', $lists);		
         /*下一篇start*/
         $where_next['id'] = array('gt', $id);
 		$where_next['catid'] = array('eq', $article_info['catid']);

@@ -57,7 +57,7 @@ class NewsController extends PublicController
 			$catid_all = catid_str($catid,$model);
 			$top_article = top_article('id',$article_db,$catid_all);
 			if (counum_article($article_db,$catid_all) >= 1) {
-				$where = 'catid in (' . $catid_all . ')  and status = 1 and id != '. $top_article .'';
+				//$where = 'catid in (' . $catid_all . ')  and status = 1 and id != '. $top_article .'';				$where = 'catid in (' . $catid_all . ')  and status = 1';
 			} else {
 				$where = 'catid in (' . $catid_all . ')  and status = 1';
 			}

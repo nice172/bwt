@@ -1,7 +1,7 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE HTML>
 <html>
 <head>
-<meta charset="utf-8">
+	<meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=9" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="renderer" content="webkit">
@@ -35,62 +35,57 @@
 <script type="text/javascript" src="/Public/assets/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script><?php endif; ?>
 </head>
 <body>
-
+	
 </body>
 </html>
 
-
+<block name="body">
     <ol class="breadcrumb">
         <li><a href="<?php echo U('Index/summarize');?>">首页</a></li>
-        <li>栏目管理</li>
+        <li><a href="<?php echo U('Article/index');?>">文章管理</a></li>
+        <li>文章评论</li>
     </ol>
     <div class="content">
         <div class="Config_nav">
             <ul>
-                <li><a class="on" href="<?php echo U('Category/index');?>">栏目管理</a></li>
-                <li><a href="<?php echo U('Category/add');?>">添加栏目</a></li>
-                <li><a href="<?php echo U('Category/addBatch');?>">批量添加</a></li>
+                <li><a href="<?php echo U('Article/index');?>">文章管理</a></li>
+                <li><a href="<?php echo U('Article/add');?>">添加文章</a></li>
+                <li><a class="on" href="<?php echo U('Articlecomment/index');?>">文章评论</a></li>
+                <li><a href="<?php echo U('Article/recycle');?>">回收站</a></li>
             </ul>
         </div>
-        <form action="<?php echo U('Category/listorder');?>" method="post" >
-            <div class="List">
-                <div class="table-list">
-                    <ul>
-                        <li class="ID">ID</li>
-                        <li class="Name">栏目名称</li>
-                        <li class="S_Order">排序</li>
-                        <li class="Property">栏目属性</li>
-                        <li class="Status">状态</li>
-                        <li class="Oper">管理操作</li>
-                    </ul>
-                </div>
-                <?php if(is_array($list)): foreach($list as $k=>$vo): ?><div class="ProList">
-                        <ul>
-                            <li class="ID"><?php echo ($vo["catid"]); ?></li>
-                            <li class="Name">
-                                <?php echo str_repeat("└─ ",$vo['level']);?>
-                                <?php if($vo['ispart'] == 0): ?><a href="<?php echo U('Category/edit',array('catid'=>$vo['catid']));?>"><?php echo (str_cut($vo["catname"],80)); ?></a>
-                                <?php else: ?>
-                                    <?php echo (str_cut($vo["catname"],80)); endif; ?>
-                            </li>
-                            <li class="S_Order">
-                                <input type="text" class="sInput" name="sort[<?php echo ($vo["catid"]); ?>]" value="<?php echo ($vo["sort"]); ?>" />
-                            </li>
-                            <li class="Property"><?php echo ($vo['ispart']==0?'列表':'频道'); ?></li>
-                            <li class="Status"><?php echo ($vo['ishidden']==0?'显示':'隐藏'); ?></li>
-                            <li class="Oper">
-                            	<div>
-                                    <a href="<?php echo U('Category/edit',array('catid'=>$vo['catid']));?>">编辑</a>
-                                    <span>|</span>
-                                    <a  href="<?php echo U('Category/delete',array('catid'=>$vo['catid']));?>" onclick="return confirm('确认是否删除?')">删除</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div><?php endforeach; endif; ?>
-                <div class="cl" style="margin-top: 15px;"></div>
-                <div class="Order_submit"><input class="btn btn-primary btn6 mr10" type="submit" value="排序" /></div>
+        <div class="List">
+            <div class="table-list">
+                <ul>
+                    <li class="ID">ID</li>
+                    <li class="Name">文章标题</li>
+                    <li class="Property">评论时间</li>
+                    <li class="S_Order">用户名</li>
+                    <li class="Status">审核</li>
+                    <li class="Oper">管理操作</li>
+                </ul>
             </div>
-        </form>           
+            <?php if(is_array($article_list)): foreach($article_list as $k=>$vo): ?><div class="ProList">
+                    <ul>
+                        <li class="ID"><?php echo ($vo["id"]); ?></li>
+                        <li class="Name"><a href="<?php echo U('Articlecomment/Comment',array('id'=>$vo['id']));?>"><?php echo (str_cut($vo["articletitle"],80)); ?></a></li>
+                        <li class="Property"><?php echo (date("Y-m-d",$vo["inputtime"])); ?></li>
+                        <li class="S_Order"><?php echo ($vo["username"]); ?></li>
+                        <li class="Status"><a href="<?php echo U('Articlecomment/status',array('id'=>$vo['id'],'status'=>$vo['status']));?>"><?php echo ($vo[status]==1?'已通过':'<font color=red>未通过</font>'); ?></a></li>
+                        <li class="Oper">
+                            <div>
+                                <a href="<?php echo U('Articlecomment/Comment',array('id'=>$vo['id']));?>">查看</a>
+                                <span>|</span>
+                                <a href="<?php echo U('Articlecomment/delete',array('id'=>$vo['id']));?>"  onclick="return confirm('确认是否删除?')">删除</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div><?php endforeach; endif; ?>
+            <div class="cl" style="margin-top: 15px;"></div>
+            <div class="Order_submit">
+                <div class="tp_pages"><?php echo ($page); ?></div>
+            </div>
+        </div>
         <!-- Footer Start -->
 <footer>
     技术支持：<a href="http://www.macroblue.net/" title="广州宏蓝计算机科技有限公司" target="_blank">宏蓝科技</a> 1.1.1.100305版本 &copy; 2016 - 2018
@@ -98,3 +93,4 @@
 <!-- Footer End -->	
 
     </div>
+</black>

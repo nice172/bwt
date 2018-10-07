@@ -1,11 +1,10 @@
-<?php $sel = 3; ?>
-<include file="Public/commoner"/>
-<block name="body">
-	<ol class="breadcrumb">
-		<li><a href="{:U('Index/summarize')}">首页</a></li>
-		<li><a href="{:U('Product/index')}">产品管理</a></li>
-		<li>修改产品</li>
-	</ol>
+<?php $sel = 3; ?><include file="Public/commoner"/>
+<block name="body">
+	<ol class="breadcrumb">
+		<li><a href="{:U('Index/summarize')}">首页</a></li>
+		<li><a href="{:U('Product/index')}">产品管理</a></li>
+		<li>修改产品</li>
+	</ol>
 	<div class="content">
 		 <div class="Config_nav">
 			<ul>
@@ -19,7 +18,7 @@
 				<div id=cpxqcon>
 					<div id="cpxqcontags">
 						<ul id="cpxqtags">
-							<li class="selectTag"><A onClick="selectTag('cpxqtagContent0',this)" href="javascript:void(0)">常规选项</A></li>
+							<li class="selectTag"><A onClick="selectTag('cpxqtagContent0',this)" href="javascript:void(0)">常规选项</A></li>							<li><A onClick="selectTag('cpxqtagContent3',this)" href="javascript:void(0)">产品数据</A></li>
 							<li><A onClick="selectTag('cpxqtagContent1',this)" href="javascript:void(0)">SEO设置</A></li>
 							<li><A onClick="selectTag('cpxqtagContent2',this)" href="javascript:void(0)">扩展设置</A></li>
 						</ul>
@@ -101,7 +100,7 @@
 								</li>
 							</ul>
 						</div>
-					   
+					   <div class="cpxqtagContent" id="cpxqtagContent3">								<ul>								<li class="Name">参数图片</li>								<li class="inputx">									<input type="file" name="abc"  id="abc" />									<foreach name="gallery2" item="vo">										<div class="cl" style="margin-top: 5px;"></div>										<div id="src_{$key+1}" class="Pic">											<input type="hidden" name="gallery2[]" value="{$vo}" />											<span><img src="{$vo}" /></span>											<a href="javascript:;" class="gallery"  data-id="{$key+1}">移除</a>										</div>									</foreach>								</li>							</ul>						</div>
 						<div class="cpxqtagContent" id=cpxqtagContent1>
                         	<ul>
 								<li class="Name">SEO标题</li>
@@ -169,7 +168,7 @@
 									</select>
 								</li>
 							</ul>
-						</div>
+						</div>						
 						<div class="cl" style="height: 10px;"></div>
 						<div class="btn">
 							<input class="btn btn-primary btn6 mr10" name="submit" value="修改" style="margin-right: 10px;" type="submit"><input class="btn btn6" onClick="history.go(-1)" value="返回" type="button">
@@ -177,114 +176,6 @@
 					</div>
 				</div>
 			</div>    
-		</form>           
-		<include file="Public:copyright"/>
-	</div>
-</black>
-<script type="text/javascript">
-$(function(){
-	$('#upload_file').uploadify({
-		'queueSizeLimit'  : 1,
-		'swf'             : '__PUBLIC__/User/uploadify.swf',
-		'uploader'        : "{:U('Public/uploadAttach',array('session_id'=>session_id(),'type'=>'1'))}",
-		'fileObjName'     : $('#upload_file').attr('name'),
-		'buttonClass'     : 'upload-case',
-		'width'           : 150,
-		'height'          : 25,
-		'removeTimeout'   : 1,
-		'buttonText'      : '上传图片',
-		'fileTypeExts'    : '*.gif; *.jpg; *.png',
-		'onUploadSuccess' : function(file, data, response) {
-			//var data = $.parseJSON(data);
-			var data=eval("("+data+")");
-			if(data.status ==0){
-				alert('上传出错，请稍后再试');
-				return false;
-			}
-			
-			if(data.status==1){           	
-				var html = '<div class="cl" style="margin-top: 5px;"></div>'
-				html += '<div id="attachment">'+'<span><img src="'+data.file+'"></span>' ;
-				html += '<a href="javascript:void(0)" onclick="delete_attachment(this);">删除</a>';
-				html += '<input type="hidden" name="thumb" value="'+data.file+'" /></div>';
-				$('#upload_file').after(html);
-			} else {
-				alert('上传出错，请稍后再试');
-				return false;
-			}
-		},
-		'onSelect' : function(file) {
-			var length = $('#attachment').length;
-			if(length > 0){
-				$('#upload_file').uploadify('cancel')
-				$('#upload_file').uploadify('stop');
-				alert('附件只允许上传一个');
-				return false;
-			}
-		}
-	});
-});
-function delete_attachment(e){
-	var $this = $(e);
-	$this.parent('div').remove();
-}
-function delete_thumb(e){
-	var $this = $(e);
-	$this.parent('div').remove();
-	document.getElementById("thumb").value="";
-}
-</script>
-<script type="text/javascript">
-	$(function(){
-		$('#upload_gallery').uploadify({
-			'queueSizeLimit' : 10,
-			'swf'             : '__PUBLIC__/User/uploadify.swf',
-			'uploader'        : "{:U('Public/uploadAttach',array('session_id'=>session_id(),'type'=>'1'))}",
-			'fileObjName'     : $('#upload_gallery').attr('name'),
-			'buttonClass'     : 'upload-case',
-			'width'           : 150,
-			'height'          : 25,
-			'removeTimeout'   : 1,
-			'buttonText'      : '上传多图',
-			'fileTypeExts'    : '*.gif; *.jpg; *.png',
-			'onUploadSuccess' : function(file, data, response) {
-				//var data = $.parseJSON(data);
-				var data=eval("("+data+")");
-				if(data.status ==0){
-					alert('上传出错，请稍后再试');
-					return false;
-				}
-				if(data.status==1){           	
-					var html = '<div class="cl" style="margin-top: 5px;"></div>'
-					html += '<div id="attachment">'+'<span><img src="'+data.file+'"></span>' ;
-					html += '<a href="javascript:void(0)" onclick="delete_attachment(this);">删除</a>';
-					html += '<input type="hidden" name="gallery[]" value="'+data.file+'" /></span>';
-					$('#upload_gallery').after(html);
-				} else {
-					alert('上传出错，请稍后再试');
-					return false;
-				}
-			},
-			'onSelect' : function(file) {
-				var length = $('#attachment').length;
-				if(length > 0&&lengh<11){
-					$('#upload_gallery').uploadify('cancel')
-					$('#upload_gallery').uploadify('stop');
-					alert('附件只允许上传10个');
-					return false;
-				}
-			}
-		});
-	});
-</script>
-<script type="text/livescript">
-	$(function(){
-		$(".gallery").click(function(){
-			var id=$(this).attr('data-id');
-			$('#src_'+id).remove();
-			$(this).fadeIn(300);
-		  });
-	  });
-</script>
-<script type="text/javascript" src="__JS__/selectTag/selectTag.js"></script>
-<include file="Public/editorjs"/>
+		</form>           <include file="Public:copyright"/>
+	</div><script type="text/javascript">$(function(){	$('#upload_file').uploadify({		'queueSizeLimit'  : 1,		'swf'             : '__PUBLIC__/User/uploadify.swf',		'uploader'        : "{:U('Public/uploadAttach',array('session_id'=>session_id(),'type'=>'1'))}",		'fileObjName'     : $('#upload_file').attr('name'),		'buttonClass'     : 'upload-case',		'width'           : 150,		'height'          : 25,		'removeTimeout'   : 1,		'buttonText'      : '上传图片',		'fileTypeExts'    : '*.gif; *.jpg; *.png',		'onUploadSuccess' : function(file, data, response) {			//var data = $.parseJSON(data);			var data=eval("("+data+")");			if(data.status ==0){				alert('上传出错，请稍后再试');				return false;			}						if(data.status==1){           					var html = '<div class="cl" style="margin-top: 5px;"></div>'				html += '<div id="attachment">'+'<span><img src="'+data.file+'"></span>' ;				html += '<a href="javascript:void(0)" onclick="delete_attachment(this);">删除</a>';				html += '<input type="hidden" name="thumb" value="'+data.file+'" /></div>';				$('#upload_file').after(html);			} else {				alert('上传出错，请稍后再试');				return false;			}		},		'onSelect' : function(file) {			var length = $('#attachment').length;			if(length > 0){				$('#upload_file').uploadify('cancel')				$('#upload_file').uploadify('stop');				alert('附件只允许上传一个');				return false;			}		}	});});function delete_attachment(e){	var $this = $(e);	$this.parent('div').remove();}function delete_thumb(e){	var $this = $(e);	$this.parent('div').remove();	document.getElementById("thumb").value="";}</script><script type="text/javascript">	$(function(){		$('#upload_gallery').uploadify({			'queueSizeLimit' : 10,			'swf'             : '__PUBLIC__/User/uploadify.swf',			'uploader'        : "{:U('Public/uploadAttach',array('session_id'=>session_id(),'type'=>'1'))}",			'fileObjName'     : $('#upload_gallery').attr('name'),			'buttonClass'     : 'upload-case',			'width'           : 150,			'height'          : 25,			'removeTimeout'   : 1,			'buttonText'      : '上传多图',			'fileTypeExts'    : '*.gif; *.jpg; *.png',			'onUploadSuccess' : function(file, data, response) {				//var data = $.parseJSON(data);				var data=eval("("+data+")");				if(data.status ==0){					alert('上传出错，请稍后再试');					return false;				}				if(data.status==1){           						var html = '<div class="cl" style="margin-top: 5px;"></div>'					html += '<div id="attachment">'+'<span><img src="'+data.file+'"></span>' ;					html += '<a href="javascript:void(0)" onclick="delete_attachment(this);">删除</a>';					html += '<input type="hidden" name="gallery[]" value="'+data.file+'" /></span>';					$('#upload_gallery').after(html);				} else {					alert('上传出错，请稍后再试');					return false;				}			},			'onSelect' : function(file) {				var length = $('#attachment').length;				if(length > 0&&lengh<11){					$('#upload_gallery').uploadify('cancel')					$('#upload_gallery').uploadify('stop');					alert('附件只允许上传10个');					return false;				}			}		});				$('#abc').uploadify({			'queueSizeLimit' : 10,			'swf'             : '__PUBLIC__/User/uploadify.swf',			'uploader'        : "{:U('Public/uploadAttach',array('session_id'=>session_id(),'type'=>'1'))}",			'fileObjName'     : $('#abc').attr('name'),			'buttonClass'     : 'upload-case',			'width'           : 150,			'height'          : 25,			'removeTimeout'   : 1,			'buttonText'      : '上传多图',			'fileTypeExts'    : '*.gif; *.jpg; *.png',			'onUploadSuccess' : function(file, data, response) {				//var data = $.parseJSON(data);				var data=eval("("+data+")");				if(data.status ==0){					alert('上传出错，请稍后再试');					return false;				}				if(data.status==1){           						var html = '<div class="cl" style="margin-top: 5px;"></div>'					html += '<div id="attachment2">'+'<span><img src="'+data.file+'"></span>' ;					html += '<a href="javascript:void(0)" onclick="delete_attachment(this);">删除</a>';					html += '<input type="hidden" name="gallery2[]" value="'+data.file+'" /></span>';					$('#abc').after(html);				} else {					alert('上传出错，请稍后再试');					return false;				}			},			'onSelect' : function(file) {				var length = $('#attachment2').length;				if(length > 0&&lengh<11){					$('#abc').uploadify('cancel')					$('#abc').uploadify('stop');					alert('附件只允许上传10个');					return false;				}			}		});			});	</script><script type="text/livescript">	$(function(){		$(".gallery").click(function(){			var id=$(this).attr('data-id');			$('#src_'+id).remove();			$(this).fadeIn(300);		  });	  });</script><script type="text/javascript" src="__JS__/selectTag/selectTag.js"></script><include file="Public/editorjs"/>
+</block>

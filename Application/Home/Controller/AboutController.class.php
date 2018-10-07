@@ -8,7 +8,7 @@ class AboutController extends PublicController
 		$sortid = 2;
 		$model = get_catname($sortid,'ismodel');
 		$sortid_all = catid_str($sortid,$model);
-		$catid = I('get.catid', 0, 'intval');
+		$catid = I('get.catid', 0, 'intval');		$this->assign('catid',$catid);				$subid = I('get.subid', 0, 'intval');		$this->assign('subid',$subid);		
         if (!$catid && countnum($sortid) != 0) {
             $catid = get_minid($sortid,$model);
         } elseif (countnum($sortid) == 0) {
@@ -21,7 +21,7 @@ class AboutController extends PublicController
 			$r = $cate_db->where('catid = '.$catid.' and pid in ('.$sortid_all.') and ismodel = '.$model.' and ishidden = 0')->find();
 		} elseif (countnum($sortid) == 0) {
 			$r = $cate_db->where('catid = '.$catid.' and ismodel = '.$model.' and ishidden = 0')->find();
-		}		
+		}
         if (!$r) {
             $this->error('参数错误');
         }
@@ -35,12 +35,11 @@ class AboutController extends PublicController
        
 		$catelist = $cate_db->where(array('pid' => $sortid, 'ishidden' => array('eq', 0)))->order('sort desc, catid asc')->select();
 		$this->assign("catelist",$catelist);
-		
 		if ($model != 0) {
 			/*文章列表start*/
 			if ($r['page'] == 0) {
 				$r['page'] = 12;
-			}
+			}			if ($catid == 9){				$r['page'] = 8;			}			
 			if ($r['ismodel'] == 1) {
 				$article_db = M('Article');
 			} elseif ($r['ismodel'] == 2) {
@@ -52,12 +51,12 @@ class AboutController extends PublicController
 			} elseif ($r['ismodel'] == 5) {
 				$article_db = M('Jobs');
 			}
-			$catid_all = catid_str($catid,$model);
-			$where = 'catid in (' . $catid_all . ')  and status = 1';
+			$catid_all = catid_str($catid,$model);						$catid_all_arr = explode(',', $catid_all);			$catid_all_arr = array_merge(array_diff($catid_all_arr, array($catid)));			if (!$subid && !empty($catid_all_arr)){				$subid = $catid_all_arr[0];				$this->assign('subid',$subid);			}						if (!empty($catid_all_arr)){				$sub_cate = M('Category')->where(['ishidden' => 0,'catid' => ['IN',$catid_all_arr]])				->field(['catid','catname','ecatname','url'])->order('sort asc')->select();				$this->assign('sub_cate',$sub_cate);			}			if ($catid == 9){				$where = 'catid='.$subid.'  and status = 1';			}else{
+				$where = 'catid in (' . $catid_all . ')  and status = 1';			}
 			$count = $article_db->where($where)->count();
 			$p = getpage($count, $r['page']);
-			$lists = $article_db->where($where)->order('sort desc,id desc')->limit($p->firstRow, $p->listRows)->select();
-			$this->assign('lists', $lists);
+			$lists = $article_db->where($where)->order('sort desc,id desc')->limit($p->firstRow, $p->listRows)->select();
+			$this->assign('lists', $lists);			
 			$this->assign('pages', $p->show());
 			/*文章列表end*/
 		}

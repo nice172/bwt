@@ -1,4 +1,5 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -11,7 +12,7 @@
 <link rel="stylesheet" href="/Public/Home/Css/nav-footer.css" />
 <link rel="stylesheet" href="/Public/Home/Css/share.min.css" />
 <script type="text/javascript" src="/Public/Home/js/jquery-3.0.0.js"></script>
-        <link rel="stylesheet" type="text/css" href="/Public/Home/Css/main.css"/><style>.sort {width:300px;}.sort li {width:100%;}.pro_ul li:nth-child(2n+2){margin-right: 0px;float:right;}</style>
+        <link rel="stylesheet" type="text/css" href="/Public/Home/Css/main.css"/>
     </head>
     <body>
     	<!--Header Start-->
@@ -56,26 +57,28 @@
 
         <!--Header end-->
         <!--Inside Banner Start-->
-        <div class="banner" style="background-image: url(<?php echo get_catname(3,'thumb');?>)">
+        <div class="banner" style="background-image: url(<?php echo get_catname(2,'thumb');?>)">
         	<div class="warp1300 fs36"><?php echo get_catname(3,'catname');?></div>
-        </div>       	<div class="tr">           	<div class="warp1300 fs14"><?php echo catpos(3,get_catname(3,'url')); echo ($cate["catname"]); ?></div>        </div>
-        <!--Inside Banner end-->
+        </div>       	<div class="tr">           	<div class="warp1300 fs14"><?php echo catpos(3,get_catname(3,'url')); echo get_catname($cate['catid'],'catname');?></div>        </div>
+        <!--Inside Banner end--><!--         <div class="crumbs">        	<div class="warp1300">            	<span><a href="javascript:history.go(-1)"></a></span>                <a class="sel" href="">产品详情</a>                <a href="">合作关系</a>            </div>        </div> -->
         <!--Inside Content Start-->
-        <div class="warp1300 m40">
-            <!-- <div class="Tar"><h2><?php echo get_catname(3,'catname');?></h2></div> -->
-            <div class="cl"></div>
-			<div class="container">			<div style="float:left;width:300px;">			<h3 class="root" style="width:300px;height:70px;line-height:70px;text-align:center;border-top: 1px solid #ececec;border-left: 1px solid #ececec;border-right: 1px solid #ececec;"><?php echo get_catname(3,'catname');?></h3>            <ul class="sort">                <?php if(is_array($catelist)): foreach($catelist as $k=>$vo): if($vo['url'] == ''): ?><li <?php if($vo['catid'] == $catid): ?>class="selected"<?php endif; ?>><a href="<?php echo U('Product/index',array('catid'=>$vo['catid']));?>"><?php echo ($vo["catname"]); ?></a></li>                    <?php else: ?>                        <li <?php if($vo['catid'] == $catid): ?>class="selected"<?php endif; ?>><a href="<?php echo U('Product/index',array('catid'=>$vo['catid']));?>"><?php echo ($vo["catname"]); ?></a></li><?php endif; endforeach; endif; ?>              </ul>			</div>						<div class="goods_list" style="width:900px;background:#fff;float:right;">				<ul class="pro_ul" style="margin-top:0px;">                 <?php if(is_array($lists)): foreach($lists as $k=>$vo): ?><li>                        <a href="<?php echo U('Product/show',array('id'=>$vo['id']));?>">                            <i><img src="<?php echo ($vo["thumb"]); ?>" alt="<?php echo ($vo["title"]); ?>" class="absolute" /></i>                            <div>                                <h5><?php echo ($vo["title"]); ?></h5>                                <p><?php echo ($vo["info"]); ?></p>                                <label>查看详情</label>                            </div>                        </a>                    </li><?php endforeach; endif; ?>            </ul>                        <div class="cl"></div>                        <div class="page">                <div class="pages"><?php echo ($pages); ?></div>            </div>            <div class="cl"></div>            			</div>						</div>
-            <div class="cl" style="height: 40px;"></div>
-            <h3 class="root">相关案例推荐</h3>
-            <div class="cl" style="height: 30px;"></div>
-            <ul class="cate_com">
-                <?php $list=M("Article")->where("catid in (20,31,32,34,54) and status=1")->limit(4)->order("sort desc,id desc")->select();foreach ($list as $k=>$vs):?><li>
-                        <a href="<?php echo U('News/show',array('id'=>$vs['id']));?>">
-                            <i><img src="<?php echo ($vs["thumb"]); ?>" alt="<?php echo ($vs["title"]); ?>" title="<?php echo ($vs["title"]); ?>" /></i>
-                            <h4><?php echo ($vs["title"]); ?></h4>
+        <div class="warp1300 m40">            	<div class="Top_News" style="border:none;">                	<div class="top_img fl" style="width:400px;height:400px;border:1px solid #ececec;"><img src="<?php echo ($cate["thumb"]); ?>" style="width:400px;height:400px;" class="absolute" alt="<?php echo ($cate["title"]); ?>"  /></div>                    <div class="Top_Info fr" style="margin:0px !important;width:830px;">                        <h3 style="margin-bottom:10px;"><?php echo ($cate["title"]); ?></h3>                        <span style="font-size:14px;color:#666;height:40px;line-height:40px;">发布时间：<?php echo (date("Y-m-d H:i:s",$cate["inputtime"])); ?></span>                        <p><?php echo ($cate["info"]); ?></p>                    </div>                </div>			<style>.Content div{display:none;}.Content .active{display:block;}.cat li.active{background:#DE0615;}.cat li{cursor:pointer;float:left;border-right:1px solid #fff;height:40px;line-height:40px;background:#3F3F3F;color:#fff;padding:0 20px;}</style>			<div style="height:40px;">				<ul class="cat">					<li class="active" item="intro">产品简介</li>					<li item="pro_data">产品数据</li>					<li item="case">应用案例</li>					<li item="pro_photo">产品图片</li>				</ul>			<div class="cl" style="border-bottom:1px solid #ececec;"></div>			</div>
+            <div class="Content">
+				<div class="intro active"><?php echo ($cate["content"]); ?></div>				<div class="pro_data">				<?php foreach($gallery2 as $val){ ?>				<img src="<?php echo ($val); ?>" alt="" />				<?php } ?>				</div>				<div class="case">									</div>				<div class="pro_photo">				<?php foreach($gallery as $val){ ?>				<img src="<?php echo ($val); ?>" alt="" />				<?php } ?>				</div>
+            </div>
+            <div class="cl" style="height: 20px;"></div>
+            <h3 class="root">相关产品推荐</h3>
+            <ul class="pro_ul">
+            	<?php if(is_array($lists)): foreach($lists as $k=>$vo): ?><li>
+                        <a href="<?php echo U('Product/show',array('id'=>$vo['id']));?>">
+                            <i><img src="<?php echo ($vo["thumb"]); ?>" alt="<?php echo ($vo["title"]); ?>" class="absolute"></i>
+                            <div>
+                                <h5><?php echo ($vo["title"]); ?></h5>
+                                <p><?php echo ($vo["info"]); ?></p>
+                                <label>查看详情</label>
+                            </div>
                         </a>
-                    </li><?php endforeach; ?>
-                <div class="cl"></div>
+                    </li><?php endforeach; endif; ?>
             </ul>
             <div class="cl"></div>
         </div>
@@ -126,6 +129,6 @@
 	});
 </script>
 
-        <!--Footer end-->
-    </body>
+        <!--Footer end--><script>$(function(){	$('.cat li').click(function(index){		$('.cat li,.Content div').removeClass('active');		$(this).addClass('active');		$('.Content div.'+$(this).attr('item')).addClass('active');	});});</script>
+</body>
 </html>

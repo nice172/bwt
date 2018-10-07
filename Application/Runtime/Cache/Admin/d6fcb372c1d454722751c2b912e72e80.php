@@ -47,19 +47,12 @@
 	<div class="content">
 		<div class="Config_nav">
 			<ul>
-				<li><a class="on" href="<?php echo U('Product/index');?>">产品管理</a></li>
-				<li><a href="<?php echo U('Product/add');?>">添加产品</a></li>
-				<li><a href="<?php echo U('Productcomment/index');?>">产品评论</a></li>
+				<li><a href="<?php echo U('Product/index');?>">产品管理</a></li>				<li><a class="on" href="<?php echo U('Product/apply');?>">案例管理</a></li>
+				<li><a href="<?php echo U('Product/add_case');?>">添加案例</a></li>
 			</ul>
 		</div>
 		<div class="Search">
 			<form action="" method="get">
-				<div class="JianSuo">
-					<select name="catid">
-						<option>选择栏目</option>
-						<?php if(is_array($cate_list)): foreach($cate_list as $k=>$vo): ?><option value="<?php echo ($vo["catid"]); ?>" <?php if($vo['ispart']==1 or $vo['ismodel']!=2){echo "disabled='disabled'";}?>><?php echo str_repeat("└─",$vo['level']); echo ($vo["catname"]); ?></option><?php endforeach; endif; ?>
-					</select>
-				</div>
 				<div class="JianSuo">
 					<select name="status" id="">
 						<option>发布状态</option>
@@ -71,36 +64,32 @@
 				<div class="btn1"><input class="btn btn-primary btn6 mr10" value="查询" type="submit" /></div>
 			</form>
 		</div>
-		<form action="<?php echo U('Product/sortBatch');?>" name="myform" id="myform" method="post">
+		<form action="<?php echo U('Product/sortBatchs');?>" name="myform" id="myform" method="post">
 			<div class="List">
 				<div class="table-list">
 					<ul>
 						<li class="ID">ID</li>
-						<li class="Name">产品名称</li>
-						<li class="Property">所属类别</li>
+						<li class="Name">标题</li>
+						<li class="Property">所属产品</li>
 						<li class="S_Order">排序</li>
 						<li class="Status">是否发布</li>
 						<li class="Oper">管理操作</li>
 					</ul>
 				</div>
-				<?php if(is_array($article_list)): foreach($article_list as $k=>$vo): ?><div class="ProList">
+				<?php if(is_array($lists)): foreach($lists as $k=>$vo): ?><div class="ProList">
 						<ul>
 							<li class="ID"><?php echo ($vo["id"]); ?></li>
-							<li class="Name"><a href="<?php echo U('Product/edit',array('id'=>$vo['id']));?>"><?php echo ($vo["title"]); ?></a></li>
-							<li class="Property"><?php echo get_catname($vo['catid'],'catname');?></li>
+							<li class="Name"><a href="<?php echo U('Product/edit_case',array('id'=>$vo['id']));?>"><?php echo ($vo["title"]); ?></a></li>
+							<li class="Property"><?php echo ($vo["goods_name"]); ?></li>
 							 <li class="S_Order">
 								<input type="text" class="sInput" name="sort[<?php echo ($vo["id"]); ?>]" value="<?php echo ($vo["sort"]); ?>" />
 							</li>
 							<li class="Status"><?php echo ($vo[status]==1?'已发布':'<font color=red>未发布</font>'); ?></li>
 							<li class="Oper">
                                 <div>
-                                	<!--<a href="<?php echo U('Prodata/index',array('articleid'=>$vo['id']));?>">详情</a>
-                                    <span>|</span>-->
-                                    <a href="<?php echo U('Productcomment/index',array('articleid'=>$vo['id']));?>">评论</a>
-                                    <span>|</span>
-                                    <a href="<?php echo U('Product/edit',array('id'=>$vo['id']));?>">编辑</a>                                    <span>|</span>                                    <a href="<?php echo U('Product/apply',array('id'=>$vo['id']));?>">应用案例</a>
-                                    <span>|</span>
-                                    <a href="<?php echo U('Product/delete',array('id'=>$vo['id']));?>" onclick="return confirm('确认是否删除?')">删除</a>
+                                	
+                                    <a href="<?php echo U('Product/edit_case',array('id'=>$vo['id']));?>">编辑</a>                                    <span>|</span>
+                                    <a href="<?php echo U('Product/delete_case',array('id'=>$vo['id']));?>" onclick="return confirm('确认是否删除?')">删除</a>
                                 </div>
 							</li>
 						</ul>

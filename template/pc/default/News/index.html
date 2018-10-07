@@ -10,44 +10,25 @@
         <!--Header end-->
         <!--Inside Banner Start-->
         <div class="banner" style="background-image: url({:get_catname(5,'thumb')})">
-        	<div class="warp1300 fs36">{:get_catname(5,'catname')}</div>
-        	<div class="tr">
-            	<div class="warp1300 fs14">{:catpos(5,get_catname(5,'url'))}{$cate.catname}</div>
-            </div>
+        	<!--<div class="warp1300 fs36">{:get_catname(5,'catname')}</div>-->        <div class="menus">            <div class="menuk">                <ul class="servmen">                <category item="vs" pid="5" key="k" order="sort desc,catid asc">                    <if condition="substr($vs['url'],0,7) eq 'http://' or substr($vs['url'],0,8) eq 'https://'">                        <li><a href="{$vs.url}" <if condition="$vs['catid'] eq $cate['catid']">class="xm"</if>>{$vs.catname}<br />{$vs.ecatname}</a></li>                    <elseif condition="$vs['url'] eq ''" />                        <li><a href="{:U(get_catname(5,'url'),array('catid'=>$vs['catid']))}" <if condition="$vs['catid'] eq $cate['catid']">class="xm"</if>>{$vs.catname}<br />{$vs.ecatname}</a></li>                    <elseif condition="$vs['url'] neq '' and (substr($vs['url'],0,7) neq 'http://' or substr($vs['url'],0,8) neq 'https://')" />                        <li><a href="{:U($vs['url'],array('catid'=>$vs['catid']))}" <if condition="$vs['catid'] eq $cate['catid']">class="xm"</if>>{$vs.catname}<br />{$vs.ecatname}</a></li>                    </if>                </category>                             </ul>            </div>        </div>
         </div>
-        <div class="menus">
-            <div class="menuk">
-                <ul class="servmen">
-                <category item="vs" pid="5" key="k" order="sort desc,catid asc">
-                    <if condition="substr($vs['url'],0,7) eq 'http://' or substr($vs['url'],0,8) eq 'https://'">
-                        <li><a href="{$vs.url}" <if condition="$vs['catid'] eq $cate['catid']">class="xm"</if>>{$vs.catname}</a></li>
-                    <elseif condition="$vs['url'] eq ''" />
-                        <li><a href="{:U(get_catname(5,'url'),array('catid'=>$vs['catid']))}" <if condition="$vs['catid'] eq $cate['catid']">class="xm"</if>>{$vs.catname}</a></li>
-                    <elseif condition="$vs['url'] neq '' and (substr($vs['url'],0,7) neq 'http://' or substr($vs['url'],0,8) neq 'https://')" />
-                        <li><a href="{:U($vs['url'],array('catid'=>$vs['catid']))}" <if condition="$vs['catid'] eq $cate['catid']">class="xm"</if>>{$vs.catname}</a></li>
-                    </if>
-                </category>             
-                </ul>
-            </div>
-        </div>
+        	<div class="tr">            	<div class="warp1300 fs14">{:catpos(5,get_catname(5,'url'))}{$cate.catname}</div>            </div>
         <!--Inside Banner end-->
         <!--Inside Content Start-->
         <div class="warp1300 m40">
             <div class="Tar" style="margin-bottom: 50px;"><h2>{$cate.catname}</h2></div>
-            <if condition="$p eq 1 or $p eq ''">
             <?php $catid = $cate['catid']; ?>
-            <arclist item="vo" limit="1" catid="$catid" order="sort desc,id desc" key="k">
-            	<div class="Top_News">
-                	<div class="top_img fl"><a href="{:U('News/show',array('id'=>$vo['id']))}" title="{$vo.title}"><img  src="{$vo.thumb}" class="absolute" alt="{$vo.title}"  /></a></div>
-                    <div class="Top_Info fr">
-                        <h5><a href="{:U('News/show',array('id'=>$vo['id']))}" title="{$vo.title}">{$vo.title}</a></h5>
-                        <p>{$vo.info}</p>
-                        <label>{$vo.inputtime|date="Y-m-d",###}</label>
-                        <a href="{:U('News/show',array('id'=>$vo['id']))}" stitle="{$vo.title}" class="more">了解更多</a>
-                    </div>
-                </div>
-            </arclist>
-            </if>
+            <foreach name="lists" item="vo" key="k">
+            	<div class="Top_News" style="border:none;">
+                	<div class="top_img fl"><a href="{:U('News/show',array('id'=>$vo['id']))}" title="{$vo.title}"><img  src="{$vo.thumb}" class="absolute" alt="{$vo.title}"  /></a></div>
+                    <div class="Top_Info fr" style="margin-top:0px;">
+                        <h5><a href="{:U('News/show',array('id'=>$vo['id']))}" title="{$vo.title}" style="display:inline;">{$vo.title}</a><label style="float:right;margin-top:7px;font-weight:normal;">{$vo.inputtime|date="Y-m-d",###}</label></h5>
+                        <p>{$vo.info}</p>
+                        <a href="{:U('News/show',array('id'=>$vo['id']))}" stitle="{$vo.title}" class="more">了解更多</a>
+                    </div>
+                </div>
+            </foreach>
+            <if condition="isset($news_li)">
             <ul class="news_ul"> 
                 <foreach name="lists" item="vo" key="k">
                     <li class="box_siz">
@@ -60,9 +41,9 @@
                             </div>
                         </a>
                     </li>
-                </foreach>
+                </foreach>				
                 <div class="cl"></div>
-            </ul>
+            </ul>			</if>
             <div class="page">
                 <div class="pages">{$pages}</div>
             </div>
