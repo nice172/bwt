@@ -37,59 +37,35 @@
 <body>
 
 </body>
-</html>
-
-<block name="body">
-    <ol class="breadcrumb">
-        <li><a href="<?php echo U('Index/summarize');?>">首页</a></li>
-        <li><a href="<?php echo U('Product/index');?>">产品管理</a></li>
-        <li>产品评论</li>
-    </ol>
-    <div class="content">
-        <div class="Config_nav">
-            <ul>
-                <li><a href="<?php echo U('Product/index');?>">产品管理</a></li>
-                <li><a href="<?php echo U('Product/add');?>">添加产品</a></li>
-                <li><a class="on" href="<?php echo U('Productcomment/index');?>">产品评论</a></li>
-            </ul>
-        </div>
-        <div class="List">
-            <div class="table-list">
-                <ul>
-                    <li class="ID">ID</li>
-                    <li class="Name">评论标题</li>
-                    <li class="Property">评论时间</li>
-                    <li class="S_Order">评论指数</li>
-                    <li class="Status">状态</li>
-                    <li class="Oper">管理操作</li>
-                </ul>
-            </div>
-            <?php if(is_array($article_list)): foreach($article_list as $k=>$vo): ?><div class="ProList">
-                    <ul>
-                        <li class="ID"><?php echo ($vo["id"]); ?></li>
-                        <li class="Name"><a href="<?php echo U('Productcomment/Comment',array('id'=>$vo['id']));?>"><?php echo ($vo["commenttitle"]); ?></a></li>
-                        <li class="Property"><?php echo (date("Y-m-d",$vo["inputtime"])); ?></li>
-                        <li class="S_Order"><?php echo ($vo["info"]); ?></li>
-                        <li class="Status"><?php echo ($vo[status]==1?'已审核':'<font color=red>未审核</font>'); ?></li>
-                        <li class="Oper">
-                            <div>
-                                <a href="<?php echo U('Productcomment/Comment',array('id'=>$vo['id']));?>">查看</a>
-                                <span>|</span>
-                                <a href="<?php echo U('Productcomment/delete',array('id'=>$vo['id']));?>" onclick="return confirm('确认是否删除?')">删除</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div><?php endforeach; endif; ?>
-            <div class="cl" style="margin-top: 15px;"></div>
-            <div class="Order_submit">
-                <div class="tp_pages"><?php echo ($page); ?></div>
-            </div>
-        </div>
+</html>
+
+    <ol class="breadcrumb">
+        <li><a href='<?php echo U('Index/summarize');?>'>首页</a></li>
+    </ol>
+    <div class="content">
+        <div class="geren">
+            <div class="Title"><b><?php echo L('system_info');?></b><span><?php echo L('esystem_info');?></span></div>
+            <ul>
+                <li><span><?php echo L('yikecms_version');?>：</span><?php echo ($system_info["version"]); ?></li>
+                <li><span><?php echo L('server_domain');?>：</span><?php echo ($system_info["server_domain"]); ?></li>
+                <li><span><?php echo L('server_os');?>：</span><?php echo ($system_info["server_os"]); ?></li>
+                <li><span><?php echo L('web_server');?>：</span><?php echo ($system_info["web_server"]); ?></li>
+                <li><span><?php echo L('php_version');?>：</span><?php echo ($system_info["php_version"]); ?></li>
+                <li><span><?php echo L('mysql_version');?>：</span><?php echo ($system_info["mysql_version"]); ?></li>
+                <li><span><?php echo L('upload_max_filesize');?>：</span><?php echo ($system_info["upload_max_filesize"]); ?></li>
+                <li><span><?php echo L('max_execution_time');?>：</span><?php echo ($system_info["max_execution_time"]); ?></li>
+                <li><span><?php echo L('safe_mode');?>：</span><?php echo ($system_info["safe_mode"]); ?></li>
+                <li><span><?php echo L('zlib');?>：</span><?php echo ($system_info["zlib"]); ?></li>
+                <li><span><?php echo L('curl');?>：</span><?php echo ($system_info["curl"]); ?></li>
+                <li><span><?php echo L('timezone');?>：</span><?php echo ($system_info["timezone"]); ?></li>
+                 <li><span><?php echo L('Thinkphp');?>：</span><?php echo ($system_info["Thinkphp"]); ?></li>
+                <li><span><?php echo L('yunxin');?>：</span><?php echo ($system_info["yunxin"]); ?></li>
+            </ul>
+        </div>
         <!-- Footer Start -->
 <footer>
     技术支持：<a href="http://www.macroblue.net/" title="广州宏蓝计算机科技有限公司" target="_blank">宏蓝科技</a> 1.1.1.100305版本 &copy; 2016 - 2018
 </footer>
 <!-- Footer End -->	
-
+
     </div>
-</black>

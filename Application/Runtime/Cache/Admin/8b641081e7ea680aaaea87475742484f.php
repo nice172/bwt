@@ -38,8 +38,7 @@
 <body>
 
 </body>
-</html>
-
+</html>
 
 	<ol class="breadcrumb">
 		<li><a href="<?php echo U('Index/summarize');?>">首页</a></li>

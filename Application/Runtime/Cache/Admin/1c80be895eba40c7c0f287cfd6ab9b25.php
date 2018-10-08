@@ -38,8 +38,7 @@
 <body>
 
 </body>
-</html>
-
+</html>
 
 	<ol class="breadcrumb">
 		<li><a href="<?php echo U('Index/summarize');?>">首页</a></li>
@@ -69,7 +68,7 @@
 								<li class="input">
 									<select name="catid">
 										<option>选择商品</option>
-										<?php if(is_array($goods_list)): foreach($goods_list as $k=>$vo): ?><option value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["title"]); ?></option><?php endforeach; endif; ?>
+										<?php if(is_array($goods_list)): foreach($goods_list as $k=>$vo): ?><option value="<?php echo ($vo["id"]); ?>" <?php if(intval($_GET['goodsid']) > 0): ?>selected="selected"<?php endif; ?>><?php echo ($vo["title"]); ?></option><?php endforeach; endif; ?>
 									</select>
 								</li>
 							</ul>

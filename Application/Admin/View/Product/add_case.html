@@ -30,7 +30,7 @@
 									<select name="catid">
 										<option>选择商品</option>
 										<foreach name="goods_list" item="vo" key="k" >
-											<option value="{$vo.id}">{$vo.title}</option>
+											<option value="{$vo.id}" <if condition="intval($_GET['goodsid']) gt 0">selected="selected"</if>>{$vo.title}</option>
 										</foreach>
 									</select>
 								</li>

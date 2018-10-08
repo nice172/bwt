@@ -37,8 +37,7 @@
 <body>
 
 </body>
-</html>
-
+</html>
 <block name="body">
 	<ol class="breadcrumb">
 		<li><a href="<?php echo U('Index/summarize');?>">首页</a></li>
@@ -48,7 +47,7 @@
 		<div class="Config_nav">
 			<ul>
 				<li><a href="<?php echo U('Product/index');?>">产品管理</a></li>				<li><a class="on" href="<?php echo U('Product/apply');?>">案例管理</a></li>
-				<li><a href="<?php echo U('Product/add_case');?>">添加案例</a></li>
+				<li><a href="<?php echo U('Product/add_case',['goodsid' => $_GET['id']]);?>">添加案例</a></li>
 			</ul>
 		</div>
 		<div class="Search">

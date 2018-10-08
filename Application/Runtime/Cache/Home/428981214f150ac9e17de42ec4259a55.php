@@ -101,7 +101,7 @@
 </section>
 <!--产品中心-->
 <section class="index_product" id="product">
-	<img class="bg" src="/Public/Home/img/product.jpg" />
+	<!-- <img class="bg" src="/Public/Home/img/product.jpg" /> -->                <div class="Case_Sort">                    <div class="Tar">                        <h2>产品中心</h2>                    </div>                </div>
     <div class="product_content">
         <div class="product_list">
             <?php $list=M("Category")->where("pid=3 and ishidden=0")->limit(0)->order("sort desc,catid asc")->select();foreach ($list as $k=>$vo): if(substr($vo['url'],0,7) == 'http://' or substr($vo['url'],0,8) == 'https://'): ?><a href="<?php echo ($vo["url"]); ?>">

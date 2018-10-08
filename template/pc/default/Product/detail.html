@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <include file="default:public:header" />
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/Css/main.css"/>
+    </head>
+    <body>
+    	<!--Header Start-->
+    	<include file="default:public:top" />
+        <!--Header end-->
+        <!--Inside Banner Start-->
+        <div class="banner" style="background-image: url({:get_catname(2,'thumb')})">
+        	<div class="warp1300 fs36">{:get_catname(3,'catname')}</div>
+        </div>       	<div class="tr">           	<div class="warp1300 fs14">{:catpos(3,get_catname(3,'url'))}应用案例详情</div>        </div>
+        <!--Inside Banner end--><!--         <div class="crumbs">        	<div class="warp1300">            	<span><a href="javascript:history.go(-1)"></a></span>                <a class="sel" href="">产品详情</a>                <a href="">合作关系</a>            </div>        </div> -->
+        <!--Inside Content Start-->
+        <div class="warp1300 m40">            	<div class="Top_News" style="border:none;">                	<div class="top_img fl" style="width:400px;height:400px;border:1px solid #ececec;"><img src="{$cate.thumb}" style="width:400px;height:400px;" class="absolute" alt="{$cate.title}"  /></div>                    <div class="Top_Info fr" style="margin:0px !important;width:830px;">                        <h3 style="margin-bottom:10px;">{$cate.title}</h3>                        <span style="font-size:14px;color:#666;height:40px;line-height:40px;">发布时间：{$cate.inputtime|date="Y-m-d H:i:s",###}</span>                        <p>{$cate.info}</p>                    </div>                </div>			<style>.Content div{display:none;}.Content .active{display:block;}.cat li.active{background:#DE0615;}.cat li{cursor:pointer;float:left;border-right:1px solid #fff;height:40px;line-height:40px;background:#3F3F3F;color:#fff;padding:0 20px;}</style>			<div style="height:40px;">				<ul class="cat">					<li class="active" item="intro">案例详情</li>				</ul>			<div class="cl" style="border-bottom:1px solid #ececec;"></div>			</div>
+            <div class="Content">
+				{$cate.content}
+            </div>
+            <div class="cl" style="height: 20px;"></div>
+            <h3 class="root">相关产品推荐</h3>
+            <ul class="pro_ul">
+            	<foreach name="lists" item="vo" key="k">
+                    <li>
+                        <a href="{:U('Product/show',array('id'=>$vo['id']))}">
+                            <i><img src="{$vo.thumb}" alt="{$vo.title}" class="absolute"></i>
+                            <div>
+                                <h5>{$vo.title}</h5>
+                                <p>{$vo.info}</p>
+                                <label>查看详情</label>
+                            </div>
+                        </a>
+                    </li>
+                </foreach>
+            </ul>
+            <div class="cl"></div>
+        </div>
+        <!--Inside Content end-->
+        <!--Footer Start-->
+    	<include file="default:public:foot" />
+        <!--Footer end--><script>$(function(){	$('.cat li').click(function(index){		$('.cat li,.Content div').removeClass('active');		$(this).addClass('active');		$('.Content div.'+$(this).attr('item')).addClass('active');	});});</script>
+</body>
+</html>

@@ -1,5 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit();?>
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -57,30 +56,90 @@
 
         <!--Header end-->
         <!--Inside Banner Start-->
-        <div class="banner" style="background-image: url(<?php echo get_catname(2,'thumb');?>)">
-        	<div class="warp1300 fs36"><?php echo get_catname(3,'catname');?></div>
-        </div>       	<div class="tr">           	<div class="warp1300 fs14"><?php echo catpos(3,get_catname(3,'url')); echo get_catname($cate['catid'],'catname');?></div>        </div>
-        <!--Inside Banner end--><!--         <div class="crumbs">        	<div class="warp1300">            	<span><a href="javascript:history.go(-1)"></a></span>                <a class="sel" href="">产品详情</a>                <a href="">合作关系</a>            </div>        </div> -->
-        <!--Inside Content Start-->
-        <div class="warp1300 m40">            	<div class="Top_News" style="border:none;">                	<div class="top_img fl" style="width:400px;height:400px;border:1px solid #ececec;"><img src="<?php echo ($cate["thumb"]); ?>" style="width:400px;height:400px;" class="absolute" alt="<?php echo ($cate["title"]); ?>"  /></div>                    <div class="Top_Info fr" style="margin:0px !important;width:830px;">                        <h3 style="margin-bottom:10px;"><?php echo ($cate["title"]); ?></h3>                        <span style="font-size:14px;color:#666;height:40px;line-height:40px;">发布时间：<?php echo (date("Y-m-d H:i:s",$cate["inputtime"])); ?></span>                        <p><?php echo ($cate["info"]); ?></p>                    </div>                </div>			<style>.Content div{display:none;}.Content .active{display:block;}.cat li.active{background:#DE0615;}.cat li{cursor:pointer;float:left;border-right:1px solid #fff;height:40px;line-height:40px;background:#3F3F3F;color:#fff;padding:0 20px;}</style>			<div style="height:40px;">				<ul class="cat">					<li <?php if(!isset($_GET['p'])): ?>class="active"<?php endif; ?> item="intro">产品简介</li>					<li item="pro_data">产品数据</li>					<li <?php if(isset($_GET['p'])): ?>class="active"<?php endif; ?> item="case">应用案例</li>					<li item="pro_photo">产品图片</li>				</ul>			<div class="cl" style="border-bottom:1px solid #ececec;"></div>			</div>
-            <div class="Content">
-				<div class="intro <?php if(!isset($_GET['p'])): ?>active<?php endif; ?>"><?php echo ($cate["content"]); ?></div>				<div class="pro_data">				<?php foreach($gallery2 as $val){ ?>				<img src="<?php echo ($val); ?>" alt="" />				<?php } ?>				</div>				<div class="case <?php if(isset($_GET['p'])): ?>active<?php endif; ?>">									<ul class="cate_com">                <?php if(is_array($case_list)): foreach($case_list as $key=>$vs): ?><li>                        <a href="<?php echo U('detail',array('gid' => $vs['goodsid'],'id'=>$vs['id']));?>" target="_blank">                            <i><img src="<?php echo ($vs["thumb"]); ?>" alt="<?php echo ($vs["title"]); ?>" title="<?php echo ($vs["title"]); ?>" /></i>                            <h4><?php echo ($vs["title"]); ?></h4>                        </a>                    </li><?php endforeach; endif; ?>                <div class="cl"></div>            </ul>            <div class="cl"></div>									            <div class="page" style="display:block !important;">                <div class="pages"><?php echo ($page_html); ?></div>            </div>					<div class="cl"></div>			</div>				<div class="pro_photo">				<?php foreach($gallery as $val){ ?>				<img src="<?php echo ($val); ?>" alt="" />				<?php } ?>				</div>
+        <div class="banner" style="background-image: url(<?php echo get_catname(7,'thumb');?>)">
+        	<div class="warp1300 fs36"><?php echo get_catname(7,'catname');?></div>
+        	<div class="tr">
+            	<div class="warp1300 fs14"><?php echo catpos(7,get_catname(7,'url')); echo ($cate["catname"]); ?></div>
             </div>
-            <div class="cl" style="height: 20px;"></div>
-            <h3 class="root">相关产品推荐</h3>
-            <ul class="pro_ul">
-            	<?php if(is_array($lists)): foreach($lists as $k=>$vo): ?><li>
-                        <a href="<?php echo U('Product/show',array('id'=>$vo['id']));?>">
-                            <i><img src="<?php echo ($vo["thumb"]); ?>" alt="<?php echo ($vo["title"]); ?>" class="absolute"></i>
-                            <div>
-                                <h5><?php echo ($vo["title"]); ?></h5>
-                                <p><?php echo ($vo["info"]); ?></p>
-                                <label>查看详情</label>
-                            </div>
-                        </a>
-                    </li><?php endforeach; endif; ?>
+        </div>
+        <!--Inside Banner end-->
+        <!--Inside Content Start-->
+        <div class="warp1300" style="margin: 40px auto 30px;">
+            <div class="Tar"><h2><?php echo get_catname(7,'catname');?></h2></div>
+            <h4 class="Tit">欢迎您浏览正虹官网，如果您遇到的问题，请在下方寻找对应的联系方式</h4>
+			<ul class="Contact">
+            	<li>
+                	<i></i>
+                	<h5>地址</h5>
+                    <p>广州高新技术开发区科学城科学大道182号创新大厦C1座7楼701</p>
+                </li>
+                <li>
+                	<i></i>
+                	<h5>电话</h5>
+                    <p>400-060-2822/ 020-89232836</p>
+                </li>
+                <li>
+                	<i></i>
+                	<h5>邮箱</h5>
+                    <p>zhkj@zhenghongkeji.com</p>
+                </li>
+                <li>
+                	<i></i>
+                	<h5>公众号</h5>
+                    <p>微信搜索“正虹环境”关注</p>
+                </li>
             </ul>
-            <div class="cl"></div>
+			<div class="cl"></div>
+        </div>
+        <h3 class="root">地址地图</h3>
+        <div class="a button-row"></div>
+        <div class="modal fade">
+			<div  id="container"></div>
+			<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=4d57777becc438ccd14e00f013243166"></script>
+            <script type="text/javascript">
+                var map = new AMap.Map('container',{
+                    zoom: 16,
+                    center: [113.456502,23.167185]//new AMap.LngLat(116.39,39.9)
+                });
+                marker = new AMap.Marker({
+                    position: [113.456502,23.167185],  //标记的地图坐标 
+                    map: map
+                });
+                var marker = new AMap.Marker({
+                        icon : 'http://vdata.amap.com/icons/b18/1/2.png',//24px*24px      //自定义图标
+                        position : provinces[i].center.split(','),
+                        offset : new AMap.Pixel(-12,-12),
+                        map : mapObj
+                });
+            </script>
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">关闭</span></button>
+        </div>
+        <div class="warp1300" style="margin: 30px auto 40px;">
+            <h3 class="root">在线留言</h3>
+            <div class="Feedback">
+                <form action="<?php echo U('Contact/insert');?>" method="post">
+                    <div class="row">
+                        <div class="fl Input wow bounceInLeft"><input name="name" class="iInput box_siz border" placeholder="姓名 *" id="name" type="text" /></div>
+                        <div class="fr Input wow bounceInRight"><input name="qq" class="iInput box_siz border" placeholder="微信 *" type="text"  id="qq" /></div>
+                    </div>
+                    <div class="row">
+                        <div class="fl Input wow bounceInLeft"><input name="telephone"  class="iInput box_siz border" placeholder="手机 *" type="text" id="telephone" /></div>
+                        <div class="fr Input wow bounceInRight"><input name="email" class="iInput box_siz border" placeholder="邮箱" type="text" id="email" /></div>
+                    </div>
+                    <div class="wow bounceInUp">
+                        <div class="row cl6"><input name="title" class="iInput box_siz border" placeholder="标题 *" id="title" type="text" /></div>
+                        <div class="row cl6"><textarea name="content" id="content" rows="4" placeholder="留言内容 *" class="iInput box_siz text border"></textarea></div>
+                        <div class="row cl6">
+                            <div class="fl fiel"><input  name="code" class="iInput box_siz border" placeholder="验证码" type="text" ></div>
+                            <div class="fl code_img"><img src="<?php echo U('Public/verify');?>" title="看不清？点击刷新" style="display:inline;" onclick="this.src=this.src+'?'" /></div>
+                        </div>
+                        <div class="simple_name">
+                            <button name="submit" class="submit border" type="submit">提 交</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+			<div class="cl"></div>
         </div>
         <!--Inside Content end-->
         <!--Footer Start-->
@@ -129,6 +188,7 @@
 	});
 </script>
 
-        <!--Footer end--><script>$(function(){	$('.cat li').click(function(index){		$('.cat li,.Content div').removeClass('active');		$(this).addClass('active');		$('.Content div.'+$(this).attr('item')).addClass('active');	});});</script>
-</body>
+        <!--Footer end-->
+		<script type="text/javascript" src="/Public/Home/js/script.js"></script>
+    </body>
 </html>

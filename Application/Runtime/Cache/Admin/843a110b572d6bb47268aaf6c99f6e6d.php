@@ -38,8 +38,7 @@
 <body>
 
 </body>
-</html>
-
+</html>
 
 	<ol class="breadcrumb">
 		<li><a href="<?php echo U('Index/summarize');?>">首页</a></li>
@@ -53,7 +52,7 @@
 				<li><a class="on" href="javascript:;">编辑案例</a></li>
 			</ul>
 		</div>
-		<form action="<?php echo U('Product/edit_case');?>" method="post" id="form"  enctype="multipart/form-data">     			<input type="hidden" name="id" value="<?php echo ($detail["id"]); ?>" />
+		<form action="<?php echo U('Product/edit_case');?>" method="post" id="form"  enctype="multipart/form-data">     			<input type="hidden" name="id" value="<?php echo ($detail["id"]); ?>" />			<input type="hidden" id="thumb" name="thumb" value="<?php echo ($detail["thumb"]); ?>" />
 			<div class="Save">
 				<div id=cpxqcon>
 					<div id="cpxqcontags">

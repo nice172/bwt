@@ -1,5 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); $sel = 4; ?>
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -56,37 +55,44 @@
 
 
         <!--Header end-->
-        <div class="banner" style="background-image: url(<?php echo get_catname(4,'thumb');?>)">
-        	<div class="warp1300 fs36"><?php echo get_catname(4,'catname');?></div>
-        	<div class="tr">
-            	<div class="warp1300 fs14"><?php echo catpos(4,get_catname(4,'url')); echo ($cate["catname"]); ?></div>
-            </div>
+        <!--Inside Banner Start-->
+        <div class="banner" style="background-image: url(<?php echo get_catname(5,'thumb');?>)">
+        	<div class="warp1300 fs36"><?php echo get_catname(5,'catname');?></div>
         </div>
-        <div class="warp1300 m40">        	
-            <div class="Tar">
-                <h2><?php echo ($cate["catname"]); ?></h2>
+        <!--Inside Banner end-->        	<div class="tr">            	<div class="warp1300 fs14"><?php echo catpos(5,get_catname(5,'url')); echo get_catname($cate['catid'],'catname');?></div>            </div>
+        <!--Inside Content Start-->
+        <div class="warp1300 m40">
+            <div class="Left box_siz fl">                
+                <div class="top_show">
+                    <h3><?php echo ($cate["title"]); ?></h3>
+                    <div class="Data">
+                        <span>阅读量：<?php echo ($cate["views"]); ?></span><span class="Time"><?php echo (date("Y-m-d",$cate["inputtime"])); ?></span>						<span><div class="bshare-custom"><a title="分享到QQ空间" class="bshare-qzone"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a>						<a title="分享到人人网" class="bshare-renren"></a>						<a title="分享到腾讯微博" class="bshare-qqmb"></a><a title="分享到网易微博" class="bshare-neteasemb"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a>						<span class="BSHARE_COUNT bshare-share-count">0</span></div>						<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>						<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>						</span>
+                    </div>
+                </div>
+                <div class="Content">
+                    <?php echo ($cate["content"]); ?>				<div>  <div class="bshare-custom icon-medium">   <a title="分享到QQ空间" class="bshare-qzone"></a>   <a title="分享到新浪微博" class="bshare-sinaminiblog"></a>   <a title="分享到人人网" class="bshare-renren"></a>   <a title="分享到腾讯微博" class="bshare-qqmb"></a>   <a title="分享到网易微博" class="bshare-neteasemb"></a>   <a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a>   <span class="BSHARE_COUNT bshare-share-count">0</span>  </div>			</div>
+                </div>
+                <div class="Flip box_siz">
+                	<a href="<?php echo ($previous_page[url]); ?>" class="fl">上一篇</a><a href="javascript:history.go(-1)" class="return">返回</a><a href="<?php echo ($next_page[url]); ?>" class="fr">下一篇</a>
+                </div>
             </div>
-            <div class="cl" style="height: 20px;"></div>
-            <ul class="case_ul">
-                <?php if(is_array($lists)): foreach($lists as $k=>$vo): ?><li class="box_siz">
-                        <a href="<?php echo U('Case/show',array('id'=>$vo['id']));?>">
-                            <i><img src="<?php echo ($vo["thumb"]); ?>" alt="<?php echo ($vo["title"]); ?>" /></i>
-                            <div class="info">
-                                <h5><?php echo ($vo["title"]); ?></h5>
-                                <p><?php echo ($vo["info"]); ?></p>
-                            </div>
-                            <div class="Time">
-                            	<span><?php echo (date("d",$vo["inputtime"])); ?></span>
-                                <label><?php echo (date("Y-m",$vo["inputtime"])); ?></label>
-                            </div>
-                        </a>
-                    </li><?php endforeach; endif; ?>
-            </ul>
-            <div class="page">
-                <div class="pages"><?php echo ($pages); ?></div>
-            </div>    
-        	<div class="cl"></div>
+            <div class="Right fr">
+                <div class="New_tit"><span>最新新闻</span></div>
+                <ul class="New_news">
+                    <?php $list=M("Article")->where("catid in (5,22,23,24,25) and status=1")->limit(6)->order("sort desc,id desc")->select();foreach ($list as $k=>$vs):?><li><a href="<?php echo U('News/show',array('id'=>$vs['id']));?>" title="<?php echo ($vs["title"]); ?>"><?php echo ($vs["title"]); ?></a></li><?php endforeach; ?>
+                </ul>
+                <div class="cl"></div>
+                <ul class="Sort_li">
+                	<?php $list=M("Category")->where("pid=4 and ishidden=0")->limit(0)->order("sort desc,catid asc")->select();foreach ($list as $k=>$vo): if(substr($vo['url'],0,7) == 'http://' or substr($vo['url'],0,8) == 'https://'): ?><li><a href="<?php echo ($vo["url"]); ?>" class="box_siz"><?php echo ($vo["catname"]); ?></a></li>
+                        <?php elseif($vo['url'] == ''): ?>
+                            <li><a href="<?php echo U(get_catname(4,'url'),array('catid'=>$vo['catid']));?>" class="box_siz"><?php echo ($vo["catname"]); ?></a></li>
+                        <?php elseif($vo['url'] != '' and (substr($vo['url'],0,7) != 'http://' or substr($vo['url'],0,8) != 'https://')): ?>
+                            <li><a href="<?php echo U($vo['url'],array('catid'=>$vo['catid']));?>" class="box_siz"><?php echo ($vo["catname"]); ?></a></li><?php endif; endforeach; ?>
+                </ul>
+            </div>
+            <div class="cl"></div>
         </div>
+        <!--Inside Content end-->
         <!--Footer Start-->
     	<!--联系我们-->
 <section class="index_contact">
@@ -133,6 +139,6 @@
 	});
 </script>
 
-        <!--Footer Start-->
+        <!--Footer end-->
     </body>
 </html>

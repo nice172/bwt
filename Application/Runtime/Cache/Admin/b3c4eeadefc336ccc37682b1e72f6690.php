@@ -39,7 +39,6 @@
 </body>
 </html>
 
-
 	<ol class="breadcrumb">
 		<li><a href="<?php echo U('Index/summarize');?>">首页</a></li>
 		<li><a href="<?php echo U('Product/index');?>">产品管理</a></li>
