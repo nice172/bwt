@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="__PUBLIC__/Home/Css/index.css" />
 		<script type="text/javascript" src="__PUBLIC__/Home/js/jquery.easing.1.3.js"></script>
         <script>
-            $('body,html').css('overflow', 'hidden');
+            //$('body,html').css('overflow', 'hidden');
         </script>
 		<section class="index_banner clearfix">
         <!--banner图片-->
@@ -56,43 +56,41 @@
     </div>
 	<a class="more" href="{:U(get_catname(2,'url'))}">深入了解</a>
 </section>
-<!--产品中心-->
+<!--产品中心--><style>.Tar{text-align: center;margin-bottom: 0px;}.Tar h2{font-size: 28px;display: inline-block;vertical-align: middle;color:#cd161c;font-weight: normal; line-height: 40px;border-bottom: 2px solid #cd161c;padding-bottom: 3px;height: 40px;width:180px;}.Case_Sort p {    text-align: center;    font-size: 14px;    color: #919191;    line-height: 30px;    height: 30px;}.product_list .lix{background:#F8F8F8;}</style>
 <section class="index_product" id="product">
-	<!-- <img class="bg" src="__PUBLIC__/Home/img/product.jpg" /> -->                <div class="Case_Sort">                    <div class="Tar">                        <h2>产品中心</h2>                    </div>                </div>
-    <div class="product_content">
-        <div class="product_list">
+	<!-- <img class="bg" src="__PUBLIC__/Home/img/product.jpg" /> -->                <div class="Case_Sort" style="margin-top:50px;">                    <div class="Tar">                        <h2>产品中心</h2>                    </div>                    <p>Product Center</p>                </div>
+    <div class="product_contentx"> <!-- <div class="product_list"> 
             <category item="vo" pid="3" key="k" order="sort desc,catid asc">
                 <if condition="substr($vo['url'],0,7) eq 'http://' or substr($vo['url'],0,8) eq 'https://'">
-                     <a href="{$vo.url}">
+                     <a href="{$vo.url}" class="lix">
                         <div class="ico"><img src="__PUBLIC__/Home/img/{$k+1}.png" class="absolute" /></div>
                         <h3>{$vo.catname}</h3>
                         <img src="{$vo.thumb}" class="img">
                     </a>
                 <elseif condition="$vo['url'] eq ''" />
-                    <a href="{:U(get_catname(3,'url'),array('catid'=>$vo['catid']))}">
+                    <a href="{:U(get_catname(3,'url'),array('catid'=>$vo['catid']))}" class="lix">
                         <div class="ico"><img src="__PUBLIC__/Home/img/{$k+1}.png" class="absolute" /></div>
                         <h3>{$vo.catname}</h3>
                         <img src="{$vo.thumb}" class="img">
                     </a>
                 <elseif condition="$vo['url'] neq '' and (substr($vo['url'],0,7) neq 'http://' or substr($vo['url'],0,8) neq 'https://')" />
-                    <a href="{:U($vo['url'],array('catid'=>$vo['catid']))}">
+                    <a href="{:U($vo['url'],array('catid'=>$vo['catid']))}" class="lix">
                         <div class="ico"><img src="__PUBLIC__/Home/img/{$k+1}.png" class="absolute" /></div>
                         <h3>{$vo.catname}</h3>
                         <img src="{$vo.thumb}" class="img">
                     </a>
                 </if>
-            </category>
-        </div>
+            </category></div> 
         <div class="product_btn absolute">
             <div class="pre" style="display: none;"></div>
             <div class="next"></div>
-        </div>
+        </div>         -->                <div class="trade-content">                        <div class="trade-black">                <div class="trade-box">                    <div class="trade-box-list">                    <category item="vo" limit="5" pid="3" key="k" order="sort desc,catid asc">                    <if condition="substr($vo['url'],0,7) eq 'http://' or substr($vo['url'],0,8) eq 'https://'">                        <div class="trade-box-item item0{$k+1}" style="background-image: url({$vo.thumb});">                            <a href="{$vo.url}">                                <div class="item-logo">                                    <img src="__PUBLIC__/Home/img/{$k+1}.png" alt="">                                </div>                                <div class="item-title">{$vo.catname}</div>                                <div class="item-text">                                    <p>{$vo.info}</p>                                </div>                            </a>                        </div>                        <elseif condition="$vo['url'] eq ''" />							<div class="trade-box-item item0{$k+1}" style="background-image: url({$vo.thumb});">                            <a href="{:U(get_catname(3,'url'),array('catid'=>$vo['catid']))}">                                <div class="item-logo">                                    <img src="__PUBLIC__/Home/img/{$k+1}.png" alt="">                                </div>                                <div class="item-title">{$vo.catname}</div>                                <div class="item-text">                                    <p>{$vo.info}</p>                                </div>                            </a>                        </div>                        <elseif condition="$vo['url'] neq '' and (substr($vo['url'],0,7) neq 'http://' or substr($vo['url'],0,8) neq 'https://')" />							<div class="trade-box-item item0{$k+1}" style="background-image: url({$vo.thumb});">                            <a href="{:U($vo['url'],array('catid'=>$vo['catid']))}">                                <div class="item-logo">                                    <img src="__PUBLIC__/Home/img/{$k+1}.png" alt="">                                </div>                                <div class="item-title">{$vo.catname}</div>                                <div class="item-text">                                    <p>{$vo.info}</p>                                </div>                            </a>                        </div>                        </if>                    </category>                    </div>                </div>            </div>        </div>        
     </div>
-	<a class="more" href="{:U('Product/index')}">深入了解</a>
+	<a class="more" href="{:U('Product/index')}">更多产品</a>
 </section>
 <!--重点工程-->
 <section class="index_stress" id="stress">
-	<img class="bg" src="__PUBLIC__/Home/img/stress__bg.jpg" />
+	<!-- <img class="bg" src="__PUBLIC__/Home/img/stress__bg.jpg" /> -->                <div class="Case_Sort">                    <div class="Tar">                        <h2>成功案例</h2>                    </div>                    <p>Successful cases</p>                </div>
     <div class="stress_content">
         <div class="stress_btn absolute">
             <div class="pre"></div>
@@ -214,8 +212,8 @@
 		<li class="show"><span>项目案例 </span></li>
 		<li class="show"><span>联系我们 </span></li>
 	</ul>
-	<script type="text/javascript" src="__PUBLIC__/Home/js/index.js"></script>
-	<script src="__PUBLIC__/Home/js/index_move.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="__PUBLIC__/Home/js/index.js"></script>	
+	<!-- 	<script src="__PUBLIC__/Home/js/index_move.js" type="text/javascript" charset="utf-8"></script> -->
 	<script>
 		$(function () {
 			$(' .nav .column  .index').addClass('cur');
