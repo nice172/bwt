@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="/Public/Home/Css/initial.css" />
 <link rel="stylesheet" href="/Public/Home/Css/nav-footer.css" />
 <link rel="stylesheet" href="/Public/Home/Css/share.min.css" />
-<script type="text/javascript" src="/Public/Home/js/jquery-3.0.0.js"></script>
+<script type="text/javascript" src="/Public/Home/js/jquery-1.10.2.min.js"></script><!--[if lt IE 8]><script>	alert('已不支持IE6-8，请使用谷歌、火狐等浏览器\n或360、QQ等国产浏览器的极速模式浏览本页面！');</script><![endif]--><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
     </head>
     <body>
     	<nav class="nav">
@@ -56,7 +56,7 @@
         <link rel="stylesheet" href="/Public/Home/Css/index.css" />
 		<script type="text/javascript" src="/Public/Home/js/jquery.easing.1.3.js"></script>
         <script>
-            $('body,html').css('overflow', 'hidden');
+            //$('body,html').css('overflow', 'hidden');
         </script>
 		<section class="index_banner clearfix">
         <!--banner图片-->
@@ -64,20 +64,20 @@
                 <li style="display: block;">
                     <img src="/Public/Home/img/banner3.jpg" class="bg" />
                     <img src="/Public/Home/img/banner3_txt.png" class="banner_1 banner_other" />
-                    <a class="more" href="">了解更多</a>
+                    <a class="more" href="" style="bottom:80px;">了解更多</a>
                 </li>
                 <li style="display: none;">
                     <img src="/Public/Home/img/banner1.jpg" class="bg" />
                     <img src="/Public/Home/img/banner1_txt.png" class="banner_1 banner_other" />
                     <img src="/Public/Home/img/banner1_equipment.png" class="banner_2 banner_other" />
                     <img src="/Public/Home/img/banner1_other.png" class="banner_3 banner_other" />
-                    <a class="more" href="">了解更多</a>
+                    <a class="more" href="" style="bottom:80px;">了解更多</a>
                 </li>
                 <li style="display: none;">
                     <img src="/Public/Home/img/banner2.jpg" class="bg" />
                     <img src="/Public/Home/img/banner2_txt.png" class="banner_1 banner_other" />
                     <img src="/Public/Home/img/banner2_equipment.png" class="banner_2 banner_other" />
-                    <a class="more" href="">了解更多</a>
+                    <a class="more" href="" style="bottom:80px;">了解更多</a>
                 </li>
             </ul>
             <div class="btn absolute clearfix">
@@ -85,7 +85,7 @@
                 <div class="next"></div>
             </div>
         </section>
-<!--关于正虹-->
+<!--关于正虹--><div style="clear:both;"></div>
 <section class="index_about">
     <img class="bg" src="/Public/Home/img/about.jpg" />
     <img class="logo ico" src="/Public/Home/img/about_bg1.png" />
@@ -99,40 +99,17 @@
     </div>
 	<a class="more" href="<?php echo U(get_catname(2,'url'));?>">深入了解</a>
 </section>
-<!--产品中心-->
+<!--产品中心--><style>.Tar{text-align: center;margin-bottom: 0px;}.Tar h2{font-size: 28px;display: inline-block;vertical-align: middle;color:#cd161c;font-weight: normal; line-height: 40px;border-bottom: 2px solid #cd161c;padding-bottom: 3px;height: 40px;width:180px;}.Case_Sort p {    text-align: center;    font-size: 14px;    color: #919191;    line-height: 30px;    height: 30px;}.product_list .lix{background:#F8F8F8;}</style>
 <section class="index_product" id="product">
-	<!-- <img class="bg" src="/Public/Home/img/product.jpg" /> -->                <div class="Case_Sort">                    <div class="Tar">                        <h2>产品中心</h2>                    </div>                </div>
-    <div class="product_content">
-        <div class="product_list">
-            <?php $list=M("Category")->where("pid=3 and ishidden=0")->limit(0)->order("sort desc,catid asc")->select();foreach ($list as $k=>$vo): if(substr($vo['url'],0,7) == 'http://' or substr($vo['url'],0,8) == 'https://'): ?><a href="<?php echo ($vo["url"]); ?>">
-                        <div class="ico"><img src="/Public/Home/img/<?php echo ($k+1); ?>.png" class="absolute" /></div>
-                        <h3><?php echo ($vo["catname"]); ?></h3>
-                        <img src="<?php echo ($vo["thumb"]); ?>" class="img">
-                    </a>
-                <?php elseif($vo['url'] == ''): ?>
-                    <a href="<?php echo U(get_catname(3,'url'),array('catid'=>$vo['catid']));?>">
-                        <div class="ico"><img src="/Public/Home/img/<?php echo ($k+1); ?>.png" class="absolute" /></div>
-                        <h3><?php echo ($vo["catname"]); ?></h3>
-                        <img src="<?php echo ($vo["thumb"]); ?>" class="img">
-                    </a>
-                <?php elseif($vo['url'] != '' and (substr($vo['url'],0,7) != 'http://' or substr($vo['url'],0,8) != 'https://')): ?>
-                    <a href="<?php echo U($vo['url'],array('catid'=>$vo['catid']));?>">
-                        <div class="ico"><img src="/Public/Home/img/<?php echo ($k+1); ?>.png" class="absolute" /></div>
-                        <h3><?php echo ($vo["catname"]); ?></h3>
-                        <img src="<?php echo ($vo["thumb"]); ?>" class="img">
-                    </a><?php endif; endforeach; ?>
-        </div>
-        <div class="product_btn absolute">
-            <div class="pre" style="display: none;"></div>
-            <div class="next"></div>
-        </div>
+	<!-- <img class="bg" src="/Public/Home/img/product.jpg" /> -->                <div class="Case_Sort" style="margin-top:50px;">                    <div class="Tar">                        <h2>产品中心</h2>                    </div>                    <p>Product Center</p>                </div>
+    <div class="product_contentx">                <div class="trade-content">                        <div class="trade-black">                <div class="trade-box">                    <div class="trade-box-list">                    <?php $list=M("Category")->where("pid=3 and ishidden=0")->limit(5)->order("sort desc,catid asc")->select();foreach ($list as $k=>$vo): if(substr($vo['url'],0,7) == 'http://' or substr($vo['url'],0,8) == 'https://'): ?><div class="trade-box-item item0<?php echo ($k+1); ?>" style="background-image: url(<?php echo ($vo["thumb"]); ?>);">                            <a href="<?php echo ($vo["url"]); ?>">                                <div class="item-logo">                                    <img src="/Public/Home/img/<?php echo ($k+1); ?>.png" alt="">                                </div>                                <div class="item-title"><?php echo ($vo["catname"]); ?></div>                                <div class="item-text">                                    <p><?php echo ($vo["info"]); ?></p>                                </div>                            </a>                        </div>                        <?php elseif($vo['url'] == ''): ?>							<div class="trade-box-item item0<?php echo ($k+1); ?>" style="background-image: url(<?php echo ($vo["thumb"]); ?>);">                            <a href="<?php echo U(get_catname(3,'url'),array('catid'=>$vo['catid']));?>">                                <div class="item-logo">                                    <img src="/Public/Home/img/<?php echo ($k+1); ?>.png" alt="">                                </div>                                <div class="item-title"><?php echo ($vo["catname"]); ?></div>                                <div class="item-text">                                    <p><?php echo ($vo["info"]); ?></p>                                </div>                            </a>                        </div>                        <?php elseif($vo['url'] != '' and (substr($vo['url'],0,7) != 'http://' or substr($vo['url'],0,8) != 'https://')): ?>							<div class="trade-box-item item0<?php echo ($k+1); ?>" style="background-image: url(<?php echo ($vo["thumb"]); ?>);">                            <a href="<?php echo U($vo['url'],array('catid'=>$vo['catid']));?>">                                <div class="item-logo">                                    <img src="/Public/Home/img/<?php echo ($k+1); ?>.png" alt="">                                </div>                                <div class="item-title"><?php echo ($vo["catname"]); ?></div>                                <div class="item-text">                                    <p><?php echo ($vo["info"]); ?></p>                                </div>                            </a>                        </div><?php endif; endforeach; ?>                    </div>                </div>            </div>        </div>        
     </div>
-	<a class="more" href="<?php echo U('Product/index');?>">深入了解</a>
+	<!-- <a class="more" href="<?php echo U('Product/index');?>">更多产品</a> -->
 </section>
 <!--重点工程-->
 <section class="index_stress" id="stress">
-	<img class="bg" src="/Public/Home/img/stress__bg.jpg" />
-    <div class="stress_content">
+	<!-- <img class="bg" src="/Public/Home/img/stress__bg.jpg" /> -->                <div class="Case_Sort" style="padding-bottom:50px;">                    <div class="Tar">                        <h2>成功案例</h2>                    </div>                    <p>Successful cases</p>                </div>	<div style="width:1200px;margin:0 auto;">		<div class="accrodion-group">	<div class="5-accordion"></div></div>	</div><!--
+    <div class="stress_content">
         <div class="stress_btn absolute">
             <div class="pre"></div>
             <div class="next"></div>
@@ -143,10 +120,9 @@
                     <p><?php echo ($vs["title"]); ?></p>
                 </a><?php endforeach; ?>
         </div>
-    </div>
-	<a class="more" href="<?php echo U('Case/lists','catid=21');?>">更多工程</a>
+    </div>--><div style="clear:both;"></div><a class="more" style="bottom:-80px;" href="<?php echo U('Case/lists','catid=21');?>">更多</a>
 </section>
-<!--资讯中心-->
+<!--资讯中心--><div style="clear:both;"></div><div class="Case_Sort" style="padding-top:130px;margin-bottom:20px;">    <div class="Tar">        <h2>资讯中心</h2>    </div>    <p>Information Center</p></div>
 <section class="index_info" id="app">
     <div class="info_class">
         <?php $list=M("Category")->where("pid=5 and ishidden=0")->limit(0)->order("sort desc,catid asc")->select();foreach ($list as $k=>$vo):?><div <?php if(($k+1) == 1): ?>class="cur"<?php endif; ?>><?php echo ($vo["catname"]); ?></div><?php endforeach; ?>
@@ -169,14 +145,13 @@
             </div>
             <ul class="info_list_dot"></ul>
         </article><?php endforeach; ?>
-	<a class="info_more" href="<?php echo U('News/index','catid=22');?>">更多新闻</a>
-	<a class="info_more" href="<?php echo U('News/index','catid=23');?>">更多动态</a>
-	<a class="info_more" href="<?php echo U('News/index','catid=24');?>">更多法规</a>
-	<a class="info_more" href="<?php echo U('News/index','catid=25');?>">更多百科</a>
+	<!-- <a class="info_more" href="<?php echo U('News/index','catid=22');?>">更多新闻</a>	<a class="info_more" href="<?php echo U('News/index','catid=23');?>">更多动态</a>
+	<a class="info_more" href="<?php echo U('News/index','catid=24');?>">更多法规</a>
+	<a class="info_more" href="<?php echo U('News/index','catid=25');?>">更多百科</a> -->
 </section>
 <!--项目案例-->
 <section class="index_project" id="APP">
-    <img class="bg" src="/Public/Home/img/project_bg.jpg" />
+    <!-- <img class="bg" src="/Public/Home/img/project_bg.jpg" /> -->
     <div class="project_content clearfix">
         <?php $list=M("Article")->where("catid in (20,31,32,34,54) and status=1")->limit(4)->order("sort desc,id desc")->select();foreach ($list as $k=>$vs):?><a href="<?php echo U('Case/show',array('id'=>$vs['id']));?>">
                 <i><img src="<?php echo ($vs["thumb"]); ?>" alt="<?php echo ($vs["title"]); ?>" title="<?php echo ($vs["title"]); ?>" /></i>
@@ -241,8 +216,8 @@
 		<li class="show"><span>项目案例 </span></li>
 		<li class="show"><span>联系我们 </span></li>
 	</ul>
-	<script type="text/javascript" src="/Public/Home/js/index.js"></script>
-	<script src="/Public/Home/js/index_move.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/Public/Home/js/accordion.js" type="text/javascript"></script><script type="text/javascript" src="/Public/Home/js/index.js"></script><script src="/Public/Home/js/index_move.js" type="text/javascript"></script>
+
 	<script>
 		$(function () {
 			$(' .nav .column  .index').addClass('cur');
@@ -359,31 +334,7 @@
 						$('.index_info .info_content').eq(info_cla - 1).fadeIn(400);
 					}, 400);
 				}
-			});
-			/*
-			video(0);
-			function video(value) {
-				$('.mask .video_open h3.title').text($('.mask .video_open ul.list li').eq(value).find('p.title').text());
-				$('.mask .video_open .play  p.key_word').html($('.mask .video_open ul.list li').eq(value).find('p.key_word').html());
-				$('.mask .video_open .play  p.video_visit').html($('.mask .video_open ul.list li').eq(value).find('p.video_visit').html());
-				var Url = $('.mask .video_open ul.list li').eq(value).attr('Url');
-				//if (Url.search(".mp4") != -1) {
-					//$('.play #video').html('');
-				//}
-				//else {
-					$('.play #video').html('');
-					var a = '<embed ref="play_embed" src="' + Url + '" type="application/x-shockwave-flash" class="video_play" pluginspage="http://www.macromedia.com/go/getflashplayer" width="480" height="380" wmode="transparent" play="true" loop="false" menu="false" allowscriptaccess="never" allowfullscreen="true"></embed>';
-					$('.play #video').html(a);
-				//}
-			}
-			$('.mask .video_open ul.list li').click(function () {
-				$(this).parents().find('li').removeClass('cur');
-				$(this).addClass('cur');
-				$(this).parents('#VideoList').find('.play').css({ 'opacity': 0 });
-				video($(this).index());
-				$(this).parents('#VideoList').find('.play').animate({ 'opacity': 1 });
-			});
-			*/
+			});
 			$('body').on('mouseenter', '.index_product .product_content .product_list a', function () {
 				$(this).find('.ico').attr('src', $(this).attr('ico2'));
 			});
@@ -449,6 +400,6 @@
 	});
 </script>
 
-	<script src="/Public/Home/js/SL.js" type="text/javascript" charset="utf-8"></script> 
+<!-- 	<script src="/Public/Home/js/SL.js" type="text/javascript" charset="utf-8"></script>  --><script type="text/javascript">$(document).ready(function(){	var horiObj = {imageObj:<?php echo ($Article_lists); ?>};	$('[class*="-accordion"]').not(":first").parents(".accordion-DIV").hide();	$(".5-accordion").accordion({		imageObj:horiObj.imageObj,		arrangement:'horizontal',		fontCut: 180,		defaultWidth: 100,		defaultHeight: 200,		animateWidth: 500,		animateHeight: 200,		response: true,		styleColor:{background:"red",font:"#fff",textShadow:"0px 0px 1px blue"}	});		setTimeout(function(){$('[class*="-accordion"],.accordion-DIV').show();},100);});</script>
     </body>
 </html>

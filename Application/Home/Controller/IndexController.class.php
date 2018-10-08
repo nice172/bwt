@@ -23,9 +23,9 @@ if($menuIdArr){
 	$menuIdArr = array_unique($menuIdArr);
 	
 }
-$this->assign('menuIdArr', $menuIdArr);
-
-		$this->assign('lists', $lists);
+$this->assign('menuIdArr', $menuIdArr);		$childs = M('category')->where(['pid' => 21])->field('catid')->select();		$temp = array();		foreach ($childs as $v){			$temp[] = $v['catid'];		}
+		$this->assign('lists', $lists);		$Article_lists = M('Article')->where(['status' => 1,'catid' => ['in',$temp]])->order('sort asc')->limit(5)->select();		$data = [];		foreach ($Article_lists as $val){			$data[] = [				'src' => $val['thumb'],				'content' => $val['pdescription'],				'title' => $val['title'],					'url' => U('Case/show',array('id'=>$val['id']))
+			];		}		$this->assign('Article_lists', json_encode($data));		
 		$this->display($this->template . 'index/index');
     }
 	public function bind() {
@@ -46,7 +46,7 @@ $this->assign('menuIdArr', $menuIdArr);
         //跳转到授权页面
         redirect($sns->getRequestCodeURL());
     }
-	
+	public function test(){		$menuIdArr =  M('Article')->where('status = 1')->getField('gallery',true);		if($menuIdArr){				$menuIdStr = implode(',', $menuIdArr);				$menuIdArr = explode(',', $menuIdStr);				$menuIdArr = array_unique($menuIdArr);							}		$this->assign('menuIdArr', $menuIdArr);				$this->assign('lists', $lists);		//$this->display($this->template . 'index/test');}
 	
 	public function callback($type = null, $code = null) {
 		header("Content-type: text/html; charset=utf-8");

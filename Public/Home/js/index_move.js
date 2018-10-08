@@ -71,7 +71,7 @@ $(function () {
     //回到顶部
     $('.code-top .top').click(function () {
         page = 0;
-        page_scroll();
+        //page_scroll();
     });
 
     //重点工程上一张

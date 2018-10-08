@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="/Public/Home/Css/initial.css" />
 <link rel="stylesheet" href="/Public/Home/Css/nav-footer.css" />
 <link rel="stylesheet" href="/Public/Home/Css/share.min.css" />
-<script type="text/javascript" src="/Public/Home/js/jquery-3.0.0.js"></script>
+<script type="text/javascript" src="/Public/Home/js/jquery-3.0.0.js"></script><!--[if lt IE 8]><script>	alert('已不支持IE6-8，请使用谷歌、火狐等浏览器\n或360、QQ等国产浏览器的极速模式浏览本页面！');</script><![endif]-->
         <link rel="stylesheet" type="text/css" href="/Public/Home/Css/main.css"/>
     </head>
     <body>
