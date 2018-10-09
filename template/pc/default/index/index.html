@@ -325,6 +325,6 @@
 	</div>
     -->
     <include file="default:public:foot" />
-<!-- 	<script src="__PUBLIC__/Home/js/SL.js" type="text/javascript" charset="utf-8"></script>  --><script type="text/javascript">$(document).ready(function(){	var horiObj = {imageObj:{$Article_lists}};	$('[class*="-accordion"]').not(":first").parents(".accordion-DIV").hide();	$(".5-accordion").accordion({		imageObj:horiObj.imageObj,		arrangement:'horizontal',		fontCut: 180,		defaultWidth: 100,		defaultHeight: 200,		animateWidth: 500,		animateHeight: 200,		response: true,		styleColor:{background:"red",font:"#fff",textShadow:"0px 0px 1px blue"}	});		setTimeout(function(){$('[class*="-accordion"],.accordion-DIV').show();},100);});</script>
+<!-- 	<script src="__PUBLIC__/Home/js/SL.js" type="text/javascript" charset="utf-8"></script>  --><script type="text/javascript">$(document).ready(function(){	var horiObj = {imageObj:{$Article_lists}};	$('[class*="-accordion"]').not(":first").parents(".accordion-DIV").hide();	$(".5-accordion").accordion({		imageObj:horiObj.imageObj,		arrangement:'horizontal',		fontCut: 180,		defaultWidth: 100,		defaultHeight: 200,		animateWidth: 500,		animateHeight: 200,		response: true,		styleColor:{background:"red",font:"#fff",textShadow:"0px 0px 1px blue"}	});		setTimeout(function(){$('[class*="-accordion"],.accordion-DIV').show();	$('body').on('click','.accordion-li',function(){		window.location.href=$(this).find('a').attr('href');	});	},100);});</script>
     </body>
 </html>

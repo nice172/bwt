@@ -91,8 +91,8 @@ class CaseController extends PublicController
         }
 		$article_db = M('Article');
         /*文章详情start*/
-         $article_info = $article_db->where('id = '.$id.' and catid in (' . $sortid_all . ') and status = 1')->find();
-        if (empty($article_info)) {
+        //$article_info = $article_db->where('id = '.$id.' and catid in (' . $sortid_all . ') and status = 1')->find();		$article_info = $article_db->where('id = '.$id.' and status = 1')->find();
+        if (empty($article_info)) {
             $this->error('文章不存在');
         }
 		$innerlink=M("Innerlink")->where(array('status' => array('eq', 1)))->select();
