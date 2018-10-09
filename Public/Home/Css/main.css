@@ -195,7 +195,7 @@ button.close {position: absolute;color: #fff;bottom: 0px;margin: 0 auto;left: 0;
 .menuk{height: 69px; margin:0px auto; width: 1300px;}
 .menuk ul{width: 100%;display: flex;display: -webkit-box;display: -webkit-flex;display: -moz-flex;display: -ms-flexbox;display: -moz-box;}
 .menuk ul li{/*width: 100%;text-align:center;*/padding:0 3px;-moz-box-flex: 1.0;-webkit-box-flex: 1.0;box-flex: 1.0;-o-box-flex: 1.0;-ms-box-flex: 1.0;}
-.menuk ul li a{/*font-weight: bold;font-size: 16px;line-height: 69px;*/padding:0 23px;display: block;height: 55px;padding-top:14px;color: #000;background:rgba(255,255,255,0.6);}
+.menuk ul li a{/*font-weight: bold;font-size: 16px;line-height: 69px;*/padding:0 23px;display: block;height: 55px;bottom:15px;padding-top:14px;color: #000;background:rgba(255,255,255,0.6);}
 .menuk ul li a:hover,
 .menuk ul li a.xm{/*color: #cd181c; border-bottom: 1px solid #cd181c;*/color:#333;background:#fff;position:relative;bottom:14px;height: 54px;padding-top:29px;}
 

@@ -70,6 +70,7 @@ $(function () {
         index_banner_next();
         index_Banner = setInterval(index_banner_next, 8000);
     });
+    
 	$ul.click(function(){
 		$ul.removeClass('current');
 		$(this).addClass('current');
@@ -78,10 +79,11 @@ $(function () {
 		banner_spend = $(this).index();
 		index_banner();
 	});
+    
     //回到顶部
     $('.code-top .top').click(function () {
         page = 0;
-        page_scroll();
+        //page_scroll();
     });
 
     //重点工程上一张

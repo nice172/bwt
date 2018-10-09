@@ -76,7 +76,7 @@
                     
                     });
                     </script>
-                <elseif condition="$cate.catid eq 11"/>
+                <elseif condition="$cate.catid eq 11"/><style>.history-date ul li .Root {padding-left:183px;}</style>
                 <div class="history">
                 <?php $catid = $cate['catid']; ?>
                 <category item="vo" pid="$catid" key="k" order="sort desc,catid desc">
@@ -94,7 +94,7 @@
                             <?php $cateid = $vo['catid']; ?>
                             <arclist item="vs" catid="$cateid" order="sort desc,id desc" key="k">
                                 <li>
-                                    <h3>{$vs.inputtime|date="m.d",###}<span>{$vs.inputtime|date="Y",###}</span></h3>
+                                    <!-- <h3>{$vs.inputtime|date="m.d",###}<span>{$vs.inputtime|date="Y",###}</span></h3> -->
                                     <div class="Root fl">
                                         <i><img src="{$vs.thumb}" /></i>
                                         <div class="Text">
