@@ -7,7 +7,6 @@ header("Content-Type: text/html; charset=utf-8");
 
 $CONFIG = json_decode(preg_replace("/\/\*[\s\S]+?\*\//", "", file_get_contents("config.json")), true);
 $action = $_GET['action'];
-
 switch ($action) {
     case 'config':
         $result =  json_encode($CONFIG);
@@ -20,7 +19,7 @@ switch ($action) {
     /* 上传视频 */
     case 'uploadvideo':
     /* 上传文件 */
-    case 'uploadfile':
+    case 'uploadfile':
         $result = include("action_upload.php");
         break;
 

@@ -20,7 +20,7 @@ $(window).resize(function () {
 
 function windowsize() {
     if (height < 750 && bool) {
-        alert('请全屏浏览网站或更换分辨率！');
+        //alert('请全屏浏览网站或更换分辨率！');
         bool = !bool;
     }
     if (width >= 1300) {
@@ -45,7 +45,8 @@ function windowsize() {
     });
 
     $('.index_product .product_content').css({
-        'marginTop': (height - 82 - $('.index_product .product_content').height()) / 2
+        //'marginTop': (height - 82 - $('.index_product .product_content').height()) / 2
+    	'marginTop': 40
     });
     $('.index_project .project_content').css({
         'top': (height - 82 - $('.index_project .project_content').height()) / 2 - 100

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <include file="default:public:header" />
+        <include file="default:public:header" /><style>.Tar{text-align: center;margin-bottom: 0px;}.Tar h2{font-size: 28px;display: inline-block;vertical-align: middle;color:#cd161c;font-weight: normal; line-height: 40px;border-bottom: 2px solid #cd161c;padding-bottom: 3px;height: 40px;width:180px;}.Case_Sort p {    text-align: center;    font-size: 14px;    color: #919191;    line-height: 30px;    height: 30px;}.product_list .lix{background:#F8F8F8;}</style>
     </head>
     <body>
     	<include file="default:public:top" />
@@ -57,60 +57,13 @@
 	<a class="more" href="{:U(get_catname(2,'url'))}">深入了解</a>
 </section>
 <!--产品中心-->
-<section class="index_product" id="product">
-	<img class="bg" src="__PUBLIC__/Home/img/product.jpg" />
-    <div class="product_content">
-        <div class="product_list">
-            <category item="vo" pid="3" key="k" order="sort desc,catid asc">
-                <if condition="substr($vo['url'],0,7) eq 'http://' or substr($vo['url'],0,8) eq 'https://'">
-                     <a href="{$vo.url}">
-                        <div class="ico"><img src="__PUBLIC__/Home/img/{$k+1}.png" class="absolute" /></div>
-                        <h3>{$vo.catname}</h3>
-                        <img src="{$vo.thumb}" class="img">
-                    </a>
-                <elseif condition="$vo['url'] eq ''" />
-                    <a href="{:U(get_catname(3,'url'),array('catid'=>$vo['catid']))}">
-                        <div class="ico"><img src="__PUBLIC__/Home/img/{$k+1}.png" class="absolute" /></div>
-                        <h3>{$vo.catname}</h3>
-                        <img src="{$vo.thumb}" class="img">
-                    </a>
-                <elseif condition="$vo['url'] neq '' and (substr($vo['url'],0,7) neq 'http://' or substr($vo['url'],0,8) neq 'https://')" />
-                    <a href="{:U($vo['url'],array('catid'=>$vo['catid']))}">
-                        <div class="ico"><img src="__PUBLIC__/Home/img/{$k+1}.png" class="absolute" /></div>
-                        <h3>{$vo.catname}</h3>
-                        <img src="{$vo.thumb}" class="img">
-                    </a>
-                </if>
-            </category>
-        </div>
-        <div class="product_btn absolute">
-            <div class="pre" style="display: none;"></div>
-            <div class="next"></div>
-        </div>
-    </div>
-	<a class="more" href="{:U('Product/index')}">深入了解</a>
+<section class="index_product" id="product">
+	<img class="bg" src="__PUBLIC__/Home/img/product.jpg" />	        <div class="product_content" style="height:550px;">         <div class="Case_Sort">           <div class="Tar">               <h2>产品中心</h2>           </div>           <p>Product Center</p>       </div>            <div class="trade-content">                        <div class="trade-black">                <div class="trade-box">					<div class="trade-box-list">                    	<div class="trade-box-item item01">                            <a href="/Product/lists/catid/12.html">                                <div class="item-logo">                                    <img src="/Public/Home/img/1.png" alt="">                                </div>                                <div class="item-title">油烟在线监控系统</div>                                <div class="item-text">                                    <p>国内首个对餐饮油烟进行智能监控的系统。通过对油烟数据的实时采集、传输、存储，实现了对餐饮企业油烟排放的定性和定量双重监管，体现了互联网+与环保监管的完美结合。</p>                                </div>                            </a>                        </div>							                        <div class="trade-box-item">                            <a href="/Product/lists/catid/13.html">                                <div class="item-logo">                                    <img src="/Public/Home/img/2.png" alt="">                                </div>                                <div class="item-title">VOCs处理</div>                                <div class="item-text">                                    <p>VOCs对环境和人体有较大危害，正虹环境研发的多相催化氧化、RCO、等离子催化氧化等VOCs治理系列设备，净化效率高且无二次污染。</p>                                </div>                            </a>                        </div>							                        <div class="trade-box-item">                            <a href="/Product/lists/catid/14.html">                                <div class="item-logo">                                    <img src="/Public/Home/img/3.png" alt="">                                </div>                                <div class="item-title">在线监测</div>                                <div class="item-text">                                    <p>环境在线监测系统基于物联网研发的环保物联网综合平台，涵盖油烟、VOCs、烟气、水质、扬尘噪声等在线监测系统。</p>                                </div>                            </a>                        </div>							                        <div class="trade-box-item">                            <a href="/Product/lists/catid/15.html">                                <div class="item-logo">                                    <img src="/Public/Home/img/4.png" alt="">                                </div>                                <div class="item-title">智慧城市</div>                                <div class="item-text">                                    <p>智慧城管物联网综合管理系统的核心是“物联网技术”，构建全方位、多层次、全覆盖的环境监测网络，为环境监督执法及管理决策提供依据。</p>                                </div>                            </a>                        </div>							                        <div class="trade-box-item">                            <a href="/Product/lists/catid/16.html">                                <div class="item-logo">                                    <img src="/Public/Home/img/5.png" alt="">                                </div>                                <div class="item-title">智慧数采仪</div>                                <div class="item-text">                                    <p>正虹智慧数采仪按照工业级标准设计，支持多种网络通讯，可实现视频数据采集。</p>                                </div>                            </a>                        </div>                                           </div>                </div>            </div>        </div>            </div>
+	<!-- <a class="more" href="{:U('Product/index')}">深入了解</a> -->
 </section>
-<!--重点工程-->
-<section class="index_stress" id="stress">
-	<img class="bg" src="__PUBLIC__/Home/img/stress__bg.jpg" />
-    <div class="stress_content">
-        <div class="stress_btn absolute">
-            <div class="pre"></div>
-            <div class="next"></div>
-        </div>
-        <div class="stress_a">
-        	<arclist item="vs" limit="5" catid="21" order="sort desc,id desc" key="k">
-                <a href="{:U('Case/show',array('id'=>$vs['id']))}">
-                    <div><img src="{$vs.thumb}" alt="{$vs.title}" title="{$vs.title}"/></div>
-                    <p>{$vs.title}</p>
-                </a>
-            </arclist>
-        </div>
-    </div>
-	<a class="more" href="{:U('Case/lists','catid=21')}">更多工程</a>
-</section>
+<!--重点工程--><section class="index_stress" id="stress">	<!-- <img class="bg" src="__PUBLIC__/Home/img/stress__bg.jpg" /> -->                <div class="Case_Sort" style="padding-bottom:50px;padding-top:30px;">                    <div class="Tar">                        <h2>成功案例</h2>                    </div>                    <p>Successful cases</p>                </div>	<div style="width:1200px;margin:0 auto;overflow:hidden;">		<div class="accrodion-group" style="overflow:hidden;">	<div class="5-accordion"></div></div>	</div><div style="clear:both;"></div><a class="more" href="{:U('Case/index')}">更多</a></section>
 <!--资讯中心-->
-<section class="index_info" id="app">
+<section class="index_info" id="app"><div class="Case_Sort" style="padding-top:20px;">    <div class="Tar">        <h2>资讯中心</h2>    </div>    <p>Information Center</p></div>
     <div class="info_class">
         <category item="vo" pid="5" key="k" order="sort desc,catid asc">
         	<div <if condition="($k+1) eq 1"> class="cur"</if>>{$vo.catname}</div>
@@ -213,7 +166,7 @@
 		<li class="show"><span>资讯中心 </span></li>
 		<li class="show"><span>项目案例 </span></li>
 		<li class="show"><span>联系我们 </span></li>
-	</ul>
+	</ul><script src="__PUBLIC__/Home/js/accordion.js" type="text/javascript"></script>
 	<script type="text/javascript" src="__PUBLIC__/Home/js/index.js"></script>
 	<script src="__PUBLIC__/Home/js/index_move.js" type="text/javascript" charset="utf-8"></script>
 	<script>
@@ -362,7 +315,7 @@
 			});
 			$('body').on('mouseleave', '.index_product .product_content .product_list a', function () {
 				$(this).find('.ico').attr('src', $(this).attr('ico1'));
-			});
+			});			var horiObj = {imageObj:{$Article_lists}};			$('[class*="-accordion"]').not(":first").parents(".accordion-DIV").hide();			$(".5-accordion").accordion({				imageObj:horiObj.imageObj,				arrangement:'horizontal',				fontCut: 180,				defaultWidth: 100,				defaultHeight: 200,				animateWidth: 500,				animateHeight: 200,				response: true,				styleColor:{background:"red",font:"#fff",textShadow:"0px 0px 1px blue"}			});						setTimeout(function(){$('[class*="-accordion"],.accordion-DIV').show();			$('body').on('click','.accordion-li',function(){				window.location.href=$(this).find('a').attr('href');			});			},100);			
 		});
 	</script>
     <!--
@@ -378,6 +331,6 @@
 	</div>
     -->
     <include file="default:public:foot" />
-	<script src="__PUBLIC__/Home/js/SL.js" type="text/javascript" charset="utf-8"></script> 
+	 <script src="__PUBLIC__/Home/js/SL.js" type="text/javascript" charset="utf-8"></script>
     </body>
 </html>
