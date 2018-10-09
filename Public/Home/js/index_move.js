@@ -1,6 +1,6 @@
 $(function () {
     var banner_bool = true;
-
+    var $ul = $('.pointer ul li');
     var banner_spend = 0;
     var index_Banner = setInterval(index_banner_next,30000);
     function index_banner_next() {
@@ -20,6 +20,8 @@ $(function () {
     }
 
     function index_banner() {
+    	$ul.removeClass('current');
+    	$ul.eq(banner_spend).addClass('current');
         $('.index_banner .banner_ul li').each(function (i, ele) {
             if (i != banner_spend) {
                 $(ele).delay(300).fadeOut(400);
@@ -68,6 +70,16 @@ $(function () {
         index_banner_next();
         index_Banner = setInterval(index_banner_next, 8000);
     });
+    
+	$ul.click(function(){
+		$ul.removeClass('current');
+		$(this).addClass('current');
+        clearInterval(index_Banner);
+        banner_bool = false;
+		banner_spend = $(this).index();
+		index_banner();
+	});
+    
     //回到顶部
     $('.code-top .top').click(function () {
         page = 0;

@@ -2,8 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <include file="default:public:header" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
-    </head>
+        <include file="default:public:header" /> </head>
     <body>
     	<include file="default:public:top" />
         <link rel="stylesheet" href="__PUBLIC__/Home/Css/index.css" />
@@ -33,11 +32,11 @@
                     <a class="more" href="" style="bottom:80px;">了解更多</a>
                 </li>
             </ul>
-            <div class="btn absolute clearfix">
-                <div class="pre"></div>
-                <div class="next"></div>
-            </div>
-        </section>
+            <div class="btn absolute clearfix">
+                <div class="pre"></div>
+                <div class="next"></div>
+            </div>			<style>.pointer {position:absolute;bottom:10px;width:100%;text-align:center;}				.pointer ul li{display:inline-block;				border:1px solid #F6F7FB;				width:8px;				height:8px;margin:0 3px;				border-radius:50%;cursor:pointer;				}				.pointer ul li.current{border-color:#E8F2FE;background:#eee;}			</style>			<div class="pointer">				<ul>					<li class="current"></li>					<li></li>					<li></li>				</ul>			</div>
+        </section>
 <!--关于正虹--><div style="clear:both;"></div>
 <section class="index_about">
     <img class="bg" src="__PUBLIC__/Home/img/about.jpg" />
@@ -65,7 +64,7 @@
 </section>
 <!--重点工程-->
 <section class="index_stress" id="stress">
-	<!-- <img class="bg" src="__PUBLIC__/Home/img/stress__bg.jpg" /> -->                <div class="Case_Sort" style="padding-bottom:50px;">                    <div class="Tar">                        <h2>成功案例</h2>                    </div>                    <p>Successful cases</p>                </div>	<div style="width:1200px;margin:0 auto;">		<div class="accrodion-group">	<div class="5-accordion"></div></div>	</div><!--
+	<!-- <img class="bg" src="__PUBLIC__/Home/img/stress__bg.jpg" /> -->                <div class="Case_Sort" style="padding-bottom:50px;">                    <div class="Tar">                        <h2>成功案例</h2>                    </div>                    <p>Successful cases</p>                </div>	<div style="width:1200px;margin:0 auto;overflow:hidden;">		<div class="accrodion-group" style="overflow:hidden;">	<div class="5-accordion"></div></div>	</div><!--
     <div class="stress_content">
         <div class="stress_btn absolute">
             <div class="pre"></div>
@@ -79,7 +78,7 @@
                 </a>
             </arclist>
         </div>
-    </div>--><div style="clear:both;"></div><a class="more" style="bottom:-80px;" href="{:U('Case/lists','catid=21')}">更多</a>
+    </div>--><div style="clear:both;"></div><a class="more" style="bottom:-80px;" href="{:U('Case/index')}">更多</a>
 </section>
 <!--资讯中心--><div style="clear:both;"></div><div class="Case_Sort" style="padding-top:130px;margin-bottom:20px;">    <div class="Tar">        <h2>资讯中心</h2>    </div>    <p>Information Center</p></div>
 <section class="index_info" id="app">
