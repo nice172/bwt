@@ -63,7 +63,7 @@ function windowsize() {
         $('.index_info .info_class').removeAttr('style');
         $('.index_stress .stress_content').removeAttr('style');
         $('.index_info .info_class').css({
-            'marginTop': 35
+            'marginTop': 30
         });
     }
     $('.page_show').css('top', (height - $('.page_show').height()) / 2);
