@@ -55,15 +55,15 @@ h3.root{font-size: 24px;color: #666;font-weight: normal; line-height: 32px;heigh
 .pro_ul li:nth-child(3n+3){margin-right: 0px;}
 .pro_ul li i{border: 1px solid #e8e8e8; width: 400px;height: 250px;position: relative; display: block;}
 .pro_ul li i img{max-height: 100%;max-width: 100%;}
-.pro_ul li div{padding: 20px 30px 30px;border: 1px solid #e8e8e8;border-top: none;}
+.pro_ul li div{background:#D6D6D6;padding: 20px 30px 30px;border: 1px solid #e8e8e8;border-top: none;}.pro_ul li div p{color: #333;}
 .pro_ul li h5{font-size: 15px;line-height: 30px;color: #333;font-weight: normal; margin-bottom: 5px; height: 30px; overflow: hidden;}
 .pro_ul li p{line-height: 24px;font-size: 14px;color: #919191;height: 48px;overflow: hidden; margin-bottom: 12px;}
-.pro_ul li label{display: block;width: 125px;height: 35px;border: 1px solid #e8e8e8;border-radius: 4px;text-align: center;line-height: 35px;font-size: 14px;color: #919191;}
+.pro_ul li label{display: block;width: 125px;height: 35px;border: 1px solid #e8e8e8;border-radius: 4px;background:#363636;text-align: center;line-height: 35px;font-size: 14px;color: #fff;}
 .pro_ul li:hover i{-webkit-box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);-o-box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);-ms-box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);-moz-box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);}
 .pro_ul li:hover div{background: #cd161c;}
 .pro_ul li:hover h5,
 .pro_ul li:hover p{color: #fff;}
-.pro_ul li:hover label{border: 1px solid #fff;color: #fff;}
+.pro_ul li:hover label{background: #cd161c;border: 1px solid #fff;color: #fff;}
 
 .cate_com{}
 .cate_com li{float: left;width: 270px;margin-right: 73px;}
@@ -194,7 +194,7 @@ button.close {position: absolute;color: #fff;bottom: 0px;margin: 0 auto;left: 0;
 .menus{ width:100%; height:69px; /*border-bottom:1px solid #dfdfdf;*/position:absolute;bottom:0px;}
 .menuk{height: 69px; margin:0px auto; width: 1300px;}
 .menuk ul{width: 100%;display: flex;display: -webkit-box;display: -webkit-flex;display: -moz-flex;display: -ms-flexbox;display: -moz-box;}
-.menuk ul li{/*width: 100%;text-align:center;*/padding:0 3px;-moz-box-flex: 1.0;-webkit-box-flex: 1.0;box-flex: 1.0;-o-box-flex: 1.0;-ms-box-flex: 1.0;}
+.menuk ul li{text-align:center;/*width: 100%;*/padding:0 3px;-moz-box-flex: 1.0;-webkit-box-flex: 1.0;box-flex: 1.0;-o-box-flex: 1.0;-ms-box-flex: 1.0;}
 .menuk ul li a{/*font-weight: bold;font-size: 16px;line-height: 69px;*/padding:0 23px;display: block;height: 55px;bottom:15px;padding-top:14px;color: #000;background:rgba(255,255,255,0.6);}
 .menuk ul li a:hover,
 .menuk ul li a.xm{/*color: #cd181c; border-bottom: 1px solid #cd181c;*/color:#333;background:#fff;position:relative;bottom:14px;height: 54px;padding-top:29px;}
