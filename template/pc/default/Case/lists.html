@@ -3,7 +3,7 @@
 <html>
     <head>
         <include file="default:public:header" />
-        <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/Css/main.css"/>
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/Css/main.css"/><style>.tr {    border-top: 1px solid rgba(237,237,237,0.2) !important;    color:#fff !important;    position:relative;    top:260px;    }.tr a ,.tr .fs14{color:#fff !important;}.tr .fs14 {margin-top:15px !important;}</style>
     </head>
     <body>
     	<!--Header Start-->
@@ -11,8 +11,8 @@
         <!--Header end-->
         <div class="banner" style="background-image: url({:get_catname(4,'thumb')})">
         	<!-- <div class="warp1300 fs36">{:get_catname(4,'catname')}</div> -->
-
-        </div>        	<div class="tr">            	<div class="warp1300 fs14">{:catpos(4,get_catname(4,'url'))}{$cate.catname}</div>            </div>
+        	<div class="tr">            	<div class="warp1300 fs14">{:catpos(4,get_catname(4,'url'))}{$cate.catname}</div>            </div>
+        </div>
         <div class="warp1300 m40">        	
             <div class="Tar">
                 <h2>{$cate.catname}</h2>
